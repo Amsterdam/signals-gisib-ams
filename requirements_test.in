@@ -1,0 +1,11 @@
+# Base APP
+-r ./requirements.txt
+
+factory-boy
+freezegun
+flake8
+isort
+tox
+pytest
+pytest-cov
+pytest-django

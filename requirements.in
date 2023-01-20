@@ -1,0 +1,8 @@
+Django
+django-extensions
+django-filter
+djangorestframework
+gunicorn
+psycopg2
+uvicorn
+whitenoise

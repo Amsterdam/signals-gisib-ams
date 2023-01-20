@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "8001:8000"
+    depends_on:
+      postgis:
+        condition: service_healthy
+    environment:
+      - SECRET_KEY=insecure
+      - DJANGO_DEBUG=false
+      - DATABASE_HOST=postgis
+      - DATABASE_PORT=5432
+      - DATABASE_USER=signals-gisib
+      - DATABASE_PASSWORD=insecure
+    volumes:
+      - ./src:/app/
+      - ./docker-compose/run.sh:/run.sh
+    command: /run.sh
+
+  postgis:
+    image: postgis/postgis:15-3.3
+    ports:
+      - "54321:5432"
+    environment:
+      POSTGRES_DB: signals-gisib
+      POSTGRES_USER: signals-gisib
+      POSTGRES_PASSWORD: insecure
+    volumes:
+      - postgis-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "sh -c 'pg_isready -U signals-gisib -d signals-gisib'" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgis-data:

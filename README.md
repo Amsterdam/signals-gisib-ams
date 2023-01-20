@@ -1,2 +1,51 @@
-# signals-gisib-ams
-Handles the communication between the Signals API and GISIB (Geographic Information System) for the City of Amsterdam
+# Welcome to the "signals-gisib-ams" GitHub project!
+
+The "signals-gisib-ams" GitHub project is a tool that facilitates communication between the RESTful Signals API and 
+GISIB (Geographic Information System) for the City of Amsterdam.
+
+## Running and developing locally
+
+Set up a virtual environment and activate it:
+
+```shell
+$(which python3) -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies in the virtual environment using the provided `make` command:
+
+```shell
+make install
+```
+
+Start the development database provided in the docker-compose.yml:
+
+```shell
+docker-compose up -d postgis
+```
+
+You can now either run the application from the virtual environment using the following command:
+
+```shell
+python src/manage.py runserver 0.0.0.0:8000
+```
+
+Or you can use docker-compose:
+
+```shell
+docker-compose up app
+```
+
+## Running the tests
+
+To run the complete test suite you can use the following command:
+
+```shell
+docker-compose run --rm app tox
+```
+
+## Note
+This project is designed and optimized for the Amsterdam municipality and may not be fully compatible with other 
+environments. It is recommended to consider this limitation before implementation in other locations.
+
+## Thanks for visiting!

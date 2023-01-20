@@ -1,0 +1,7 @@
+# Base APP
+-r ./requirements_test.txt
+
+# Tools for maintaining requirements.txt:
+pip-tools
+
+django-debug-toolbar

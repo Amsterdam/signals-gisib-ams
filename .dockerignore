@@ -1,0 +1,24 @@
+# Python
+*.egg-info/
+*.eggs/
+*.pytest_cache/
+build/
+dist/
+docs/_build/
+htmlcov/
+*.tox/
+
+# Django
+db.sqlite3
+media/
+
+# Pycharm
+.idea/
+
+# Git
+.git
+.gitignore
+
+# GitHub Actions
+.github/
+workflows/
