@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  app:
+  app: &app
     build:
       context: .
       target: dev
@@ -17,6 +17,10 @@ services:
       - DATABASE_PORT=5432
       - DATABASE_USER=signals-gisib
       - DATABASE_PASSWORD=insecure
+      - GISIB_ENDPOINT=
+      - GISIB_USERNAME=
+      - GISIB_PASSWORD=
+      - GISIB_APIKEY=
     volumes:
       - ./src:/app/
       - ./docker-compose/run.sh:/run.sh
@@ -34,6 +38,34 @@ services:
       - postgis-data:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "sh -c 'pg_isready -U signals-gisib -d signals-gisib'" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  celery: &celery
+    <<: *app
+    depends_on:
+      postgis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    command: celery -A main worker -l debug
+
+  celery-beat:
+    <<: *celery
+    command: celery -A main beat -l debug --pidfile /tmp/celerybeat.pid
+
+  rabbitmq:
+    image: rabbitmq:latest
+    ports:
+      - "5673:5672"
+    environment:
+      - RABBITMQ_ERLANG_COOKIE='secret cookie here'
+      - RABBITMQ_DEFAULT_USER=signals-gisib-ams
+      - RABBITMQ_DEFAULT_PASS=insecure
+      - RABBITMQ_DEFAULT_VHOST=vhost
+    healthcheck:
+      test: [ "CMD-SHELL", "rabbitmqctl status" ]
       interval: 10s
       timeout: 5s
       retries: 5

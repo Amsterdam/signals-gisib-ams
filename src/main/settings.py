@@ -35,6 +35,8 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,0.0.0.0,localhost').split(
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django_celery_beat',
+    'django_celery_results',
     'django.contrib.contenttypes',
     'django.contrib.gis',
     'django.contrib.sessions',
@@ -43,6 +45,9 @@ INSTALLED_APPS = [
     'django_filters',
     'django_extensions',
     'rest_framework',
+    'simple_history',
+
+    'signals_gisib',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'main.urls'
@@ -126,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '../static')
 
@@ -136,6 +142,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, '../static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# Debug toolbar
+if DEBUG:
+    INSTALLED_APPS += ['debug_toolbar', ]
+    MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
+    INTERNAL_IPS = ['127.0.0.1', '0.0.0.0', ]
+
+
 # Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -144,3 +158,31 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }
+
+
+# Celery
+RABBITMQ_USER = os.getenv('RABBITMQ_USER', 'signals-gisib-ams')
+RABBITMQ_PASSWORD = os.getenv('RABBITMQ_PASSWORD', 'insecure')
+RABBITMQ_VHOST = os.getenv('RABBITMQ_VHOST', 'vhost')
+RABBITMQ_HOST = os.getenv('RABBITMQ_HOST', 'rabbitmq')
+RABBITMQ_PORT = os.getenv('RABBITMQ_PORT', 5672)
+
+CELERY_BROKER_URL = f'amqp://{RABBITMQ_USER}:{RABBITMQ_PASSWORD}@{RABBITMQ_HOST}:{RABBITMQ_PORT}/{RABBITMQ_VHOST}'
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_RESULT_EXTENDED = True
+CELERY_TASK_RESULT_EXPIRES = 604800  # 7 days in seconds (7*24*60*60)
+CELERY_TASK_ALWAYS_EAGER = True
+
+
+# Celery Beat settings
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BEAT_SCHEDULE = {}
+
+
+# GISIB Setting
+GISIB_ENDPOINT = os.getenv('GISIB_ENDPOINT')
+GISIB_USERNAME = os.getenv('GISIB_USERNAME')
+GISIB_PASSWORD = os.getenv('GISIB_PASSWORD')
+GISIB_APIKEY = os.getenv('GISIB_APIKEY')
+GISIB_LIMIT = os.getenv('GISIB_LIMIT', 500)
+GISIB_SLEEP = os.getenv('GISIB_LIMIT', 0.5)  # seconds to sleep between consecutive calls

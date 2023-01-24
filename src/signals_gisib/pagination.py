@@ -1,0 +1,49 @@
+from django.core.paginator import InvalidPage
+from rest_framework.exceptions import NotFound
+from rest_framework.pagination import PageNumberPagination
+
+
+class LinkHeaderPagination(PageNumberPagination):
+    page_size_query_param = 'page_size'
+
+    def paginate_queryset(self, queryset, request, view=None):
+        page_size = self.get_page_size(request)
+
+        paginator = self.django_paginator_class(queryset, page_size)
+        page_number = self.get_page_number(request, paginator)
+
+        try:
+            self.page = paginator.page(page_number)
+        except InvalidPage as exc:
+            msg = self.invalid_page_message.format(
+                page_number=page_number, message=str(exc)
+            )
+            raise NotFound(msg)
+
+        if paginator.num_pages > 1 and self.template is not None:
+            # The browsable API should display pagination controls.
+            self.display_page_controls = True
+
+        self.request = request
+        return self.page.object_list
+
+    def __init__(self, page_query_param=None, page_size=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.page_query_param = page_query_param or self.page_query_param
+        self.page_size = page_size or self.page_size
+
+    def get_pagination_headers(self):
+        headers = {'X-Total-Count': self.page.paginator.count, 'Link': []}
+        header_links = [f'<{self.request.build_absolute_uri()}>; rel="self"', ]
+
+        next_link = self.get_next_link()
+        if next_link:
+            header_links.append(f'<{next_link}>; rel="next"')
+
+        previous_link = self.get_previous_link()
+        if previous_link:
+            header_links.append(f'<{previous_link}>; rel="prev"')
+
+        headers['Link'] = ','.join(header_links)
+        return headers
