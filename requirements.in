@@ -1,8 +1,13 @@
+Celery
 Django
+django-celery-beat
+django-celery-results
 django-extensions
 django-filter
+django-simple-history
 djangorestframework
 gunicorn
+requests
 psycopg2
 uvicorn
 whitenoise

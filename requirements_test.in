@@ -9,3 +9,4 @@ tox
 pytest
 pytest-cov
 pytest-django
+vcrpy

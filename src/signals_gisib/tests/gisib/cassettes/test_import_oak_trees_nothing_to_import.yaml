@@ -1,0 +1,157 @@
+interactions:
+- request:
+    body: '{"Username": "test-user", "Password": "test-password", "ApiKey": "test-api-key"}'
+    headers:
+      Accept:
+        - '*/*'
+      Accept-Encoding:
+        - gzip, deflate
+      Connection:
+        - keep-alive
+      Content-Length:
+        - '93'
+      Content-Type:
+        - application/json
+      User-Agent:
+        - python-requests/2.28.2
+    method: POST
+    uri: https://amsterdam-test.gisib.nl/api/api/Login
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
+        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
+        n0+LL4vvVLNvv7r6sji4nN2b3Xu+nP7g+eLh9U9dH1x/8fT43fMfHO88vzdvJ5+/+kH23Wk7+S59
+        9/pFNfnus59+/nu/qH6fN2e7L4qz5mz56v705OzTs7er3/snT77zcEwd/OR07yevJ4tn7U+9pi8W
+        z66y3/vF6vd5TY3f0u/fbcscn//0dO+LN1/svPjBk59+8fRZ8cVP/8T9Lz7/TvH7LH6q/GLv97n6
+        4rs/Of/i6Wzx4vPfZ++suCp+6veeX539dPXuxU9Pd168me59+eaL3ecn31lN732BwSy5j4IQmJy1
+        xcPpL/qJ3+v3uvcTv/f98mHxi45/n/u/98H+T158+tXp8fEPnjw7rg5++ru//9Pv/MT/Awh1g+8N
+        AQAA
+    headers:
+      Content-Encoding:
+        - gzip
+      Content-Security-Policy:
+        - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' data: https:;'
+      Content-Type:
+        - text/plain; charset=utf-8
+      Date:
+        - Tue, 24 Jan 2023 08:15:35 GMT
+      Expect-CT:
+        - enforce, max-age=43200
+      Permissions-Policy:
+        - vibrate=(self)
+      Referrer-Policy:
+        - no-referrer-when-downgrade
+      Strict-Transport-Security:
+        - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+        - chunked
+      Vary:
+        - Accept-Encoding
+      X-Content-Type-Options:
+        - nosniff
+      X-Frame-Options:
+        - SAMEORIGIN
+      X-XSS-Protection:
+        - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '[{"Criterias": [{"Property": "Soortnaam.Description", "Value": "Quercus",
+      "Operator": "StartsWith"}, {"Property": "LastUpdate", "Value": "2023-01-24T08:49:59",
+      "Operator": "GreaterOrEqual"}], "Operator": "AND"}]'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer 123456
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '211'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+    method: POST
+    uri: https://amsterdam-test.gisib.nl/api/api/Collections/Boom/WithFilter/Items?offset=0&limit=2
+  response:
+    body:
+      string: '{"type":"FeatureCollection","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:EPSG::28992"}},"links":[{"rel":"next","type":"application/geo+json","title":"Next
+        page","href":"https://amsterdam-test.gisib.nl/api/api/OGCCollections/Boom/items?crs=28992&limit=2&offset=2"},{"rel":"prev","type":"application/geo+json","title":"Previous
+        page","href":"https://amsterdam-test.gisib.nl/api/api/OGCCollections/Boom/items?crs=28992&limit=2&offset=0"},{"rel":"first","type":"application/geo+json","title":"First
+        page","href":"https://amsterdam-test.gisib.nl/api/api/OGCCollections/Boom/items?crs=28992&limit=2&offset=0"}],"features":[]}'
+    headers:
+      Content-Length:
+      - '633'
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' data: https:;'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 24 Jan 2023 08:51:40 GMT
+      Expect-CT:
+      - enforce, max-age=43200
+      Permissions-Policy:
+      - vibrate=(self)
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer 123456
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://amsterdam-test.gisib.nl/api/api/Collections/Boom/DeletedItems?referenceDate=2023%2F01%2F24
+  response:
+    body:
+      string: '[]'
+    headers:
+      Content-Length:
+      - '2'
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' data: https:;'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 24 Jan 2023 08:51:40 GMT
+      Expect-CT:
+      - enforce, max-age=43200
+      Permissions-Policy:
+      - vibrate=(self)
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
