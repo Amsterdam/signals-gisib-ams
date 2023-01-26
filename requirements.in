@@ -9,5 +9,6 @@ djangorestframework
 gunicorn
 requests
 psycopg2
+python-keycloak
 uvicorn
 whitenoise

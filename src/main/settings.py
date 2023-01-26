@@ -186,3 +186,11 @@ GISIB_PASSWORD = os.getenv('GISIB_PASSWORD')
 GISIB_APIKEY = os.getenv('GISIB_APIKEY')
 GISIB_LIMIT = os.getenv('GISIB_LIMIT', 500)
 GISIB_SLEEP = os.getenv('GISIB_LIMIT', 0.5)  # seconds to sleep between consecutive calls
+
+
+# Keycloak (Used to get tokens for the Signals API)
+KEYCLOAK_SERVER_URL = os.getenv('KEYCLOAK_SERVER_URL')
+KEYCLOAK_CLIENT_ID = os.getenv('KEYCLOAK_CLIENT_ID')
+KEYCLOAK_REALM_NAME = os.getenv('KEYCLOAK_REALM_NAME')
+KEYCLOAK_CLIENT_SECRET_KEY = os.getenv('KEYCLOAK_CLIENT_SECRET_KEY')
+KEYCLOAK_GRANT_TYPE = os.getenv('KEYCLOAK_GRANT_TYPE')
