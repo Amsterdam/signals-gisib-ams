@@ -1,0 +1,149 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer abcdefg
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: http://test.com/signals/v1/private/signals/?updated_after=2022-01-27T14%3A00%3A00&status=m&category_slug=eikenprocessierups
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Fri, 27 Jan 2023 13:20:30 GMT
+      Location:
+      - https://test.com/signals/v1/private/signals/?updated_after=2022-01-27T14%3A00%3A00&status=m&category_slug=eikenprocessierups
+      Referrer-Policy:
+      - same-origin
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer abcdefg
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://test.com/signals/v1/private/signals/?updated_after=2022-01-27T14%3A00%3A00&status=m&category_slug=eikenprocessierups
+  response:
+    body:
+      string: '{"_links":{"self":{"href":"https://test.com/signals/v1/private/signals/?updated_after=2022-01-27T14%3A00%3A00&status=m&category_slug=eikenprocessierups"},"next":{"href":"https://test.com/signals/v1/private/signals/?category_slug=eikenprocessierups&page=2&status=m&updated_after=2022-01-27T14%3A00%3A00"},"previous":{"href":null}},"count":2,"results":[{"_links":{"self":{"href":"https://test.com/signals/v1/private/signals/2"}},"_display":"2
+        - m - None - 2023-01-27T14:18:31.395783+01:00","id":2,"id_display":"SIG-2","signal_id":"46562694-c9c9-44df-a275-1c399af56a2e","source":"online","text":"eikenprocessierups","text_extra":"","status":{"text":null,"user":null,"state":"m","state_display":"Gemeld","target_api":null,"extra_properties":null,"send_email":false,"created_at":"2023-01-27T14:18:31.409008+01:00","email_override":null},"location":{"id":2,"stadsdeel":null,"buurt_code":null,"area_type_code":null,"area_code":null,"area_name":null,"address":{"postcode":"","huisletter":"","huisnummer":25,"woonplaats":"Amsterdam","openbare_ruimte":"Frederik
+        Hendrikplantsoen","huisnummer_toevoeging":""},"address_text":"Frederik Hendrikplantsoen
+        25  Amsterdam","geometrie":{"type":"Point","coordinates":[4.87726014188586,52.3782493653776]},"extra_properties":{"original_address":{"huisnummer":"25","woonplaats":"Amsterdam","openbare_ruimte":"Frederik
+        Hendrikplantsoen"}},"created_by":null,"bag_validated":true},"category":{"sub":"Eikenprocessierups","sub_slug":"eikenprocessierups","main":"Openbaar
+        groen en water","main_slug":"openbaar-groen-en-water","category_url":"https://test.com/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups","departments":"STW","created_by":null,"text":null,"deadline":"2023-02-10T14:18:31.395783+01:00","deadline_factor_3":"2023-03-10T14:18:31.395783+01:00"},"reporter":{"email":"","phone":"","sharing_allowed":false,"allows_contact":true},"priority":{"priority":"normal","created_by":null},"type":{"code":"SIG","created_at":"2023-01-27T14:18:31.418430+01:00","created_by":null},"created_at":"2023-01-27T14:18:31.395783+01:00","updated_at":"2023-01-27T14:18:31.420023+01:00","incident_date_start":"2023-01-27T14:18:31+01:00","incident_date_end":null,"operational_date":null,"has_attachments":false,"extra_properties":[{"id":"extra_eikenprocessierups","label":"Boom","answer":[{"id":73289,"type":"Eikenboom","label":"Eikenboom
+        - 73289","status":"checked","address":{"huisnummer":"25","woonplaats":"Amsterdam","openbare_ruimte":"Frederik
+        Hendrikplantsoen"},"GlobalID":"92e6e7b2-36cf-460c-aa6c-c35fb6078a68","coordinates":{"lat":52.3783192322377,"lng":4.87733027314336},"description":"Eikenboom"},{"id":74002,"type":"Eikenboom","label":"Eikenboom
+        - 74002","status":"checked","address":{"huisnummer":"25","woonplaats":"Amsterdam","openbare_ruimte":"Frederik
+        Hendrikplantsoen"},"GlobalID":"258dd4be-d2ea-487d-8684-b5bd6dbd0f95","coordinates":{"lat":52.3783458423585,"lng":4.87729002042385},"description":"Eikenboom"},{"id":70529,"type":"Eikenboom","label":"Eikenboom
+        - 70529","status":"checked","address":{"huisnummer":"25","woonplaats":"Amsterdam","openbare_ruimte":"Frederik
+        Hendrikplantsoen"},"GlobalID":"17372d6b-943e-446e-89e1-e753800f68c9","coordinates":{"lat":52.3782493653776,"lng":4.87726014188586},"description":"Eikenboom"}],"category_url":"/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups"},{"id":"extra_nest_grootte","label":"Op
+        de boom gezien","answer":{"id":"deken","info":"","label":"Rupsen bedekken
+        de stam als een deken"},"category_url":"/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups"}],"notes":[],"routing_departments":null,"has_parent":false,"has_children":false,"assigned_user_email":null}]}'
+    headers:
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3827'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 27 Jan 2023 13:20:30 GMT
+      Referrer-Policy:
+      - same-origin
+      Vary:
+      - Accept, Origin
+      X-API-Version:
+      - 2.13.0-beta.01
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer abcdefg
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://test.com/signals/v1/private/signals/?category_slug=eikenprocessierups&page=2&status=m&updated_after=2022-01-27T14%3A00%3A00
+  response:
+    body:
+      string: '{"_links":{"self":{"href":"https://test.com/signals/v1/private/signals/?category_slug=eikenprocessierups&page=2&status=m&updated_after=2022-01-27T14%3A00%3A00"},"next":{"href":null},"previous":{"href":"https://test.com/signals/v1/private/signals/?category_slug=eikenprocessierups&page=1&status=m&updated_after=2022-01-27T14%3A00%3A00"}},"count":2,"results":[{"_links":{"self":{"href":"https://test.com/signals/v1/private/signals/1"}},"_display":"1
+        - m - None - 2023-01-27T14:18:06.225565+01:00","id":1,"id_display":"SIG-1","signal_id":"9fffdf51-9f29-401e-96ad-c73eb9a31def","source":"online","text":"Eikenprocessierups","text_extra":"","status":{"text":null,"user":null,"state":"m","state_display":"Gemeld","target_api":null,"extra_properties":null,"send_email":false,"created_at":"2023-01-27T14:18:06.238750+01:00","email_override":null},"location":{"id":1,"stadsdeel":null,"buurt_code":null,"area_type_code":null,"area_code":null,"area_name":null,"address":null,"address_text":"","geometrie":{"type":"Point","coordinates":[4.90835380893334,52.3678633598475]},"extra_properties":null,"created_by":null,"bag_validated":false},"category":{"sub":"Eikenprocessierups","sub_slug":"eikenprocessierups","main":"Openbaar
+        groen en water","main_slug":"openbaar-groen-en-water","category_url":"https://test.com/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups","departments":"STW","created_by":null,"text":null,"deadline":"2023-02-10T14:18:06.225565+01:00","deadline_factor_3":"2023-03-10T14:18:06.225565+01:00"},"reporter":{"email":"david@dvb.local","phone":"0612345678","sharing_allowed":true,"allows_contact":true},"priority":{"priority":"normal","created_by":null},"type":{"code":"SIG","created_at":"2023-01-27T14:18:06.245604+01:00","created_by":null},"created_at":"2023-01-27T14:18:06.225565+01:00","updated_at":"2023-01-27T14:18:06.393059+01:00","incident_date_start":"2023-01-27T14:18:06+01:00","incident_date_end":null,"operational_date":null,"has_attachments":false,"extra_properties":[{"id":"extra_eikenprocessierups","label":"Boom","answer":[{"id":69981,"type":"Eikenboom","label":"Eikenboom
+        - 69981","status":"checked","GlobalID":"135f54ca-9ab3-4308-8da7-88c0ea2a4ed7","coordinates":{"lat":52.3678633598475,"lng":4.90835380893334},"description":"Eikenboom"}],"category_url":"/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups"},{"id":"extra_nest_grootte","label":"Op
+        de boom gezien","answer":{"id":"klein","info":"","label":"Nest is zo groot
+        als een tennisbal"},"category_url":"/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups"}],"notes":[{"text":"Automatische
+        e-mail bij registratie van de melding is verzonden aan de melder.","created_by":null}],"routing_departments":null,"has_parent":false,"has_children":false,"assigned_user_email":null}]}'
+    headers:
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2939'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 27 Jan 2023 13:20:30 GMT
+      Referrer-Policy:
+      - same-origin
+      Vary:
+      - Accept, Origin
+      X-API-Version:
+      - 2.13.0-beta.01
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
