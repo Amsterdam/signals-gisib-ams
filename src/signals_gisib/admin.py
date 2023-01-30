@@ -1,6 +1,7 @@
 from django.contrib import admin
 from simple_history.admin import SimpleHistoryAdmin
 
+from signals_gisib.models import Signal
 from signals_gisib.models.gisib import CollectionItem
 
 
@@ -19,3 +20,4 @@ class CollectionItemAdmin(SimpleHistoryAdmin):
 
 
 admin.site.register(CollectionItem, CollectionItemAdmin)
+admin.site.register(Signal, SimpleHistoryAdmin)
