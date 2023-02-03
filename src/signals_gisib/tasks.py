@@ -5,14 +5,20 @@ from celery import shared_task
 from django.http import QueryDict
 from django.utils import timezone
 
-from signals_gisib.gisib.import_oak_trees import start_import
+from signals_gisib.gisib.import_epr_configuration import start_import as start_epr_configuration_import
+from signals_gisib.gisib.import_oak_trees import start_import as start_quercus_trees_import
 from signals_gisib.models.signals import Signal
 from signals_gisib.signals.api import get_v1_private_signals
 
 
 @shared_task
 def import_quercus_trees(time_delta: timedelta = None, clear_table: bool = False):
-    start_import(time_delta=time_delta, clear_table=clear_table)
+    start_quercus_trees_import(time_delta=time_delta, clear_table=clear_table)
+
+
+@shared_task
+def import_epr_configuration(clear_table: bool = False):
+    start_epr_configuration_import(clear_table=clear_table)
 
 
 @shared_task

@@ -5,13 +5,13 @@ from django.test import TestCase, override_settings
 from freezegun import freeze_time
 
 from signals_gisib.models import Signal
-from signals_gisib.tasks import import_categorized_signals, import_quercus_trees
+from signals_gisib.tasks import import_categorized_signals, import_epr_configuration, import_quercus_trees
 from signals_gisib.tests import vcr
 from signals_gisib.tests.factories import SignalFactory
 
 
 class ImportQuercusTreesTest(TestCase):
-    @patch('signals_gisib.tasks.start_import')
+    @patch('signals_gisib.tasks.start_quercus_trees_import')
     def test_import_quercus_trees(self, start_import_mock):
         # Call the import_quercus_trees function
         import_quercus_trees()
@@ -22,7 +22,7 @@ class ImportQuercusTreesTest(TestCase):
         # Assert that the start_import function was called with the default arguments
         start_import_mock.assert_called_with(time_delta=None, clear_table=False)
 
-    @patch('signals_gisib.tasks.start_import')
+    @patch('signals_gisib.tasks.start_quercus_trees_import')
     def test_import_quercus_trees_with_args(self, start_import_mock):
         # Call the import_quercus_trees function with custom arguments
         time_delta = timedelta(days=7)
@@ -33,6 +33,30 @@ class ImportQuercusTreesTest(TestCase):
 
         # Assert that the start_import function was called with the custom arguments
         start_import_mock.assert_called_with(time_delta=time_delta, clear_table=True)
+
+
+class ImportEPRConfigurationTest(TestCase):
+    @patch('signals_gisib.tasks.start_epr_configuration_import')
+    def test_import_quercus_trees(self, start_import_mock):
+        # Call the import_quercus_trees function
+        import_epr_configuration()
+
+        # Assert that the start_import function was called
+        start_import_mock.assert_called_once()
+
+        # Assert that the start_import function was called with the default arguments
+        start_import_mock.assert_called_with(clear_table=False)
+
+    @patch('signals_gisib.tasks.start_epr_configuration_import')
+    def test_import_quercus_trees_with_args(self, start_import_mock):
+        # Call the import_quercus_trees function with custom arguments
+        import_epr_configuration(clear_table=True)
+
+        # Assert that the start_import function was called
+        start_import_mock.assert_called_once()
+
+        # Assert that the start_import function was called with the custom arguments
+        start_import_mock.assert_called_with(clear_table=True)
 
 
 @freeze_time('2023-01-27T14:00:00+00:00')

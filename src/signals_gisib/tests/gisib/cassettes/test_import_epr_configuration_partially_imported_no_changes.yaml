@@ -1,0 +1,168 @@
+interactions:
+- request:
+    body: '{"Username": "test-user", "Password": "test-password", "ApiKey": "test-api-key"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '93'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+    method: POST
+    uri: https://amsterdam-test.gisib.nl/api/api/Login
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
+        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
+        n0+LL4vvVLNvv7r6sji4nN2b3Xu+nP7g+eLh9U9dH1x/8fT43fMfHO88vzdvJ5+/+kH23Wk7+S59
+        9/pFNfnus59+/nu/qH6fN2e7L4qz5mz56v705OzTs7er3/snT77zcEwd/OR07yevJ4tn7U+9pi8W
+        z66y3/vF6vd5TY3f0u/fbcscn//0dO+LN1/svPjBk59+8fRZ8cVP/8T9Lz7/TvH7LH6q/GLv97n6
+        4rs/Of/i6Wzx4vPfZ++suCp+6veeX539dPXuxU9Pd168Of3Bi6fT3ecn31lN732BwSy5j4IQWM/q
+        8l77k68+/+6Xu9nL0xcX+/f3P33z9ovTne3z7YO3k+8uX//kqyfbv8/vXzf/D0R86CwNAQAA
+    headers:
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' data: https:;'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Tue, 31 Jan 2023 10:37:23 GMT
+      Expect-CT:
+      - enforce, max-age=43200
+      Permissions-Policy:
+      - vibrate=(self)
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImFwaXNpYSIsIkFwaWtleSI6Ijc2MTM0NzBjNDFiMjQ5MGJiYmZlM2YwMWVhMDdmNGY2IiwiZXhwIjoxNjc1MTkwMjQzLCJpc3MiOiJnaXNpYiJ9.iO44xBXkfioAsXBA1YdpRgURjGS65E6Xw3i-xZMoNaI
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://amsterdam-test.gisib.nl/api/api/Collections/Registratie%20EPR/Items?offset=0&limit=500
+  response:
+    body:
+      string: '[{"type":"Registratie EPR","properties":{"Code":"2","GUID":"{217AA96F-39DD-44B2-8FB6-5FE05D7AF19A}","Id":3748945,"Description":"a.
+        Melding","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-09-29T10:32:06.091184","Revisie":1}},{"type":"Registratie
+        EPR","properties":{"Code":"4","GUID":"{1F038C06-9DAD-4890-ABC4-2C53F85C347F}","Id":3748946,"Description":"b.
+        Inspecteren","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-09-29T10:32:06.106794","Revisie":1}},{"type":"Registratie
+        EPR","properties":{"Code":"3","GUID":"{4B7AAA66-D9EF-446D-B82F-DB06E0A2A5A9}","Id":3748947,"Description":"c.
+        Registratie EPR","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-09-29T10:32:06.106794","Revisie":1}},{"type":"Registratie
+        EPR","properties":{"Code":"1","GUID":"{FAFDB09C-F304-4711-BE34-62F8507F0A76}","Id":3748948,"Description":"d.
+        Geen","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-09-29T10:32:06.106794","Revisie":1}},{"type":"Registratie
+        EPR","properties":{"Code":"8","GUID":"{CFE651B9-09DE-4DA0-A12E-803BCF9F54FA}","Id":3748949,"Description":"e.
+        EPR niet bestrijden","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-09-29T10:32:06.122424","Revisie":1}},{"type":"Registratie
+        EPR","properties":{"Code":"7","GUID":"{73BAB277-6DBF-4EC5-BE1D-3BC003A5A48E}","Id":3748950,"Description":"f.
+        EPR Bestreden","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-09-29T10:32:06.122424","Revisie":1}},{"type":"Registratie
+        EPR","properties":{"Code":"6","GUID":"{EE1D280E-708D-4365-B4DB-9C1391D420FF}","Id":3748951,"Description":"g.
+        EPR Deels bestreden","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-09-29T10:32:06.122424","Revisie":1}},{"type":"Registratie
+        EPR","properties":{"Code":"99","GUID":"{C20E9D7A-131B-4F4C-ADD7-BAC37A3927B3}","Id":3749016,"Description":"h.
+        Dubbele melding","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-11-01T17:44:48.786522","Revisie":1}},{"type":"Registratie
+        EPR","properties":{"Code":"98","GUID":"{9BD9823A-F4D7-4B8C-B803-81B0F5A72725}","Id":3749040,"Description":"i.
+        Niet in beheergebied EPR Gemeente Amsterdam","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-11-16T09:58:56.252822","Revisie":1}}]'
+    headers:
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' data: https:;'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 31 Jan 2023 10:37:23 GMT
+      Expect-CT:
+      - enforce, max-age=43200
+      Permissions-Policy:
+      - vibrate=(self)
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImFwaXNpYSIsIkFwaWtleSI6Ijc2MTM0NzBjNDFiMjQ5MGJiYmZlM2YwMWVhMDdmNGY2IiwiZXhwIjoxNjc1MTkwMjQzLCJpc3MiOiJnaXNpYiJ9.iO44xBXkfioAsXBA1YdpRgURjGS65E6Xw3i-xZMoNaI
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://amsterdam-test.gisib.nl/api/api/Collections/Nestformaat/Items?offset=0&limit=500
+  response:
+    body:
+      string: '[{"type":"Nestformaat","properties":{"Code":"1","GUID":"{5E1B42B8-E3BF-4C3E-9C27-CF09F8DE0C2A}","Id":3749024,"Description":"Nest
+        is zo groot als een tennisbal","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-11-01T19:07:38.98295","Revisie":1}},{"type":"Nestformaat","properties":{"Code":"2","GUID":"{861A20E4-3A31-421E-A925-84173F9D55FC}","Id":3749025,"Description":"Nest
+        is zo groot als een voetbal","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-11-01T19:07:43.248551","Revisie":1}},{"type":"Nestformaat","properties":{"Code":"3","GUID":"{06E0CB6D-6800-4CE1-949C-0C9C5D7FF2D2}","Id":3749026,"Description":"Rupsen
+        bedekken de stam als een deken","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-11-01T19:07:48.717267","Revisie":1}},{"type":"Nestformaat","properties":{"Code":"4","GUID":"{E7512A01-7A1D-48CA-AA8E-A957DCF3E7FB}","Id":3749027,"Description":"De
+        rupsen in de boom hebben nog geen nest gevormd","IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-11-01T19:07:54.685981","Revisie":1}}]'
+    headers:
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' data: https:;'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 31 Jan 2023 10:37:24 GMT
+      Expect-CT:
+      - enforce, max-age=43200
+      Permissions-Policy:
+      - vibrate=(self)
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

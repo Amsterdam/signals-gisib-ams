@@ -36,3 +36,16 @@ class ImportOakTreesCommandTest(TestCase):
 
         output = buffer.getvalue()
         self.assertIn('days must be a positive integer', output)
+
+
+class ImportEPRConfigurationCommandTest(TestCase):
+    @patch('signals_gisib.gisib.import_epr_configuration.start_import')
+    def test_handle_command(self, start_import_mock):
+        # Call the import epr configuration management command
+        call_command('import_epr_configuration')
+
+        # Assert that the start_import function was called
+        start_import_mock.assert_called_once()
+
+        # Assert that the start_import function was called with the default arguments
+        start_import_mock.assert_called_with(clear_table=False)
