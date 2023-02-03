@@ -2,7 +2,13 @@ from django.test import TestCase, override_settings
 from django.utils import timezone
 from freezegun import freeze_time
 
-from signals_gisib.gisib.api import get_bearer_token, get_collection, get_collection_deleted_items, get_collections
+from signals_gisib.gisib.api import (
+    get_bearer_token,
+    get_collection,
+    get_collection_deleted_items,
+    get_collections,
+    post_collection_insert
+)
 from signals_gisib.tests.gisib import gisib_api_vcr
 
 
@@ -47,3 +53,21 @@ class GISIBApiTestCase(TestCase):
     def test_get_collection(self):
         result = get_collection('Boom', 1879642)
         self.assertEqual(result['properties']['Id'], 1879642)
+
+    @gisib_api_vcr.use_cassette()
+    def test_post_collection_insert(self):
+        data = {
+            'Properties': {
+                'SIG Nummer melding': 1234567890,
+                'Datum melding': timezone.now().strftime('%d-%m-%Y %H:%M'),
+                'Nestformaat': 3749024,
+                'Boom': 1879642,
+            },
+            'ObjectKindNaam': 'EPR Curatief'
+        }
+
+        result = post_collection_insert(data)
+
+        self.assertIsNone(result['Warnings'])
+        self.assertEqual(result['Message'], 'OK')
+        self.assertIsNone(result['Errors'])

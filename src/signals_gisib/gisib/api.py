@@ -58,3 +58,11 @@ def get_collection_deleted_items(object_kind_name: str, reference_date: date) ->
     response.raise_for_status()
 
     return response.json()
+
+
+def post_collection_insert(data: dict) -> dict:
+    endpoint = f'{settings.GISIB_ENDPOINT}/Collections/Insert'
+    response = requests.post(endpoint, json=data, headers=_headers())
+    response.raise_for_status()
+
+    return response.json()
