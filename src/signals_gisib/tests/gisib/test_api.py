@@ -2,7 +2,7 @@ from django.test import TestCase, override_settings
 from django.utils import timezone
 from freezegun import freeze_time
 
-from signals_gisib.gisib.api import get_bearer_token, get_collection_deleted_items, get_collections
+from signals_gisib.gisib.api import get_bearer_token, get_collection, get_collection_deleted_items, get_collections
 from signals_gisib.tests.gisib import gisib_api_vcr
 
 
@@ -37,3 +37,13 @@ class GISIBApiTestCase(TestCase):
         result = get_collection_deleted_items('Boom', one_year_ago.date())
 
         self.assertEqual(len(result), 2)
+
+    @gisib_api_vcr.use_cassette()
+    def test_get_collections_no_filters(self):
+        result = get_collections('Boom', None, 0, 5)
+        self.assertEqual(len(result['features']), 5)
+
+    @gisib_api_vcr.use_cassette()
+    def test_get_collection(self):
+        result = get_collection('Boom', 1879642)
+        self.assertEqual(result['properties']['Id'], 1879642)
