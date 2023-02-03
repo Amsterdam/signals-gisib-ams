@@ -27,14 +27,12 @@ class GisibViewSet(GenericViewSet):
             )
         )).order_by('-id')
 
-        headers = []
         feature_collection = {'type': 'FeatureCollection', 'features': []}
         paginator = LinkHeaderPagination(page_query_param='page')
         page_qs = paginator.paginate_queryset(features_qs, self.request, view=self)
 
-        if page_qs.exists():
-            features = page_qs.aggregate(features=JSONAgg('feature'))
-            feature_collection.update(features)
-            headers = paginator.get_pagination_headers()
+        features = page_qs.aggregate(features=JSONAgg('feature'))
+        feature_collection.update(features)
+        headers = paginator.get_pagination_headers()
 
         return Response(feature_collection, status=200, headers=headers)
