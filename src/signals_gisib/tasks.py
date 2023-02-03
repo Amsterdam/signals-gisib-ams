@@ -2,6 +2,7 @@ from datetime import timedelta
 from typing import List
 
 from celery import shared_task
+from django.contrib.gis.geos import Point
 from django.http import QueryDict
 from django.utils import timezone
 
@@ -47,4 +48,17 @@ def import_categorized_signals(category_slugs: List[str], time_delta_days: int =
         signal_qs = Signal.objects.filter(signal_id=signal_json['id'])
         if not signal_qs.exists():
             # The Signal has not yet been imported
-            Signal.objects.create(signal_id=signal_json['id'], snapshot=signal_json)
+            signal_id = signal_json['id']
+            signal_geometry = Point(
+                signal_json['location']['geometrie']['coordinates'][0],  # longitude
+                signal_json['location']['geometrie']['coordinates'][1],  # latitude
+            )
+            signal_created_at = timezone.datetime.strptime(signal_json['created_at'], '%Y-%m-%dT%H:%M:%S.%f%z')
+            signal_extra_properties = signal_json['extra_properties']
+
+            Signal.objects.create(
+                signal_id=signal_id,
+                signal_geometry=signal_geometry,
+                signal_created_at=signal_created_at,
+                signal_extra_properties=signal_extra_properties,
+            )
