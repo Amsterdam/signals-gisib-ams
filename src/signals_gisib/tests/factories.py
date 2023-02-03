@@ -1,10 +1,10 @@
 from django.utils import timezone
-from factory import Faker
+from factory import Faker, SelfAttribute, SubFactory
 from factory.django import DjangoModelFactory
 from factory.fuzzy import FuzzyChoice
 
 from signals_gisib.models import Signal
-from signals_gisib.models.gisib import CollectionItem
+from signals_gisib.models.gisib import CollectionItem, EPRCurative
 from signals_gisib.tests.fuzzy import FuzzyPoint
 from signals_gisib.tests.utils import BBOX_AMSTERDAM
 
@@ -31,3 +31,15 @@ class SignalFactory(DjangoModelFactory):
                               end_date=timezone.now())
     signal_geometry = FuzzyPoint(*BBOX_AMSTERDAM)
     signal_extra_properties = {}
+
+
+class EPRCurativeFactory(DjangoModelFactory):
+    class Meta:
+        model = EPRCurative
+        django_get_or_create = ('gisib_id', )
+
+    gisib_id = Faker('random_int', min=10000, max=19999, step=1)
+    signal = SubFactory(SignalFactory)
+    collection_item = SubFactory(CollectionItemFactory, gisib_id=SelfAttribute('..gisib_id'))
+    original_request = {}
+    original_response = {}
