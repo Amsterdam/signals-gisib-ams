@@ -1,0 +1,215 @@
+interactions:
+- request:
+    body: '{"status": {"state": "b", "send_email": false}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer abcdefg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '47'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+    method: PATCH
+    uri: http://test.com/signals/v1/private/signals/1
+  response:
+    body:
+      string: "{\"_links\":{\"curies\":{\"name\":\"sia\",\"href\":\"http://test.com/signals/v1/relations\"},\"self\":{\"href\":\"http://test.com/signals/v1/private/signals/1\"},\"archives\":{\"href\":\"http://test.com/signals/v1/private/signals/1/history\"},\"sia:attachments\":{\"href\":\"http://test.com/signals/v1/private/signals/1/attachments\"},\"sia:pdf\":{\"href\":\"http://test.com/signals/v1/private/signals/1/pdf\"},\"sia:context\":{\"href\":\"http://test.com/signals/v1/private/signals/1/context\"}},\"_display\":\"5
+        - b - A04i - 2023-02-02T15:55:16.203507+01:00\",\"category\":{\"sub\":\"Overig\",\"sub_slug\":\"overig\",\"main\":\"Overig\",\"main_slug\":\"overig\",\"category_url\":\"http://test.com/signals/v1/public/terms/categories/overig/sub_categories/overig\",\"departments\":\"ASC\",\"created_by\":\"signals.admin@example.com\",\"text\":null,\"deadline\":\"2023-02-09T15:55:16.203507+01:00\",\"deadline_factor_3\":\"2023-02-23T15:55:16.203507+01:00\"},\"id\":1,\"id_display\":\"SIG-5\",\"has_attachments\":false,\"location\":{\"id\":1,\"stadsdeel\":\"A\",\"buurt_code\":\"A04i\",\"area_type_code\":null,\"area_code\":null,\"area_name\":null,\"address\":{\"postcode\":\"1011PN\",\"huisletter\":\"\",\"huisnummer\":1,\"woonplaats\":\"Amsterdam\",\"openbare_ruimte\":\"Amstel\",\"huisnummer_toevoeging\":\"\"},\"address_text\":\"Amstel
+        1 1011PN Amsterdam\",\"geometrie\":{\"type\":\"Point\",\"coordinates\":[4.90022563,52.36768424]},\"extra_properties\":{\"original_address\":{\"postcode\":\"1011PN\",\"huisletter\":\"\",\"huisnummer\":1,\"woonplaats\":\"Amsterdam\",\"openbare_ruimte\":\"Amstel\",\"huisnummer_toevoeging\":\"\"}},\"created_by\":\"signals.admin@example.com\",\"bag_validated\":true},\"status\":{\"text\":null,\"user\":\"signals.admin@example.com\",\"state\":\"b\",\"state_display\":\"In
+        behandeling\",\"target_api\":null,\"extra_properties\":null,\"send_email\":false,\"created_at\":\"2023-02-02T15:59:54.609963+01:00\",\"email_override\":null},\"reporter\":{\"email\":\"Eliza_Wilderman91@example.com\",\"phone\":\"+31672578163\",\"sharing_allowed\":true,\"allows_contact\":true},\"priority\":{\"priority\":\"normal\",\"created_by\":\"signals.admin@example.com\"},\"notes\":[{\"text\":\"Automatische
+        e-mail bij registratie van de melding is verzonden aan de melder.\",\"created_by\":null}],\"type\":{\"code\":\"SIG\",\"created_at\":\"2023-02-02T15:55:16.280098+01:00\",\"created_by\":\"signals.admin@example.com\"},\"source\":\"Telefoon
+        \u2013 Adoptant\",\"text\":\"Just a text containtin http://google.com links
+        https://nu.nl \\n Also on the next line there is a http://example.com link\",\"text_extra\":\"Molestiae
+        sed quidem eum blanditiis dolorum eveniet perferendis et labore. Libero quisquam
+        facilis sed ex. Et doloribus eum enim rem.\",\"extra_properties\":null,\"created_at\":\"2023-02-02T15:55:16.203507+01:00\",\"updated_at\":\"2023-02-02T15:59:54.611456+01:00\",\"incident_date_start\":\"2023-02-02T15:55:15.905000+01:00\",\"incident_date_end\":null,\"routing_departments\":null,\"attachments\":[],\"assigned_user_email\":null}"
+    headers:
+      Allow:
+      - GET, PATCH, HEAD, OPTIONS
+      Content-Length:
+      - '2807'
+      Content-Type:
+      - application/json
+      Referrer-Policy:
+      - same-origin
+      Vary:
+      - Accept, Origin
+      X-API-Version:
+      - 2.13.0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"status": {"state": "b", "send_email": false, "text": "Lorem ipsum"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer abcdefg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '70'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+    method: PATCH
+    uri: http://test.com/signals/v1/private/signals/1
+  response:
+    body:
+      string: "{\"_links\":{\"curies\":{\"name\":\"sia\",\"href\":\"http://test.com/signals/v1/relations\"},\"self\":{\"href\":\"http://test.com/signals/v1/private/signals/1\"},\"archives\":{\"href\":\"http://test.com/signals/v1/private/signals/1/history\"},\"sia:attachments\":{\"href\":\"http://test.com/signals/v1/private/signals/1/attachments\"},\"sia:pdf\":{\"href\":\"http://test.com/signals/v1/private/signals/1/pdf\"},\"sia:context\":{\"href\":\"http://test.com/signals/v1/private/signals/1/context\"}},\"_display\":\"5
+        - b - A04i - 2023-02-02T15:55:16.203507+01:00\",\"category\":{\"sub\":\"Overig\",\"sub_slug\":\"overig\",\"main\":\"Overig\",\"main_slug\":\"overig\",\"category_url\":\"http://test.com/signals/v1/public/terms/categories/overig/sub_categories/overig\",\"departments\":\"ASC\",\"created_by\":\"signals.admin@example.com\",\"text\":null,\"deadline\":\"2023-02-09T15:55:16.203507+01:00\",\"deadline_factor_3\":\"2023-02-23T15:55:16.203507+01:00\"},\"id\":1,\"id_display\":\"SIG-5\",\"has_attachments\":false,\"location\":{\"id\":1,\"stadsdeel\":\"A\",\"buurt_code\":\"A04i\",\"area_type_code\":null,\"area_code\":null,\"area_name\":null,\"address\":{\"postcode\":\"1011PN\",\"huisletter\":\"\",\"huisnummer\":1,\"woonplaats\":\"Amsterdam\",\"openbare_ruimte\":\"Amstel\",\"huisnummer_toevoeging\":\"\"},\"address_text\":\"Amstel
+        1 1011PN Amsterdam\",\"geometrie\":{\"type\":\"Point\",\"coordinates\":[4.90022563,52.36768424]},\"extra_properties\":{\"original_address\":{\"postcode\":\"1011PN\",\"huisletter\":\"\",\"huisnummer\":1,\"woonplaats\":\"Amsterdam\",\"openbare_ruimte\":\"Amstel\",\"huisnummer_toevoeging\":\"\"}},\"created_by\":\"signals.admin@example.com\",\"bag_validated\":true},\"status\":{\"text\":\"Lorem
+        ipsum\",\"user\":\"signals.admin@example.com\",\"state\":\"b\",\"state_display\":\"In
+        behandeling\",\"target_api\":null,\"extra_properties\":null,\"send_email\":false,\"created_at\":\"2023-02-02T16:00:05.834383+01:00\",\"email_override\":null},\"reporter\":{\"email\":\"Eliza_Wilderman91@example.com\",\"phone\":\"+31672578163\",\"sharing_allowed\":true,\"allows_contact\":true},\"priority\":{\"priority\":\"normal\",\"created_by\":\"signals.admin@example.com\"},\"notes\":[{\"text\":\"Automatische
+        e-mail bij registratie van de melding is verzonden aan de melder.\",\"created_by\":null}],\"type\":{\"code\":\"SIG\",\"created_at\":\"2023-02-02T15:55:16.280098+01:00\",\"created_by\":\"signals.admin@example.com\"},\"source\":\"Telefoon
+        \u2013 Adoptant\",\"text\":\"Just a text containtin http://google.com links
+        https://nu.nl \\n Also on the next line there is a http://example.com link\",\"text_extra\":\"Molestiae
+        sed quidem eum blanditiis dolorum eveniet perferendis et labore. Libero quisquam
+        facilis sed ex. Et doloribus eum enim rem.\",\"extra_properties\":null,\"created_at\":\"2023-02-02T15:55:16.203507+01:00\",\"updated_at\":\"2023-02-02T16:00:05.835793+01:00\",\"incident_date_start\":\"2023-02-02T15:55:15.905000+01:00\",\"incident_date_end\":null,\"routing_departments\":null,\"attachments\":[],\"assigned_user_email\":null}"
+    headers:
+      Allow:
+      - GET, PATCH, HEAD, OPTIONS
+      Content-Length:
+      - '2816'
+      Content-Type:
+      - application/json
+      Referrer-Policy:
+      - same-origin
+      Vary:
+      - Accept, Origin
+      X-API-Version:
+      - 2.13.0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"status": {"state": "b", "send_email": false, "text": "Lorem ipsum", "extra_properties":
+      [{"key": "extra_property_1", "value": 1}, {"key": "extra_property_2", "value":
+      2}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer abcdefg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '174'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+    method: PATCH
+    uri: http://test.com/signals/v1/private/signals/1
+  response:
+    body:
+      string: "{\"_links\":{\"curies\":{\"name\":\"sia\",\"href\":\"http://test.com/signals/v1/relations\"},\"self\":{\"href\":\"http://test.com/signals/v1/private/signals/1\"},\"archives\":{\"href\":\"http://test.com/signals/v1/private/signals/1/history\"},\"sia:attachments\":{\"href\":\"http://test.com/signals/v1/private/signals/1/attachments\"},\"sia:pdf\":{\"href\":\"http://test.com/signals/v1/private/signals/1/pdf\"},\"sia:context\":{\"href\":\"http://test.com/signals/v1/private/signals/1/context\"}},\"_display\":\"5
+        - b - A04i - 2023-02-02T15:55:16.203507+01:00\",\"category\":{\"sub\":\"Overig\",\"sub_slug\":\"overig\",\"main\":\"Overig\",\"main_slug\":\"overig\",\"category_url\":\"http://test.com/signals/v1/public/terms/categories/overig/sub_categories/overig\",\"departments\":\"ASC\",\"created_by\":\"signals.admin@example.com\",\"text\":null,\"deadline\":\"2023-02-09T15:55:16.203507+01:00\",\"deadline_factor_3\":\"2023-02-23T15:55:16.203507+01:00\"},\"id\":1,\"id_display\":\"SIG-5\",\"has_attachments\":false,\"location\":{\"id\":1,\"stadsdeel\":\"A\",\"buurt_code\":\"A04i\",\"area_type_code\":null,\"area_code\":null,\"area_name\":null,\"address\":{\"postcode\":\"1011PN\",\"huisletter\":\"\",\"huisnummer\":1,\"woonplaats\":\"Amsterdam\",\"openbare_ruimte\":\"Amstel\",\"huisnummer_toevoeging\":\"\"},\"address_text\":\"Amstel
+        1 1011PN Amsterdam\",\"geometrie\":{\"type\":\"Point\",\"coordinates\":[4.90022563,52.36768424]},\"extra_properties\":{\"original_address\":{\"postcode\":\"1011PN\",\"huisletter\":\"\",\"huisnummer\":1,\"woonplaats\":\"Amsterdam\",\"openbare_ruimte\":\"Amstel\",\"huisnummer_toevoeging\":\"\"}},\"created_by\":\"signals.admin@example.com\",\"bag_validated\":true},\"status\":{\"text\":\"Lorem
+        ipsum\",\"user\":\"signals.admin@example.com\",\"state\":\"b\",\"state_display\":\"In
+        behandeling\",\"target_api\":null,\"extra_properties\":[{\"key\":\"extra_property_1\",\"value\":1},{\"key\":\"extra_property_2\",\"value\":2}],\"send_email\":false,\"created_at\":\"2023-02-02T16:00:06.661875+01:00\",\"email_override\":null},\"reporter\":{\"email\":\"Eliza_Wilderman91@example.com\",\"phone\":\"+31672578163\",\"sharing_allowed\":true,\"allows_contact\":true},\"priority\":{\"priority\":\"normal\",\"created_by\":\"signals.admin@example.com\"},\"notes\":[{\"text\":\"Automatische
+        e-mail bij registratie van de melding is verzonden aan de melder.\",\"created_by\":null}],\"type\":{\"code\":\"SIG\",\"created_at\":\"2023-02-02T15:55:16.280098+01:00\",\"created_by\":\"signals.admin@example.com\"},\"source\":\"Telefoon
+        \u2013 Adoptant\",\"text\":\"Just a text containtin http://google.com links
+        https://nu.nl \\n Also on the next line there is a http://example.com link\",\"text_extra\":\"Molestiae
+        sed quidem eum blanditiis dolorum eveniet perferendis et labore. Libero quisquam
+        facilis sed ex. Et doloribus eum enim rem.\",\"extra_properties\":null,\"created_at\":\"2023-02-02T15:55:16.203507+01:00\",\"updated_at\":\"2023-02-02T16:00:06.663391+01:00\",\"incident_date_start\":\"2023-02-02T15:55:15.905000+01:00\",\"incident_date_end\":null,\"routing_departments\":null,\"attachments\":[],\"assigned_user_email\":null}"
+    headers:
+      Allow:
+      - GET, PATCH, HEAD, OPTIONS
+      Content-Length:
+      - '2887'
+      Content-Type:
+      - application/json
+      Referrer-Policy:
+      - same-origin
+      Vary:
+      - Accept, Origin
+      X-API-Version:
+      - 2.13.0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"status": {"state": "ready to send", "send_email": false, "target_api":
+      "gisib"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer abcdefg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '82'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+    method: PATCH
+    uri: http://test.com/signals/v1/private/signals/1
+  response:
+    body:
+      string: "{\"_links\":{\"curies\":{\"name\":\"sia\",\"href\":\"http://test.com/signals/v1/relations\"},\"self\":{\"href\":\"http://test.com/signals/v1/private/signals/1\"},\"archives\":{\"href\":\"http://test.com/signals/v1/private/signals/1/history\"},\"sia:attachments\":{\"href\":\"http://test.com/signals/v1/private/signals/1/attachments\"},\"sia:pdf\":{\"href\":\"http://test.com/signals/v1/private/signals/1/pdf\"},\"sia:context\":{\"href\":\"http://test.com/signals/v1/private/signals/1/context\"}},\"_display\":\"5
+        - ready to send - A04i - 2023-02-02T15:55:16.203507+01:00\",\"category\":{\"sub\":\"Overig\",\"sub_slug\":\"overig\",\"main\":\"Overig\",\"main_slug\":\"overig\",\"category_url\":\"http://test.com/signals/v1/public/terms/categories/overig/sub_categories/overig\",\"departments\":\"ASC\",\"created_by\":\"signals.admin@example.com\",\"text\":null,\"deadline\":\"2023-02-09T15:55:16.203507+01:00\",\"deadline_factor_3\":\"2023-02-23T15:55:16.203507+01:00\"},\"id\":1,\"id_display\":\"SIG-5\",\"has_attachments\":false,\"location\":{\"id\":1,\"stadsdeel\":\"A\",\"buurt_code\":\"A04i\",\"area_type_code\":null,\"area_code\":null,\"area_name\":null,\"address\":{\"postcode\":\"1011PN\",\"huisletter\":\"\",\"huisnummer\":1,\"woonplaats\":\"Amsterdam\",\"openbare_ruimte\":\"Amstel\",\"huisnummer_toevoeging\":\"\"},\"address_text\":\"Amstel
+        1 1011PN Amsterdam\",\"geometrie\":{\"type\":\"Point\",\"coordinates\":[4.90022563,52.36768424]},\"extra_properties\":{\"original_address\":{\"postcode\":\"1011PN\",\"huisletter\":\"\",\"huisnummer\":1,\"woonplaats\":\"Amsterdam\",\"openbare_ruimte\":\"Amstel\",\"huisnummer_toevoeging\":\"\"}},\"created_by\":\"signals.admin@example.com\",\"bag_validated\":true},\"status\":{\"text\":null,\"user\":\"signals.admin@example.com\",\"state\":\"ready
+        to send\",\"state_display\":\"Extern: te verzenden\",\"target_api\":\"gisib\",\"extra_properties\":null,\"send_email\":false,\"created_at\":\"2023-02-02T16:00:07.501495+01:00\",\"email_override\":null},\"reporter\":{\"email\":\"Eliza_Wilderman91@example.com\",\"phone\":\"+31672578163\",\"sharing_allowed\":true,\"allows_contact\":true},\"priority\":{\"priority\":\"normal\",\"created_by\":\"signals.admin@example.com\"},\"notes\":[{\"text\":\"Automatische
+        e-mail bij registratie van de melding is verzonden aan de melder.\",\"created_by\":null}],\"type\":{\"code\":\"SIG\",\"created_at\":\"2023-02-02T15:55:16.280098+01:00\",\"created_by\":\"signals.admin@example.com\"},\"source\":\"Telefoon
+        \u2013 Adoptant\",\"text\":\"Just a text containtin http://google.com links
+        https://nu.nl \\n Also on the next line there is a http://example.com link\",\"text_extra\":\"Molestiae
+        sed quidem eum blanditiis dolorum eveniet perferendis et labore. Libero quisquam
+        facilis sed ex. Et doloribus eum enim rem.\",\"extra_properties\":null,\"created_at\":\"2023-02-02T15:55:16.203507+01:00\",\"updated_at\":\"2023-02-02T16:00:07.502924+01:00\",\"incident_date_start\":\"2023-02-02T15:55:15.905000+01:00\",\"incident_date_end\":null,\"routing_departments\":null,\"attachments\":[],\"assigned_user_email\":null}"
+    headers:
+      Allow:
+      - GET, PATCH, HEAD, OPTIONS
+      Content-Length:
+      - '2840'
+      Content-Type:
+      - application/json
+      Referrer-Policy:
+      - same-origin
+      Vary:
+      - Accept, Origin
+      X-API-Version:
+      - 2.13.0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

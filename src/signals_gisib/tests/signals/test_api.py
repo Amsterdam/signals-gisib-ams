@@ -6,7 +6,7 @@ from django.utils import timezone
 from freezegun import freeze_time
 from requests import HTTPError
 
-from signals_gisib.signals.api import get_v1_private_signals
+from signals_gisib.signals.api import get_v1_private_signals, patch_v1_private_signal_status
 from signals_gisib.tests.signals import signals_api_vcr
 
 
@@ -55,3 +55,46 @@ class SignalsApiTestCase(TestCase):
             get_v1_private_signals()
         e = cntx.exception
         self.assertIn('401 Client Error: Unauthorized for url:', str(e))
+
+    @patch('signals_gisib.signals.api.get_bearer_token')
+    @signals_api_vcr.use_cassette()
+    def test_patch_v1_private_signal_status(self, mock_get_bearer_token):
+        # set the return value of the mocked function
+        mock_get_bearer_token.return_value = 'Bearer abcdefg'
+
+        signal_id = 1
+
+        # Only update the status
+        state = 'b'
+        response = patch_v1_private_signal_status(signal_id=signal_id, state=state)
+        self.assertEqual(response['status']['state'], state)
+        self.assertFalse(response['status']['send_email'])
+        self.assertIsNone(response['status']['text'])
+        self.assertIsNone(response['status']['extra_properties'])
+
+        # Only update the status and add text
+        text = 'Lorem ipsum'
+        response = patch_v1_private_signal_status(signal_id=signal_id, state=state, text=text)
+        self.assertEqual(response['status']['state'], state)
+        self.assertFalse(response['status']['send_email'])
+        self.assertEqual(response['status']['text'], text)
+        self.assertIsNone(response['status']['extra_properties'])
+
+        # Only update the status, add text and extra_properties
+        extra_properties = [{'key': 'extra_property_1', 'value': 1}, {'key': 'extra_property_2', 'value': 2}]
+        response = patch_v1_private_signal_status(signal_id=signal_id, state=state, text=text,
+                                                  extra_properties=extra_properties)
+        self.assertEqual(response['status']['state'], state)
+        self.assertFalse(response['status']['send_email'])
+        self.assertEqual(response['status']['text'], text)
+        self.assertEqual(response['status']['extra_properties'], extra_properties)
+
+        # Only update the status to "ready to send" which requires a target_api
+        state = 'ready to send'
+        target_api = 'gisib'
+        response = patch_v1_private_signal_status(signal_id=signal_id, state=state, target_api=target_api)
+        self.assertEqual(response['status']['state'], state)
+        self.assertFalse(response['status']['send_email'])
+        self.assertIsNone(response['status']['text'])
+        self.assertIsNone(response['status']['extra_properties'])
+        self.assertEqual(response['status']['target_api'], target_api)

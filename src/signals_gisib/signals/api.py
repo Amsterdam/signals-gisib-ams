@@ -1,4 +1,5 @@
 import logging
+from typing import List, Union
 
 import requests
 from django.conf import settings
@@ -36,3 +37,21 @@ def get_v1_private_signals(filters: QueryDict = None) -> list:
         response_json = response.json()
 
     return signal_list
+
+
+def patch_v1_private_signal_status(signal_id: int, state: str, text: str = None, target_api: str = None,
+                                   extra_properties: Union[List[dict], dict] = None) -> dict:
+    data = {'status': {'state': state, 'send_email': False}}
+    if text:
+        data['status'].update({'text': text})
+    if target_api:
+        data['status'].update({'target_api': target_api})
+    if extra_properties:
+        data['status'].update({'extra_properties': extra_properties})
+
+    endpoint = f'{settings.SIGNALS_ENDPOINT}/v1/private/signals/{signal_id}'
+    response = requests.patch(endpoint, json=data, headers=_headers(), verify=False)
+    response.raise_for_status()
+    response_json = response.json()
+
+    return response_json
