@@ -38,25 +38,6 @@ class EPRCurativeInline(admin.TabularInline):
         return obj.get_status_display()
 
 
-class SignalEPRCurativeProcessedListFilter(admin.SimpleListFilter):
-    title = 'EPR Curative processed'
-
-    # Parameter for the filter that will be used in the URL query.
-    parameter_name = 'epr'
-
-    def lookups(self, request, model_admin):
-        return (
-            (1, 'Processed'),
-            (0, 'Not processed'),
-        )
-
-    def queryset(self, request, queryset):
-        if self.value() == '1':
-            return queryset.exclude(epr_curative__processed=True)
-        elif self.value() == '0':
-            return queryset.exclude(epr_curative__processed=False)
-
-
 class DateFieldListFilter(admin.SimpleListFilter):
     title = _('Signal created date')
     parameter_name = 'scd'
@@ -86,17 +67,11 @@ class SignalAdmin(SimpleHistoryAdmin):
     search_fields = ('signal_id', )
     list_display = ('signal_id', 'signal_created_at', 'processed', 'get_epr_curative_not_processed_count',
                     'get_epr_curative_processed_count', )
-    list_filter = (SignalEPRCurativeProcessedListFilter, DateFieldListFilter, )
+    list_filter = (DateFieldListFilter, )
 
-    readonly_fields = ('signal_id', 'signal_created_at', 'signal_geometry', 'signal_extra_properties')
+    readonly_fields = ('signal_id', 'signal_created_at', 'signal_geometry', 'signal_extra_properties', 'processed')
 
     inlines = (EPRCurativeInline, )
-
-    @admin.display(boolean=True, description='Processed')
-    def processed(self, obj):
-        if obj.epr_curative.count() == 0:
-            return False
-        return obj.epr_curative.exclude(processed=True).count() == obj.epr_curative.exclude(processed=False).count()
 
     @admin.display(description='Processed count')
     def get_epr_curative_not_processed_count(self, obj):

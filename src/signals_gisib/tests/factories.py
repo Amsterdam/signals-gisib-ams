@@ -2,6 +2,7 @@ from django.utils import timezone
 from factory import Faker, SelfAttribute, SubFactory
 from factory.django import DjangoModelFactory
 from factory.fuzzy import FuzzyChoice
+from pytz import UTC
 
 from signals_gisib.models import Signal
 from signals_gisib.models.gisib import CollectionItem, EPRCurative
@@ -27,10 +28,13 @@ class SignalFactory(DjangoModelFactory):
         django_get_or_create = ('signal_id', )
 
     signal_id = Faker('random_int', min=1000, max=9999, step=1)
-    signal_created_at = Faker('date_between', start_date=timezone.now() - timezone.timedelta(days=5),
-                              end_date=timezone.now())
+    signal_created_at = Faker('date_time_between_dates', datetime_start=timezone.now() - timezone.timedelta(days=5),
+                              datetime_end=timezone.now(), tzinfo=UTC)
     signal_geometry = FuzzyPoint(*BBOX_AMSTERDAM)
     signal_extra_properties = {}
+
+    flow = 'EPR'
+    processed = False
 
 
 class EPRCurativeFactory(DjangoModelFactory):
@@ -43,3 +47,7 @@ class EPRCurativeFactory(DjangoModelFactory):
     collection_item = SubFactory(CollectionItemFactory, gisib_id=SelfAttribute('..gisib_id'))
     original_request = {}
     original_response = {}
+
+    status_id = None
+    processed = False
+    last_checked = None

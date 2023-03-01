@@ -6,6 +6,7 @@ from django.contrib.gis.geos import Point
 from django.http import QueryDict
 from django.utils import timezone
 
+from signals_gisib.gisib.epr_curative_status import check_status
 from signals_gisib.gisib.import_epr_configuration import start_import as start_epr_configuration_import
 from signals_gisib.gisib.import_oak_trees import start_import as start_quercus_trees_import
 from signals_gisib.models.signals import Signal
@@ -62,3 +63,17 @@ def import_categorized_signals(category_slugs: List[str], time_delta_days: int =
                 signal_created_at=signal_created_at,
                 signal_extra_properties=signal_extra_properties,
             )
+
+
+@shared_task
+def check_epr_curative_status(signal_ids: List[int] = None):
+    signals_with_unprocessed_epr_curative_qs = Signal.objects.filter(epr_curative__processed=False)
+
+    if signal_ids:
+        # The task has been started with specific signals to check, let's filter them
+        signals_with_unprocessed_epr_curative_qs = signals_with_unprocessed_epr_curative_qs.filter(
+            signal_id__in=signal_ids
+        )
+
+    for signal in signals_with_unprocessed_epr_curative_qs.all().distinct():
+        check_status(signal=signal)

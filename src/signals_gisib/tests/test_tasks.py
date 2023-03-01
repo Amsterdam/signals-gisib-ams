@@ -5,9 +5,14 @@ from django.test import TestCase, override_settings
 from freezegun import freeze_time
 
 from signals_gisib.models import Signal
-from signals_gisib.tasks import import_categorized_signals, import_epr_configuration, import_quercus_trees
+from signals_gisib.tasks import (
+    check_epr_curative_status,
+    import_categorized_signals,
+    import_epr_configuration,
+    import_quercus_trees
+)
 from signals_gisib.tests import vcr
-from signals_gisib.tests.factories import SignalFactory
+from signals_gisib.tests.factories import EPRCurativeFactory, SignalFactory
 
 
 class ImportQuercusTreesTest(TestCase):
@@ -94,3 +99,47 @@ class ImportCategorizedSignalsTest(TestCase):
         import_categorized_signals(category_list, 365)
 
         self.assertEqual(0, Signal.objects.count())
+
+
+class CheckEPRCurativeStatusTest(TestCase):
+    @patch('signals_gisib.tasks.check_status')
+    def test_run_no_signals(self, check_status_mock):
+        check_epr_curative_status()
+
+        # Assert that the start_import function was NOT called
+        check_status_mock.assert_not_called()
+
+    @patch('signals_gisib.tasks.check_status')
+    def test_run_no_signals_with_unprocessed_epr_curatives(self, check_status_mock):
+        test_signals = SignalFactory.create_batch(5)
+        for test_signal in test_signals:
+            EPRCurativeFactory.create(signal=test_signal, processed=True)
+
+        check_epr_curative_status()
+
+        # Assert that the start_import function was NOT called
+        check_status_mock.assert_not_called()
+
+    @patch('signals_gisib.tasks.check_status')
+    def test_run_signals_with_unprocessed_epr_curatives(self, check_status_mock):
+        test_signals = SignalFactory.create_batch(5)
+        for test_signal in test_signals:
+            EPRCurativeFactory.create(signal=test_signal, processed=False)
+
+        check_epr_curative_status()
+
+        # Assert that the check_epr_curatives_status function was called with the given signal
+        for test_signal in test_signals:
+            check_status_mock.assert_any_call(signal=test_signal)
+
+    @patch('signals_gisib.tasks.check_status')
+    def test_run_for_specific_signals_with_unprocessed_epr_curatives(self, check_status_mock):
+        test_signals = SignalFactory.create_batch(2)
+        for test_signal in test_signals:
+            EPRCurativeFactory.create(signal=test_signal, processed=False)
+
+        check_epr_curative_status(signal_ids=[test_signal.signal_id for test_signal in test_signals])
+
+        # Assert that the check_epr_curatives_status function was called with the given signal
+        for test_signal in test_signals:
+            check_status_mock.assert_any_call(signal=test_signal)
