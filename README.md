@@ -3,6 +3,26 @@
 The "signals-gisib-ams" GitHub project is a tool that facilitates communication between the RESTful Signals API and 
 GISIB (Geographic Information System) for the City of Amsterdam.
 
+## GISIB Registratie EPR Flow
+
+The Registratie EPR status is a field in the GISIB system that indicates the current status of an Eikenprocessierups (EPR) report. This status can have several values, as listed below:
+
+| Registratie EPR      | Afgehandeld? |
+|----------------------|--------------|
+| Melding              | Nee          |
+| Inspectie            | Nee          |
+| Registratie EPR      | Nee          |
+| Geen                 | Ja           |
+| EPR Niet bestrijden  | Ja           |
+| EPR Bestreden        | Ja           |
+| EPR Deels bestreden  | Nee          |
+| Dubbele melding      | Ja           |
+| Niet in beheergebied | Ja           |
+
+When a report related to the Eikenprocessierups is made, the Registratie EPR status can have one of two values: "Melding" or "Registratie EPR". The status of the report may change as work is done to address the issue, and it is important to periodically check the Registratie EPR status in the GISIB system to see if it has changed.
+
+The "Afgehandeld?" column indicates whether a report with the corresponding Registratie EPR status has been processed and resolved (i.e., "Afgehandeld" in Dutch).
+
 ## Running and developing locally
 
 Set up a virtual environment and activate it:

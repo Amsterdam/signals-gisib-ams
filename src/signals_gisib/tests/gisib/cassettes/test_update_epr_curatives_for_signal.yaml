@@ -1,0 +1,131 @@
+interactions:
+- request:
+    body: '{"Username": "test-user", "Password": "test-password", "ApiKey": "test-api-key"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '93'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+    method: POST
+    uri: https://amsterdam-test.gisib.nl/api/api/Login
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
+        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
+        n0+LL4vvVLNvv7r6sji4nN2b3Xu+nP7g+eLh9U9dH1x/8fT43fMfHO88vzdvJ5+/+kH23Wk7+S59
+        9/pFNfnus59+/nu/qH6fN2e7L4qz5mz56v705OzTs7er3/snT77zcEwd/OR07yevJ4tn7U+9pi8W
+        z66y3/vF6vd5TY3f0u/fbcscn//0dO+LN1/svPjBk59+8fRZ8cVP/8T9Lz7/TvH7LH6q/GLv97n6
+        4rs/Of/i6Wzx4vPfZ++suCp+6veeX539dPXuxU9Pd168me59+eaL3ecn31lN732BwSy5j4IQmJy1
+        xcPpL/qJ3+v3uvcTv/f98mHxi45/n/u/98H+T158+tXp8fEPnjw7rg5++ru//9Pv/MT/Awh1g+8N
+        AQAA
+    headers:
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' blob: data: https:;img-src
+        ''self'' https: data: blob:;'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 01 Mar 2023 14:25:17 GMT
+      Expect-CT:
+      - enforce, max-age=43200
+      Permissions-Policy:
+      - vibrate=(self)
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer 1234567890
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://amsterdam-test.gisib.nl/api/api/Collections/EPR%20Curatief/Items/3751039
+  response:
+    body:
+      string: '{"type":"FeatureCollection","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:EPSG::28992"}},"links":[{"rel":"next","type":"application/geo+json","title":"Next
+        page","href":"https://amsterdam-test.gisib.nl/api/api/OGCCollections/EPR Curatief/items?crs=28992&limit=1&offset=1"},{"rel":"prev","type":"application/geo+json","title":"Previous
+        page","href":"https://amsterdam-test.gisib.nl/api/api/OGCCollections/EPR Curatief/items?crs=28992&limit=1&offset=0"},{"rel":"first","type":"application/geo+json","title":"First
+        page","href":"https://amsterdam-test.gisib.nl/api/api/OGCCollections/EPR Curatief/items?crs=28992&limit=1&offset=0"}],"features":[{"type":"Feature","geometry":{"type":"Point","crs":{"type":"name","properties":{"name":"EPSG:28992"}},"coordinates":[127506.08,480104.53]},"properties":{"Boom":{"Id":1879642,"GUID":"{57F9DB47-BB54-4E41-9116-3CF4342F7F70}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Boom/items/1879642","Description":null},"SIG
+        Nummer melding":"1","Datum melding":"2023-01-27T14:18:00","Foto 1":null,"Foto
+        2":null,"Foto 3":null,"Omschrijving melding":null,"Registratie EPR":{"Id":3748950,"GUID":"{73BAB277-6DBF-4EC5-BE1D-3BC003A5A48E}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Registratie
+        EPR/items/3748950","Description":"f. EPR Bestreden"},"Inspectiedatum":null,"INSPECTEUR":null,"Inspecterende
+        organisatie":null,"Nesthoogte":null,"Niet bereikbaar met hoogwerker":false,"Niet
+        toegankelijk voor bestrijding":false,"Aantal nesten maat tennisbal":null,"Aantal
+        nesten maat voetbal":null,"Aantal nesten maat deken":null,"Prioriteit EPR":{"Id":3748925,"GUID":"{E4C7D646-D999-439F-953F-A89D31AB1ACC}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Prioriteit
+        EPR/items/3748925","Description":"Standaard (3 dagen)"},"Geplande uitvoeringsdatum
+        voor":null,"Opmerking algemeen":null,"Datum bestrijding":null,"Uitgevoerd
+        door":null,"Uitvoerende organisatie":null,"Bestrijdingsmethode EPR":null,"Bestrijding
+        uitvoering EPR":null,"Aantal nesten verwijderd maat tennisbal":null,"Aantal
+        nesten verwijderd maat voetbal":null,"Aantal nesten verwijderd maat deken":null,"Opmerking
+        uitvoerende organisatie":null,"Datum toezicht":"2023-02-08T17:16:24.484942","Toezichthouder":"Liu,
+        Jack","Acceptatie EPR":{"Id":3748944,"GUID":"{8F950C2D-AB2D-436C-8DB6-EC45FA4CA0AA}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Acceptatie
+        EPR/items/3748944","Description":"Goedgekeurd niet gezien"},"Aantal EPR nesten":null,"Nestformaat":{"Id":3749024,"GUID":"{5E1B42B8-E3BF-4C3E-9C27-CF09F8DE0C2A}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Nestformaat/items/3749024","Description":"Nest
+        is zo groot als een tennisbal"},"Notitie toezichthouder":null,"Objecttype":{"Id":14109,"GUID":"{635136A6-334C-4C9A-B0AD-F69C0CDB52B7}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Objecttype/items/14109","Description":"Boom"},"Type":null,"Type
+        gedetailleerd":null,"Soortnaam":null,"Stamdiameter":null,"Openbare ruimte":null,"Buurt":{"Id":20565,"GUID":"{60ABA146-F6FE-4AA9-B3D6-C1A76D42DD4A}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Buurt/items/20565","Description":"L-buurt"},"Wijk":{"Id":20366,"GUID":"{F4C68F4A-EAC5-4C8F-B596-4FF4F867DE4E}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Wijk/items/20366","Description":"Nellestein"},"Stadsdeel
+        of kern":{"Id":20268,"GUID":"{B52292B5-6FA0-427B-B4B8-BFFFBA08904B}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Stadsdeel
+        of kern/items/20268","Description":"Zuidoost"},"Woonplaats":{"Id":20249,"GUID":"{02CC5815-955D-4B4B-BB76-3E0E3B45280C}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Woonplaats/items/20249","Description":"Amsterdam"},"Gemeente":{"Id":20247,"GUID":"{31C33111-C0B4-489E-8539-1B7D74DF2E5A}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Gemeente/items/20247","Description":"Amsterdam"},"Beheergebied":{"Id":26976,"GUID":"{F8110411-9910-4FF0-9231-E12BE9DFD38D}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Beheergebied/items/26976","Description":"Gaasperdam,
+        Driemond"},"Meerstammig":false,"Aantal dagen open bestrijding":null,"Aantal
+        dagen resterend bestrijding":null,"Aantal dagen open inspectie":0,"Aantal
+        dagen resterend inspectie":2,"Start inspectiedatum":"2023-01-30T00:00:00","Uiterlijke
+        inspectiedatum":"2023-02-01T00:00:00","Foto bestrijding":null,"Code":null,"GUID":"{DDD9E8C2-39DB-4C57-99CB-0F45C5F3E009}","Id":3751039,"Description":null,"IMGeoId":null,"Valid_Till":null,"LastUpdate":"2023-02-28T17:16:24.484942","Revisie":2}}]}'
+    headers:
+      Content-Length:
+      - '4574'
+      Content-Security-Policy:
+      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' blob: data: https:;img-src
+        ''self'' https: data: blob:;'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Mar 2023 14:25:17 GMT
+      Expect-CT:
+      - enforce, max-age=43200
+      Permissions-Policy:
+      - vibrate=(self)
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

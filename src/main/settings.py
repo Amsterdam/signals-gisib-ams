@@ -186,6 +186,11 @@ GISIB_PASSWORD = os.getenv('GISIB_PASSWORD')
 GISIB_APIKEY = os.getenv('GISIB_APIKEY')
 GISIB_LIMIT = os.getenv('GISIB_LIMIT', 500)
 GISIB_SLEEP = os.getenv('GISIB_LIMIT', 0.5)  # seconds to sleep between consecutive calls
+GISIB_REGISTRATIE_EPR_NOT_PROCESSED_STATUSES = ['a. Melding', 'b. Inspectie', 'c. Registratie EPR',
+                                                'g. EPR Deels bestreden']
+GISIB_REGISTRATIE_EPR_PROCESSED_STATUSES = ['d. Geen', 'e. EPR Niet bestrijden', 'f. EPR Bestreden',
+                                            'h. Dubbele melding', 'i. Niet in beheergebied']
+GISIB_REGISTRATIE_EPR_STATUSES = GISIB_REGISTRATIE_EPR_NOT_PROCESSED_STATUSES + GISIB_REGISTRATIE_EPR_PROCESSED_STATUSES
 
 
 # Keycloak (Used to get tokens for the Signals API)
