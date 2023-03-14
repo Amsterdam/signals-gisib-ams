@@ -39,7 +39,7 @@ chardet==5.1.0
     # via
     #   -r ./requirements_test.txt
     #   tox
-charset-normalizer==3.0.1
+charset-normalizer==3.1.0
     # via
     #   -r ./requirements_test.txt
     #   requests
@@ -68,25 +68,30 @@ colorama==0.4.6
     # via
     #   -r ./requirements_test.txt
     #   tox
-coverage[toml]==7.0.5
+coverage[toml]==7.2.1
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
+deprecation==2.1.0
+    # via
+    #   -r ./requirements_test.txt
+    #   python-keycloak
 distlib==0.3.6
     # via
     #   -r ./requirements_test.txt
     #   virtualenv
-django==4.1.5
+django==4.1.7
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
+    #   django-celery-results
     #   django-debug-toolbar
     #   django-extensions
     #   django-filter
     #   djangorestframework
 django-celery-beat==2.4.0
     # via -r ./requirements_test.txt
-django-celery-results==2.4.0
+django-celery-results==2.5.0
     # via -r ./requirements_test.txt
 django-debug-toolbar==3.8.1
     # via -r requirements_dev.in
@@ -94,7 +99,7 @@ django-extensions==3.2.1
     # via -r ./requirements_test.txt
 django-filter==22.1
     # via -r ./requirements_test.txt
-django-simple-history==3.2.0
+django-simple-history==3.3.0
     # via -r ./requirements_test.txt
 django-timezone-field==5.0
     # via
@@ -106,13 +111,13 @@ ecdsa==0.18.0
     # via
     #   -r ./requirements_test.txt
     #   python-jose
-exceptiongroup==1.1.0
+exceptiongroup==1.1.1
     # via
     #   -r ./requirements_test.txt
     #   pytest
 factory-boy==3.2.1
     # via -r ./requirements_test.txt
-faker==16.6.0
+faker==17.6.0
     # via
     #   -r ./requirements_test.txt
     #   factory-boy
@@ -140,7 +145,7 @@ iniconfig==2.0.0
     # via
     #   -r ./requirements_test.txt
     #   pytest
-isort==5.11.4
+isort==5.12.0
     # via -r ./requirements_test.txt
 kombu==5.2.4
     # via
@@ -158,12 +163,13 @@ packaging==23.0
     # via
     #   -r ./requirements_test.txt
     #   build
+    #   deprecation
     #   pyproject-api
     #   pytest
     #   tox
-pip-tools==6.12.1
+pip-tools==6.12.3
     # via -r requirements_dev.in
-platformdirs==2.6.2
+platformdirs==3.1.1
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -173,7 +179,7 @@ pluggy==1.0.0
     #   -r ./requirements_test.txt
     #   pytest
     #   tox
-prompt-toolkit==3.0.36
+prompt-toolkit==3.0.38
     # via
     #   -r ./requirements_test.txt
     #   click-repl
@@ -192,13 +198,13 @@ pyflakes==3.0.1
     # via
     #   -r ./requirements_test.txt
     #   flake8
-pyproject-api==1.5.0
+pyproject-api==1.5.1
     # via
     #   -r ./requirements_test.txt
     #   tox
 pyproject-hooks==1.0.0
     # via build
-pytest==7.2.1
+pytest==7.2.2
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
@@ -221,7 +227,7 @@ python-jose==3.3.0
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
-python-keycloak==2.9.0
+python-keycloak==2.13.2
     # via -r ./requirements_test.txt
 pytz==2022.7.1
     # via
@@ -238,7 +244,7 @@ requests==2.28.2
     #   -r ./requirements_test.txt
     #   python-keycloak
     #   requests-toolbelt
-requests-toolbelt==0.9.1
+requests-toolbelt==0.10.1
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
@@ -266,18 +272,18 @@ tomli==2.0.1
     #   pyproject-api
     #   pytest
     #   tox
-tox==4.3.5
+tox==4.4.7
     # via -r ./requirements_test.txt
 tzdata==2022.7
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
-urllib3==1.26.14
+urllib3==1.26.15
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
     #   requests
-uvicorn==0.20.0
+uvicorn==0.21.0
     # via -r ./requirements_test.txt
 vcrpy==4.2.1
     # via -r ./requirements_test.txt
@@ -287,7 +293,7 @@ vine==5.0.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.17.1
+virtualenv==20.21.0
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -297,9 +303,9 @@ wcwidth==0.2.6
     #   prompt-toolkit
 wheel==0.38.4
     # via pip-tools
-whitenoise==6.3.0
+whitenoise==6.4.0
     # via -r ./requirements_test.txt
-wrapt==1.14.1
+wrapt==1.15.0
     # via
     #   -r ./requirements_test.txt
     #   vcrpy

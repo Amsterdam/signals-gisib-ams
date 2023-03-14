@@ -31,7 +31,7 @@ certifi==2022.12.7
     #   requests
 chardet==5.1.0
     # via tox
-charset-normalizer==3.0.1
+charset-normalizer==3.1.0
     # via
     #   -r ./requirements.txt
     #   requests
@@ -57,26 +57,31 @@ click-repl==0.2.0
     #   celery
 colorama==0.4.6
     # via tox
-coverage[toml]==7.0.5
+coverage[toml]==7.2.1
     # via pytest-cov
+deprecation==2.1.0
+    # via
+    #   -r ./requirements.txt
+    #   python-keycloak
 distlib==0.3.6
     # via virtualenv
-django==4.1.5
+django==4.1.7
     # via
     #   -r ./requirements.txt
     #   django-celery-beat
+    #   django-celery-results
     #   django-extensions
     #   django-filter
     #   djangorestframework
 django-celery-beat==2.4.0
     # via -r ./requirements.txt
-django-celery-results==2.4.0
+django-celery-results==2.5.0
     # via -r ./requirements.txt
 django-extensions==3.2.1
     # via -r ./requirements.txt
 django-filter==22.1
     # via -r ./requirements.txt
-django-simple-history==3.2.0
+django-simple-history==3.3.0
     # via -r ./requirements.txt
 django-timezone-field==5.0
     # via
@@ -88,11 +93,11 @@ ecdsa==0.18.0
     # via
     #   -r ./requirements.txt
     #   python-jose
-exceptiongroup==1.1.0
+exceptiongroup==1.1.1
     # via pytest
 factory-boy==3.2.1
     # via -r requirements_test.in
-faker==16.6.0
+faker==17.6.0
     # via factory-boy
 filelock==3.9.0
     # via
@@ -115,7 +120,7 @@ idna==3.4
     #   yarl
 iniconfig==2.0.0
     # via pytest
-isort==5.11.4
+isort==5.12.0
     # via -r requirements_test.in
 kombu==5.2.4
     # via
@@ -127,10 +132,12 @@ multidict==6.0.4
     # via yarl
 packaging==23.0
     # via
+    #   -r ./requirements.txt
+    #   deprecation
     #   pyproject-api
     #   pytest
     #   tox
-platformdirs==2.6.2
+platformdirs==3.1.1
     # via
     #   tox
     #   virtualenv
@@ -138,7 +145,7 @@ pluggy==1.0.0
     # via
     #   pytest
     #   tox
-prompt-toolkit==3.0.36
+prompt-toolkit==3.0.38
     # via
     #   -r ./requirements.txt
     #   click-repl
@@ -153,9 +160,9 @@ pycodestyle==2.10.0
     # via flake8
 pyflakes==3.0.1
     # via flake8
-pyproject-api==1.5.0
+pyproject-api==1.5.1
     # via tox
-pytest==7.2.1
+pytest==7.2.2
     # via
     #   -r requirements_test.in
     #   pytest-cov
@@ -178,7 +185,7 @@ python-jose==3.3.0
     # via
     #   -r ./requirements.txt
     #   python-keycloak
-python-keycloak==2.9.0
+python-keycloak==2.13.2
     # via -r ./requirements.txt
 pytz==2022.7.1
     # via
@@ -193,7 +200,7 @@ requests==2.28.2
     #   -r ./requirements.txt
     #   python-keycloak
     #   requests-toolbelt
-requests-toolbelt==0.9.1
+requests-toolbelt==0.10.1
     # via
     #   -r ./requirements.txt
     #   python-keycloak
@@ -218,18 +225,18 @@ tomli==2.0.1
     #   pyproject-api
     #   pytest
     #   tox
-tox==4.3.5
+tox==4.4.7
     # via -r requirements_test.in
 tzdata==2022.7
     # via
     #   -r ./requirements.txt
     #   django-celery-beat
-urllib3==1.26.14
+urllib3==1.26.15
     # via
     #   -r ./requirements.txt
     #   python-keycloak
     #   requests
-uvicorn==0.20.0
+uvicorn==0.21.0
     # via -r ./requirements.txt
 vcrpy==4.2.1
     # via -r requirements_test.in
@@ -239,15 +246,15 @@ vine==5.0.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.17.1
+virtualenv==20.21.0
     # via tox
 wcwidth==0.2.6
     # via
     #   -r ./requirements.txt
     #   prompt-toolkit
-whitenoise==6.3.0
+whitenoise==6.4.0
     # via -r ./requirements.txt
-wrapt==1.14.1
+wrapt==1.15.0
     # via vcrpy
 yarl==1.8.2
     # via vcrpy
