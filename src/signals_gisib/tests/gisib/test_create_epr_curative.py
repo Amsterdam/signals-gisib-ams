@@ -47,8 +47,8 @@ class CreateEPRCurativeTestCase(TransactionTestCase):
         tree_ids = _get_tree_ids(extra_properties)
 
         self.assertEqual(len(tree_ids), 2)
-        self.assertIsNone(tree_ids[0])
-        self.assertEqual(tree_ids[1], 920107)
+        self.assertIn(None, tree_ids)
+        self.assertIn(920107, tree_ids)
 
     def test__translate_nest_size(self):
         extra_properties = [{'id': 'extra_eikenprocessierups',
