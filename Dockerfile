@@ -1,43 +1,53 @@
-FROM python:3.11-slim-buster as app
+# syntax=docker/dockerfile:1
+ARG PYTHON_VERSION=3.11
 
-# Create a new user/group called signals-gisib
-RUN groupadd -r signals-gisib && useradd --no-log-init -r -g signals-gisib signals-gisib
+##################################################
+#                   Python                       #
+##################################################
+FROM python:${PYTHON_VERSION}-slim-buster as app
 
-RUN mkdir -p /media && mkdir -p /static && chown signals-gisib /media && chown signals-gisib /static
+ENV PYTHONUNBUFFERED 1
+ENV DJANGO_SETTINGS_MODULE=main.settings
+ARG DJANGO_SECRET_KEY=insecure_docker_build_key
 
-# Add package dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    gdal-bin \
-    postgresql-client-11 \
-    build-essential \
-    libpq-dev \
-    gettext \
-    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
-    && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
 
-# Copy the requirements
-COPY requirements.txt /requirements.txt
+RUN useradd --no-create-home signals-gisib
 
-# Install the requirements
-RUN pip install --no-cache-dir -r /requirements.txt
+COPY requirements.txt /requirements/requirements.txt
 
-# Copy the app folder
-COPY src/ /app/
+RUN set -eux;  \
+    apt-get update; \
+    apt-get install -y \
+      build-essential \
+      gdal-bin \
+      postgresql-client-11 \
+      build-essential \
+      libpq-dev \
+      gettext \
+    ; \
+    apt-get purge -y --auto-remove; \
+    rm -rf /var/lib/apt/lists/*
 
-# Change ownership of the src folder to signals-gisib user/group
-RUN chown -R signals-gisib:signals-gisib /app/
+RUN pip install --no-cache-dir -r /requirements/requirements.txt
 
-# Switch to the signals-gisib user
+COPY src /app
+
+RUN set -eux; \
+    chgrp signals-gisib /app; \
+    chmod g+w /app; \
+    mkdir -p /app/static /app/media; \
+    chown signals-gisib /app/static; \
+    chown signals-gisib /app/media
+
 USER signals-gisib
 
-# Move to the app folder
-WORKDIR /app/
-
-# Collect static files
 RUN SECRET_KEY=$DJANGO_SECRET_KEY python manage.py collectstatic --no-input
+
+CMD ["gunicorn", "main.asgi:application", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "--reload"]
 
 FROM app as dev
 USER root
-ADD requirements_dev.txt /requirements_dev.txt
-RUN pip install -r /requirements_dev.txt
+COPY requirements_dev.txt /requirements/requirements.txt
+RUN pip install -r /requirements/requirements.txt
+USER signals-gisib
