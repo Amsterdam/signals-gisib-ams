@@ -14,7 +14,7 @@ class LinkHeaderPagination(PageNumberPagination):
 
         try:
             self.page = paginator.page(page_number)
-        except InvalidPage as exc:
+        except InvalidPage:
             raise NotFound(self.invalid_page_message)
 
         if paginator.num_pages > 1 and self.template is not None:
