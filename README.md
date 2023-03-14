@@ -47,7 +47,7 @@ docker-compose up -d postgis
 You can now either run the application from the virtual environment using the following command:
 
 ```shell
-python src/manage.py runserver 0.0.0.0:8000
+python app/manage.py runserver 0.0.0.0:8000
 ```
 
 Or you can use docker-compose:

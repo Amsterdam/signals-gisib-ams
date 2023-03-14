@@ -31,7 +31,7 @@ RUN set -eux;  \
 
 RUN pip install --no-cache-dir -r /requirements/requirements.txt
 
-COPY src /app
+COPY app /app
 
 RUN set -eux; \
     chgrp signals-gisib /app; \

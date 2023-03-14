@@ -22,7 +22,7 @@ services:
       - GISIB_PASSWORD=
       - GISIB_APIKEY=
     volumes:
-      - ./src:/app/
+      - ./app:/app/
       - ./docker-compose/run.sh:/run.sh
     command: /run.sh
 
