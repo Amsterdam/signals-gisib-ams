@@ -9,7 +9,7 @@ from django.core.cache import cache
 def get_bearer_token() -> Union[str, None]:
     token = cache.get('GISIB_BEARER_TOKEN')
     if token is None:
-        endpoint = f'{settings.GISIB_ENDPOINT}/Login'
+        endpoint = f'{settings.GISIB_BASE_URI}/Login'
         data = {
             'Username': settings.GISIB_USERNAME,
             'Password': settings.GISIB_PASSWORD,
@@ -29,7 +29,7 @@ def _headers() -> dict:
 
 
 def get_collection(object_kind_name: str, item_id: int) -> dict:
-    endpoint = f'{settings.GISIB_ENDPOINT}/Collections/{object_kind_name}/Items/{item_id}'
+    endpoint = f'{settings.GISIB_BASE_URI}/Collections/{object_kind_name}/Items/{item_id}'
     response = requests.get(endpoint, headers=_headers())
     response.raise_for_status()
 
@@ -40,10 +40,10 @@ def get_collections(object_kind_name: str, filters: list = None, offset: int = 0
     query_params = {'offset': offset, 'limit': limit}
 
     if filters:
-        endpoint = f'{settings.GISIB_ENDPOINT}/Collections/{object_kind_name}/WithFilter/Items'
+        endpoint = f'{settings.GISIB_BASE_URI}/Collections/{object_kind_name}/WithFilter/Items'
         response = requests.post(endpoint, params=query_params, json=filters, headers=_headers())
     else:
-        endpoint = f'{settings.GISIB_ENDPOINT}/Collections/{object_kind_name}/Items'
+        endpoint = f'{settings.GISIB_BASE_URI}/Collections/{object_kind_name}/Items'
         response = requests.get(endpoint, params=query_params, headers=_headers())
 
     response.raise_for_status()
@@ -52,7 +52,7 @@ def get_collections(object_kind_name: str, filters: list = None, offset: int = 0
 
 
 def get_collection_deleted_items(object_kind_name: str, reference_date: date) -> dict:
-    endpoint = f'{settings.GISIB_ENDPOINT}/Collections/{object_kind_name}/DeletedItems'
+    endpoint = f'{settings.GISIB_BASE_URI}/Collections/{object_kind_name}/DeletedItems'
     query_params = {'referenceDate': reference_date.strftime('%Y/%m/%d')}
     response = requests.get(endpoint, params=query_params, headers=_headers())
     response.raise_for_status()
@@ -61,7 +61,7 @@ def get_collection_deleted_items(object_kind_name: str, reference_date: date) ->
 
 
 def post_collection_insert(data: dict) -> dict:
-    endpoint = f'{settings.GISIB_ENDPOINT}/Collections/Insert'
+    endpoint = f'{settings.GISIB_BASE_URI}/Collections/Insert'
     response = requests.post(endpoint, json=data, headers=_headers())
     response.raise_for_status()
 

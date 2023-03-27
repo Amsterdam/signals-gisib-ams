@@ -11,7 +11,7 @@ from signals_gisib.tests.signals import signals_api_vcr
 
 
 @freeze_time('2023-01-27T14:00:00+00:00')
-@override_settings(SIGNALS_ENDPOINT='http://test.com/signals')
+@override_settings(SIGNALS_BASE_URI='http://test.com/signals')
 class SignalsApiTestCase(TestCase):
     @patch('signals_gisib.signals.api.get_bearer_token')
     @signals_api_vcr.use_cassette()

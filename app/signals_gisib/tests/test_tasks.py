@@ -65,7 +65,7 @@ class ImportEPRConfigurationTest(TestCase):
 
 
 @freeze_time('2023-01-27T14:00:00+00:00')
-@override_settings(SIGNALS_ENDPOINT='http://test.com/signals')
+@override_settings(SIGNALS_BASE_URI='http://test.com/signals')
 class ImportCategorizedSignalsTest(TestCase):
 
     @vcr.use_cassette()

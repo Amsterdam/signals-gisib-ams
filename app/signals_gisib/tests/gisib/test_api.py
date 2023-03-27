@@ -13,7 +13,7 @@ from signals_gisib.tests.gisib import gisib_api_vcr
 
 
 @freeze_time('2023-01-23T15:40:00+00:00')
-@override_settings(GISIB_ENDPOINT='https://amsterdam-test.gisib.nl/api/api', GISIB_USERNAME='test-user',
+@override_settings(GISIB_BASE_URI='https://amsterdam-test.gisib.nl/api/api', GISIB_USERNAME='test-user',
                    GISIB_PASSWORD='test-password', GISIB_APIKEY='test-api-key', GISIB_LIMIT=5, GISIB_SLEEP=0)
 class GISIBApiTestCase(TestCase):
 

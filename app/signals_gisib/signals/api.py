@@ -19,7 +19,7 @@ def _headers() -> dict:
 
 
 def get_v1_private_signals(filters: QueryDict = None) -> list:
-    endpoint = f'{settings.SIGNALS_ENDPOINT}/v1/private/signals/'
+    endpoint = f'{settings.SIGNALS_BASE_URI}/v1/private/signals/'
     response = requests.get(endpoint, params=filters, headers=_headers(), verify=False)
     response.raise_for_status()
     response_json = response.json()
@@ -49,7 +49,7 @@ def patch_v1_private_signal_status(signal_id: int, state: str, text: str = None,
     if extra_properties:
         data['status'].update({'extra_properties': extra_properties})
 
-    endpoint = f'{settings.SIGNALS_ENDPOINT}/v1/private/signals/{signal_id}'
+    endpoint = f'{settings.SIGNALS_BASE_URI}/v1/private/signals/{signal_id}'
     response = requests.patch(endpoint, json=data, headers=_headers(), verify=False)
     response.raise_for_status()
     response_json = response.json()

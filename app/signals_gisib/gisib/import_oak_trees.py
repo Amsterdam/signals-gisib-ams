@@ -53,7 +53,7 @@ def start_import(time_delta: timedelta = None, clear_table: bool = False):  # no
     :return:
     """
     logger.info('Start import of "Quercus" trees from GISIB')
-    logger.info(f'GISIB endpoint: {settings.GISIB_ENDPOINT}')
+    logger.info(f'GISIB endpoint: {settings.GISIB_BASE_URI}')
 
     start = timer()
 
