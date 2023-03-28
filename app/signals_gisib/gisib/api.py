@@ -1,12 +1,11 @@
 from datetime import date
-from typing import Union
 
 import requests
 from django.conf import settings
 from django.core.cache import cache
 
 
-def get_bearer_token() -> Union[str, None]:
+def get_bearer_token() -> str:
     token = cache.get('GISIB_BEARER_TOKEN')
     if token is None:
         endpoint = f'{settings.GISIB_ENDPOINT}/Login'
