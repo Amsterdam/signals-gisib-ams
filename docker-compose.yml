@@ -44,6 +44,8 @@ services:
 
   celery: &celery
     <<: *app
+    ports:
+      - "8002:8000"
     depends_on:
       postgis:
         condition: service_healthy
@@ -53,6 +55,8 @@ services:
 
   celery-beat:
     <<: *celery
+    ports:
+      - "8003:8000"
     command: celery -A main beat -l debug --pidfile /tmp/celerybeat.pid
 
   rabbitmq:
