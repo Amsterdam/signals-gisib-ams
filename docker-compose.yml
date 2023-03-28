@@ -74,5 +74,11 @@ services:
       timeout: 5s
       retries: 5
 
+  flower:
+    <<: *celery
+    ports:
+      - "5566:5566"
+    command: celery -A main flower --port=5566
+
 volumes:
   postgis-data:
