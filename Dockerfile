@@ -45,7 +45,7 @@ USER signals-gisib
 
 RUN SECRET_KEY=$DJANGO_SECRET_KEY python manage.py collectstatic --no-input
 
-CMD ["gunicorn", "main.asgi:application", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "--reload"]
+CMD ["gunicorn", "main.asgi:application", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "--reload", "-w", "2", "--threads", "4"]
 
 FROM app as dev
 USER root
