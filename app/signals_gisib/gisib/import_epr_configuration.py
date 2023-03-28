@@ -94,7 +94,7 @@ def start_import(clear_table: bool = False):
     :return:
     """
     logger.info('Start import of "EPR" configuration from GISIB')
-    logger.info(f'GISIB endpoint: {settings.GISIB_ENDPOINT}')
+    logger.info(f'GISIB endpoint: {settings.GISIB_BASE_URI}')
 
     start = timer()
 

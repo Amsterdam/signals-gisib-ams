@@ -17,7 +17,7 @@ services:
       - DATABASE_PORT=5432
       - DATABASE_USER=signals-gisib
       - DATABASE_PASSWORD=insecure
-      - GISIB_ENDPOINT=
+      - GISIB_BASE_URI=
       - GISIB_USERNAME=
       - GISIB_PASSWORD=
       - GISIB_APIKEY=
