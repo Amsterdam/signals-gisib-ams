@@ -84,3 +84,43 @@ class UpdateEPRCurativeTestCase(TransactionTestCase):
         updated_signal, updated = update_epr_curatives_for_signal(signal)
         self.assertEqual(signal.signal_id, updated_signal.signal_id)
         self.assertFalse(updated)
+
+    @gisib_api_vcr.use_cassette()
+    def test_update_epr_curative_collection_item_does_not_exist(self):
+        tree = CollectionItemFactory.create(object_kind_name='Boom', gisib_id=1879642,
+                                            properties={'species': 'Quercus'})
+        signal_extra_properties = [{'id': 'extra_eikenprocessierups',
+                                    'answer': [{'id': tree.gisib_id,
+                                                'type': 'Eikenboom'}, ]},
+                                   {'id': 'extra_nest_grootte',
+                                    'label': 'Op de boom gezien',
+                                    'answer': {'id': 'deken',
+                                               'label': 'Rupsen bedekken de stam als een deken'}}]
+        yesterday = timezone.now() - timedelta(weeks=1)
+        collection_item = CollectionItemFactory.create(object_kind_name='EPR Curatief', gisib_id=3751039,
+                                                       raw_properties={'LastUpdate': yesterday.isoformat()})
+        epr_curative = EPRCurativeFactory.create(signal__signal_extra_properties=signal_extra_properties,
+                                                 collection_item=collection_item, gisib_id=3751039)
+
+        _, updated = update_epr_curatives_for_signal(epr_curative.signal)
+        self.assertFalse(updated)
+
+    @gisib_api_vcr.use_cassette()
+    def test_update_epr_curative_collection_item_multiple_objects_returned(self):
+        tree = CollectionItemFactory.create(object_kind_name='Boom', gisib_id=1879642,
+                                            properties={'species': 'Quercus'})
+        signal_extra_properties = [{'id': 'extra_eikenprocessierups',
+                                    'answer': [{'id': tree.gisib_id,
+                                                'type': 'Eikenboom'}, ]},
+                                   {'id': 'extra_nest_grootte',
+                                    'label': 'Op de boom gezien',
+                                    'answer': {'id': 'deken',
+                                               'label': 'Rupsen bedekken de stam als een deken'}}]
+        yesterday = timezone.now() - timedelta(weeks=1)
+        collection_item = CollectionItemFactory.create(object_kind_name='EPR Curatief', gisib_id=3751039,
+                                                       raw_properties={'LastUpdate': yesterday.isoformat()})
+        epr_curative = EPRCurativeFactory.create(signal__signal_extra_properties=signal_extra_properties,
+                                                 collection_item=collection_item, gisib_id=3751039)
+
+        _, updated = update_epr_curatives_for_signal(epr_curative.signal)
+        self.assertFalse(updated)

@@ -1,3 +1,4 @@
+from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 from django.test import TestCase, override_settings
 from django.utils import timezone
 from freezegun import freeze_time
@@ -53,6 +54,16 @@ class GISIBApiTestCase(TestCase):
     def test_get_collection(self):
         result = get_collection('Boom', 1879642)
         self.assertEqual(result['properties']['Id'], 1879642)
+
+    @gisib_api_vcr.use_cassette()
+    def test_get_collection_raises_object_does_not_exist(self):
+        with self.assertRaises(ObjectDoesNotExist):
+            get_collection('Boom', 1879642)
+
+    @gisib_api_vcr.use_cassette()
+    def test_get_collection_raises_multiple_objects_returned(self):
+        with self.assertRaises(MultipleObjectsReturned):
+            get_collection('Boom', 1879642)
 
     @gisib_api_vcr.use_cassette()
     def test_post_collection_insert(self):

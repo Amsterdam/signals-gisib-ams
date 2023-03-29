@@ -1,5 +1,6 @@
 from typing import Tuple
 
+from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 from django.utils import timezone
 
 from signals_gisib.gisib.api import get_collection
@@ -12,7 +13,11 @@ def update_epr_curative(epr_curative: EPRCurative) -> Tuple[EPRCurative, bool]:
     """
 
     updated = False
-    epr_curative_json = get_collection('EPR Curatief', epr_curative.gisib_id)
+
+    try:
+        epr_curative_json = get_collection('EPR Curatief', epr_curative.gisib_id)
+    except (ObjectDoesNotExist, MultipleObjectsReturned):
+        return epr_curative, updated
 
     try:
         collection_item = CollectionItem.objects.get(gisib_id=epr_curative.gisib_id,
