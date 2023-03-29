@@ -2,6 +2,7 @@ Celery
 Django
 django-celery-beat
 django-celery-results
+django-cors-headers
 django-extensions
 django-filter
 django-simple-history

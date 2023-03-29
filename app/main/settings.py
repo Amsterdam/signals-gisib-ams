@@ -45,13 +45,14 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'simple_history',
-
+    'corsheaders',
     'signals_gisib',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -203,3 +204,13 @@ KEYCLOAK_GRANT_TYPE = os.getenv('KEYCLOAK_GRANT_TYPE')
 
 # Signals API
 SIGNALS_BASE_URI = os.getenv('SIGNALS_BASE_URI')
+
+
+# CORS
+CORS_ALLOW_ALL_ORIGINS = os.getenv('CORS_ALLOW_ALL_ORIGINS', False) in TRUE_VALUES
+CORS_ALLOWED_ORIGINS = [origin.strip()
+                        for origin in os.getenv('CORS_ALLOWED_ORIGINS', 'null').split(',')]
+CORS_EXPOSE_HEADERS = [
+    'Link',  # Added for the geography endpoint
+]
+CORS_ALLOW_CREDENTIALS = True
