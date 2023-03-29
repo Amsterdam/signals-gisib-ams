@@ -42,12 +42,15 @@ django==4.1.7
     #   -r requirements.in
     #   django-celery-beat
     #   django-celery-results
+    #   django-cors-headers
     #   django-extensions
     #   django-filter
     #   djangorestframework
 django-celery-beat==2.5.0
     # via -r requirements.in
 django-celery-results==2.5.0
+    # via -r requirements.in
+django-cors-headers==3.14.0
     # via -r requirements.in
 django-extensions==3.2.1
     # via -r requirements.in
@@ -93,7 +96,7 @@ python-jose==3.3.0
     # via python-keycloak
 python-keycloak==2.14.0
     # via -r requirements.in
-pytz==2023.2
+pytz==2023.3
     # via
     #   celery
     #   django-timezone-field
@@ -117,7 +120,7 @@ sqlparse==0.4.3
     # via django
 tornado==6.2
     # via flower
-tzdata==2023.2
+tzdata==2023.3
     # via django-celery-beat
 urllib3==1.26.15
     # via

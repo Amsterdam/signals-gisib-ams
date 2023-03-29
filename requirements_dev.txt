@@ -90,6 +90,7 @@ django==4.1.7
     #   -r ./requirements_test.txt
     #   django-celery-beat
     #   django-celery-results
+    #   django-cors-headers
     #   django-debug-toolbar
     #   django-extensions
     #   django-filter
@@ -97,6 +98,8 @@ django==4.1.7
 django-celery-beat==2.5.0
     # via -r ./requirements_test.txt
 django-celery-results==2.5.0
+    # via -r ./requirements_test.txt
+django-cors-headers==3.14.0
     # via -r ./requirements_test.txt
 django-debug-toolbar==3.8.1
     # via -r requirements_dev.in
@@ -240,7 +243,7 @@ python-jose==3.3.0
     #   python-keycloak
 python-keycloak==2.14.0
     # via -r ./requirements_test.txt
-pytz==2023.2
+pytz==2023.3
     # via
     #   -r ./requirements_test.txt
     #   celery
@@ -282,7 +285,7 @@ tornado==6.2
     #   flower
 tox==4.4.8
     # via -r ./requirements_test.txt
-tzdata==2023.2
+tzdata==2023.3
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
