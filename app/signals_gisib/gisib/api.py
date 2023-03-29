@@ -3,6 +3,7 @@ from datetime import date
 import requests
 from django.conf import settings
 from django.core.cache import cache
+from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 
 
 def get_bearer_token() -> str:
@@ -32,7 +33,14 @@ def get_collection(object_kind_name: str, item_id: int) -> dict:
     response = requests.get(endpoint, headers=_headers())
     response.raise_for_status()
 
-    return response.json()['features'][0]
+    response_json = response.json()
+    feature_count = len(response_json['features'])
+    if feature_count == 0:
+        raise ObjectDoesNotExist('CollectionItem matching query does not exists.')
+    elif feature_count > 1:
+        raise MultipleObjectsReturned(f'get_collection returned more than one item -- it returned {feature_count}')
+    else:
+        return response_json['features'][0]
 
 
 def get_collections(object_kind_name: str, filters: list = None, offset: int = 0, limit: int = 500) -> dict:
