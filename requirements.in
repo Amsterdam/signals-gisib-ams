@@ -1,5 +1,5 @@
 Celery
-Django
+Django>=4.1,<4.2
 django-celery-beat
 django-celery-results
 django-cors-headers
