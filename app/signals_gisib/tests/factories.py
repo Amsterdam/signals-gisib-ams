@@ -15,7 +15,7 @@ class CollectionItemFactory(DjangoModelFactory):
         model = CollectionItem
         django_get_or_create = ('gisib_id', )
 
-    gisib_id = Faker('random_int', min=1000, max=9999, step=1)
+    gisib_id = Faker('random_int', min=1, max=99999, step=1)
     object_kind_name = FuzzyChoice(['Boom', ])
     geometry = FuzzyPoint(*BBOX_AMSTERDAM)
     properties = {}
