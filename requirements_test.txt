@@ -103,7 +103,7 @@ ecdsa==0.18.0
     #   python-jose
 factory-boy==3.2.1
     # via -r requirements_test.in
-faker==18.3.1
+faker==18.3.2
     # via factory-boy
 filelock==3.10.7
     # via
@@ -165,7 +165,7 @@ prompt-toolkit==3.0.38
     # via
     #   -r ./requirements.txt
     #   click-repl
-psycopg2==2.9.5
+psycopg2==2.9.6
     # via -r ./requirements.txt
 pyasn1==0.4.8
     # via
