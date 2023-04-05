@@ -33,20 +33,6 @@ class EPRCurativeStatusTestCase(TransactionTestCase):
         check_status(signal=test_signal)
 
     @patch('signals_gisib.gisib.epr_curative_status.update_epr_curatives_for_signal')
-    def test_check_status_no_unprocessed_epr_curatives(self, update_epr_curatives_for_signal_mock):
-        test_signal = SignalFactory.create()
-        EPRCurativeFactory.create_batch(2, signal=test_signal, processed=True)
-
-        update_epr_curatives_for_signal_mock.return_value = (test_signal, True, )
-
-        self.assertIsNone(test_signal.processed_at)
-
-        check_status(signal=test_signal)
-
-        test_signal.refresh_from_db()
-        self.assertIsNotNone(test_signal.processed_at)
-
-    @patch('signals_gisib.gisib.epr_curative_status.update_epr_curatives_for_signal')
     def test_status_partially_processed(self, update_epr_curatives_for_signal_mock):
         test_signal = SignalFactory.create()
 

@@ -67,7 +67,9 @@ class ImportEPRConfigurationTest(TestCase):
 
 
 @freeze_time('2023-01-27T14:00:00+00:00')
-@override_settings(SIGNALS_BASE_URI='http://test.com/signals')
+@override_settings(SIGNALS_BASE_URI='http://test.com/signals',
+                   GISIB_BASE_URI='https://amsterdam-test.gisib.nl/api/api', GISIB_USERNAME='test-user',
+                   GISIB_PASSWORD='test-password', GISIB_APIKEY='test-api-key', GISIB_LIMIT=2, GISIB_SLEEP=0.5)
 class ImportCategorizedSignalsTest(TestCase):
 
     @vcr.use_cassette()

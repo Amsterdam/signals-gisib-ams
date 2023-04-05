@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '93'
+      - '49'
       Content-Type:
       - application/json
       User-Agent:
@@ -18,43 +18,32 @@ interactions:
     uri: https://amsterdam-test.gisib.nl/api/api/Login
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
-        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
-        n0+LL4vvVLNvv7r6sji4nN2b3Xu+nP7g+eLh9U9dH1x/8fT43fMfHO88vzdvJ5+/+kH23Wk7+S59
-        9/pFNfnus59+/nu/qH6fN2e7L4qz5mz56v705OzTs7er3/snT77zcEwd/OR07yevJ4tn7U+9pi8W
-        z66y3/vF6vd5TY3f0u/fbcscn//0dO+LN1/svPjBk59+8fRZ8cVP/8T9Lz7/TvH7LH6q/GLv97n6
-        4rs/Of/i6Wzx4vPfZ++suCp+6veeX539dPXuxU9Pd168me59+eaL3ecn31lN732BwSy5j4IQmJy1
-        xcPpL/qJ3+v3uvcTv/f98mHxi45/n/u/98H+T158+tXp8fEPnjw7rg5++ru//9Pv/MT/Awh1g+8N
-        AQAA
+      string: '123456789'
     headers:
-      Content-Encoding:
-      - gzip
-      Content-Security-Policy:
-      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' blob: data: https:;img-src
-        ''self'' https: data: blob:;'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '9'
       Content-Type:
-      - text/plain; charset=utf-8
+      - text/html; charset=utf-8
       Date:
-      - Wed, 01 Mar 2023 14:25:17 GMT
-      Expect-CT:
-      - enforce, max-age=43200
-      Permissions-Policy:
-      - vibrate=(self)
-      Referrer-Policy:
-      - no-referrer-when-downgrade
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding:
-      - chunked
+      - Wed, 05 Apr 2023 13:16:14 GMT
+      ETag:
+      - W/"9-98O8HYCOBHMq32eZZczDTKeuNEE"
+      Expires:
+      - '-1'
+      Keep-Alive:
+      - timeout=5
+      Pragma:
+      - no-cache
       Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
     status:
       code: 200
       message: OK
