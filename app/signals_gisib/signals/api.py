@@ -48,6 +48,8 @@ def patch_v1_private_signal_status(signal_id: int, state: str, text: str = None,
         data['status'].update({'target_api': target_api})
     if extra_properties:
         data['status'].update({'extra_properties': extra_properties})
+    if state in ['ready to send', ]:
+        data['status'].update({'target_api': 'gisib'})
 
     endpoint = f'{settings.SIGNALS_BASE_URI}/v1/private/signals/{signal_id}'
     response = requests.patch(endpoint, json=data, headers=_headers(), verify=False)

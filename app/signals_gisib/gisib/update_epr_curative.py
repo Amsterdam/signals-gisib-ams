@@ -32,6 +32,7 @@ def update_epr_curative(epr_curative: EPRCurative) -> Tuple[EPRCurative, bool]:
         if collection_item.raw_properties['LastUpdate'] < epr_curative_json['properties']['LastUpdate']:
             collection_item.properties = epr_curative_json['properties']
             collection_item.raw_properties = epr_curative_json['properties']
+            collection_item.save()
             updated = True
 
     epr_curative.last_checked = timezone.now()

@@ -6,11 +6,13 @@ from django.contrib.gis.geos import Point
 from django.http import QueryDict
 from django.utils import timezone
 
+from signals_gisib.gisib.create_epr_curative import create_epr_curative
 from signals_gisib.gisib.epr_curative_status import check_status
 from signals_gisib.gisib.import_epr_configuration import start_import as start_epr_configuration_import
 from signals_gisib.gisib.import_oak_trees import start_import as start_quercus_trees_import
 from signals_gisib.models.signals import Signal
 from signals_gisib.signals.api import get_v1_private_signals
+from signals_gisib.signals.signal_status_utils import signal_done_external, signal_ready_to_send, signal_sent
 
 
 @shared_task
@@ -57,12 +59,22 @@ def import_categorized_signals(category_slugs: List[str], time_delta_days: int =
             signal_created_at = timezone.datetime.strptime(signal_json['created_at'], '%Y-%m-%dT%H:%M:%S.%f%z')
             signal_extra_properties = signal_json['extra_properties']
 
-            Signal.objects.create(
+            signal = Signal.objects.create(
                 signal_id=signal_id,
                 signal_geometry=signal_geometry,
                 signal_created_at=signal_created_at,
                 signal_extra_properties=signal_extra_properties,
+                flow='EPR',
             )
+
+            # Update the Signal in the signals API to ready to send
+            signal_ready_to_send(signal=signal)
+
+            # Create EPR curatives in GISIB
+            create_epr_curative(signal=signal)
+
+            # Update the Signal in the signals API to sent
+            signal_sent(signal=signal)
 
 
 @shared_task
@@ -77,6 +89,9 @@ def check_epr_curative_status(signal_ids: List[int] = None):
 
     for signal in signals_with_unprocessed_epr_curative_qs.all().distinct():
         check_status(signal=signal)
+
+        # Update the Signal in the signals API to done external
+        signal_done_external(signal=signal)
 
 
 @shared_task
