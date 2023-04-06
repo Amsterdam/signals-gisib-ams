@@ -14,6 +14,7 @@ class Signal(models.Model):
 
     # True if the flow has been processed, False otherwise
     processed = models.BooleanField(default=False)
+    processed_at = models.DateTimeField(null=True, blank=True)
 
     # Track history
     history = HistoricalRecords()
