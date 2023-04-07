@@ -214,3 +214,49 @@ CORS_EXPOSE_HEADERS = [
     'Link',  # Added for the geography endpoint
 ]
 CORS_ALLOW_CREDENTIALS = True
+
+
+# Logging
+LOGGING_LEVEL = os.getenv('LOGGING_LEVEL', 'INFO')
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', ],
+            'level': 'DEBUG',
+        },
+        'signals_gisib': {
+            'handlers': ['console', ],
+            'level': LOGGING_LEVEL,
+        },
+    },
+}
+
+# Opencensus
+APPLICATION_INSIGHTS_CONNECTION_STRING = os.getenv('APPLICATION_INSIGHTS_CONNECTION_STRING', False)
+if APPLICATION_INSIGHTS_CONNECTION_STRING:
+    MIDDLEWARE += ['opencensus.ext.django.middleware.OpencensusMiddleware', ]
+    OPENCENSUS = {
+        'TRACE': {
+            'SAMPLER': 'opencensus.trace.samplers.ProbabilitySampler(rate=1)',
+            'EXPORTER': f'''opencensus.ext.azure.trace_exporter.AzureExporter(
+                connection_string="{APPLICATION_INSIGHTS_CONNECTION_STRING}"
+            )''',
+            'EXCLUDELIST_PATHS': [],
+        }
+    }
+
+    LOGGING['handlers'].update({
+        'application_insights': {
+            'class': 'opencensus.ext.azure.log_exporter.AzureLogHandler',
+            'connection_string': APPLICATION_INSIGHTS_CONNECTION_STRING,
+        },
+    })
+    LOGGING['loggers']['django']['handlers'] += ['application_insights', ]
+    LOGGING['loggers']['signals_gisib']['handlers'] += ['application_insights', ]
