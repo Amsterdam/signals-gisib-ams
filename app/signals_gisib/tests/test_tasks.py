@@ -150,7 +150,7 @@ class CheckEPRCurativeStatusTest(TestCase):
 @freeze_time('2023-04-05T16:00:00+00:00')
 class DeleteProcessedSignalsTest(TestCase):
     def test_delete_progressed_signal(self):
-        test_signal = SignalFactory.create(processed=True, processed_at=timezone.now() - timezone.timedelta(days=2))
+        test_signal = SignalFactory.create(processed_at=timezone.now() - timezone.timedelta(days=2))
         EPRCurativeFactory.create_batch(2, signal=test_signal, processed=True)
 
         self.assertEqual(1, Signal.objects.count())
@@ -163,7 +163,7 @@ class DeleteProcessedSignalsTest(TestCase):
         self.assertEqual(0, EPRCurative.objects.count())
 
     def test_delete_progressed_signal_not_processed(self):
-        test_signal = SignalFactory.create(processed=False)
+        test_signal = SignalFactory.create()
         EPRCurativeFactory.create_batch(2, signal=test_signal, processed=True)
 
         self.assertEqual(1, Signal.objects.count())
@@ -177,7 +177,7 @@ class DeleteProcessedSignalsTest(TestCase):
         self.assertEqual(2, EPRCurative.objects.count())
 
     def test_delete_progressed_signal_processed_do_not_delete(self):
-        test_signal = SignalFactory.create(processed=True, processed_at=timezone.now() - timezone.timedelta(days=1))
+        test_signal = SignalFactory.create(processed_at=timezone.now() - timezone.timedelta(days=1))
         EPRCurativeFactory.create_batch(2, signal=test_signal, processed=True)
 
         self.assertEqual(1, Signal.objects.count())

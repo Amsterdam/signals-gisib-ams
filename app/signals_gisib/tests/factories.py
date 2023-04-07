@@ -34,7 +34,6 @@ class SignalFactory(DjangoModelFactory):
     signal_extra_properties = {}
 
     flow = 'EPR'
-    processed = False
 
 
 class EPRCurativeFactory(DjangoModelFactory):

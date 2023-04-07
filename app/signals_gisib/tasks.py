@@ -82,5 +82,5 @@ def check_epr_curative_status(signal_ids: List[int] = None):
 @shared_task
 def delete_processed_signals(time_delta_days: int = 14):
     x_days_ago = timezone.now() - timezone.timedelta(days=time_delta_days)
-    signals_to_delete = Signal.objects.filter(processed=True, processed_at__lte=x_days_ago)
+    signals_to_delete = Signal.objects.filter(processed_at__isnull=False, processed_at__lte=x_days_ago)
     signals_to_delete.delete()

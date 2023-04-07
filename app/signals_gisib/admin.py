@@ -65,21 +65,21 @@ class DateFieldListFilter(admin.SimpleListFilter):
 @admin.register(Signal)
 class SignalAdmin(SimpleHistoryAdmin):
     search_fields = ('signal_id', )
-    list_display = ('signal_id', 'signal_created_at', 'processed', 'get_epr_curative_not_processed_count',
+    list_display = ('signal_id', 'signal_created_at', 'processed_at', 'get_epr_curative_not_processed_count',
                     'get_epr_curative_processed_count', )
     list_filter = (DateFieldListFilter, )
 
-    readonly_fields = ('signal_id', 'signal_created_at', 'signal_geometry', 'signal_extra_properties', 'processed')
+    readonly_fields = ('signal_id', 'signal_created_at', 'signal_geometry', 'signal_extra_properties', 'processed_at')
 
     inlines = (EPRCurativeInline, )
 
     @admin.display(description='Processed count')
     def get_epr_curative_not_processed_count(self, obj):
-        return obj.epr_curative.exclude(processed=True).count()
+        return obj.epr_curative.exclude(processed_at__isnull=True).count()
 
     @admin.display(description='Not processed count')
     def get_epr_curative_processed_count(self, obj):
-        return obj.epr_curative.exclude(processed=False).count()
+        return obj.epr_curative.exclude(processed_at__isnull=False).count()
 
     def has_add_permission(self, request):
         return False

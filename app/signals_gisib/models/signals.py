@@ -12,8 +12,7 @@ class Signal(models.Model):
     # The GISIB flow, at this moment the only flow available is the EPR Curative flow
     flow = models.CharField(max_length=32, choices=(('EPR', 'EPR Curative'), ), null=True, blank=True)
 
-    # True if the flow has been processed, False otherwise
-    processed = models.BooleanField(default=False)
+    # If the flow has been processed a DateTime isset
     processed_at = models.DateTimeField(null=True, blank=True)
 
     # Track history
