@@ -1,5 +1,6 @@
 import logging
 
+from django.utils import timezone
 from requests import HTTPError
 
 from signals_gisib.models import Signal
@@ -31,13 +32,13 @@ def signal_done_external(signal: Signal):
     # Let's get the latest data of the signal from the database
     signal.refresh_from_db()
 
-    if not signal.processed and not signal.epr_curative.filter(processed=False).exists():
+    if not signal.processed_at and not signal.epr_curative.filter(processed=False).exists():
         # Update the signal
         state = 'done external'
         text = 'Alle EPR curatief meldingen zijn afgehandeld.'
         _signal_update_status(signal, state, text)
 
-        signal.processed = True
+        signal.processed_at = timezone.now()
         signal.save()
 
 
@@ -55,7 +56,7 @@ def signal_ready_to_send(signal: Signal):
     # Let's get the latest data of the signal from the database
     signal.refresh_from_db()
 
-    if not signal.processed and not signal.epr_curative.exists():
+    if not signal.processed_at and not signal.epr_curative.exists():
         state = 'ready to send'
         text = 'Melding klaar om verzonden te worden naar GISIB'
         _signal_update_status(signal, state, text)
@@ -74,7 +75,7 @@ def signal_sent(signal: Signal):
     # Let's get the latest data of the signal from the database
     signal.refresh_from_db()
 
-    if not signal.processed and signal.epr_curative.exists():
+    if not signal.processed_at and signal.epr_curative.exists():
         _ids = ', '.join([str(_id) for _id in signal.epr_curative.only('gisib_id').values_list('gisib_id', flat=True)])
 
         state = 'sent'

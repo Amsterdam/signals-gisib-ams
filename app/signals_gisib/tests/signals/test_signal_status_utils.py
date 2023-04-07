@@ -1,4 +1,5 @@
 from django.test import TestCase, override_settings
+from django.utils import timezone
 from freezegun import freeze_time
 
 from signals_gisib.signals.signal_status_utils import (
@@ -20,7 +21,7 @@ class SignalStatusUtilsTestCase(TestCase):
         signal_done_external(signal=signal)
 
     def test_signal_done_external_signal_already_processed(self):
-        signal = SignalFactory.create(signal_id=1, processed=True)
+        signal = SignalFactory.create(signal_id=1, processed_at=timezone.now())
         signal_done_external(signal=signal)
 
     @signals_api_vcr.use_cassette()
@@ -29,18 +30,18 @@ class SignalStatusUtilsTestCase(TestCase):
         signal_ready_to_send(signal=signal)
 
     def test_signal_ready_to_send_signal_already_processed(self):
-        signal = SignalFactory.create(signal_id=3, processed=True)
+        signal = SignalFactory.create(signal_id=3, processed_at=timezone.now())
         signal_ready_to_send(signal=signal)
 
     @signals_api_vcr.use_cassette()
     def test_signal_sent(self):
         signal = SignalFactory.create(signal_id=3)
-        EPRCurativeFactory.create(signal=signal, processed=False)
+        EPRCurativeFactory.create(signal=signal)
 
         signal_sent(signal=signal)
 
     def test_signal_sent_signal_already_processed(self):
-        signal = SignalFactory.create(signal_id=1, processed=True)
+        signal = SignalFactory.create(signal_id=1, processed_at=timezone.now())
         EPRCurativeFactory.create(signal=signal, processed=True)
 
         signal_sent(signal=signal)
