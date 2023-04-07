@@ -2,11 +2,13 @@ from datetime import timedelta
 from unittest.mock import patch
 
 from django.test import TestCase, override_settings
+from django.utils import timezone
 from freezegun import freeze_time
 
-from signals_gisib.models import Signal
+from signals_gisib.models import EPRCurative, Signal
 from signals_gisib.tasks import (
     check_epr_curative_status,
+    delete_processed_signals,
     import_categorized_signals,
     import_epr_configuration,
     import_quercus_trees
@@ -143,3 +145,45 @@ class CheckEPRCurativeStatusTest(TestCase):
         # Assert that the check_epr_curatives_status function was called with the given signal
         for test_signal in test_signals:
             check_status_mock.assert_any_call(signal=test_signal)
+
+
+@freeze_time('2023-04-05T16:00:00+00:00')
+class DeleteProcessedSignalsTest(TestCase):
+    def test_delete_progressed_signal(self):
+        test_signal = SignalFactory.create(processed_at=timezone.now() - timezone.timedelta(days=2))
+        EPRCurativeFactory.create_batch(2, signal=test_signal, processed=True)
+
+        self.assertEqual(1, Signal.objects.count())
+        self.assertEqual(2, test_signal.epr_curative.count())
+        self.assertEqual(2, EPRCurative.objects.count())
+
+        delete_processed_signals(time_delta_days=1)
+
+        self.assertEqual(0, Signal.objects.count())
+        self.assertEqual(0, EPRCurative.objects.count())
+
+    def test_delete_progressed_signal_not_processed(self):
+        test_signal = SignalFactory.create()
+        EPRCurativeFactory.create_batch(2, signal=test_signal, processed=True)
+
+        self.assertEqual(1, Signal.objects.count())
+        self.assertEqual(2, test_signal.epr_curative.count())
+        self.assertEqual(2, EPRCurative.objects.count())
+
+        delete_processed_signals(time_delta_days=1)
+
+        self.assertEqual(1, Signal.objects.count())
+        self.assertEqual(2, test_signal.epr_curative.count())
+        self.assertEqual(2, EPRCurative.objects.count())
+
+    def test_delete_progressed_signal_processed_do_not_delete(self):
+        test_signal = SignalFactory.create(processed_at=timezone.now() - timezone.timedelta(days=1))
+        EPRCurativeFactory.create_batch(2, signal=test_signal, processed=True)
+
+        self.assertEqual(1, Signal.objects.count())
+
+        delete_processed_signals(time_delta_days=2)
+
+        self.assertEqual(1, Signal.objects.count())
+        self.assertEqual(2, test_signal.epr_curative.count())
+        self.assertEqual(2, EPRCurative.objects.count())

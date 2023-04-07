@@ -39,12 +39,12 @@ class EPRCurativeStatusTestCase(TransactionTestCase):
 
         update_epr_curatives_for_signal_mock.return_value = (test_signal, True, )
 
-        self.assertFalse(test_signal.processed)
+        self.assertIsNone(test_signal.processed_at)
 
         check_status(signal=test_signal)
 
         test_signal.refresh_from_db()
-        self.assertTrue(test_signal.processed)
+        self.assertIsNotNone(test_signal.processed_at)
 
     @patch('signals_gisib.gisib.epr_curative_status.update_epr_curatives_for_signal')
     def test_status_partially_processed(self, update_epr_curatives_for_signal_mock):
@@ -71,12 +71,12 @@ class EPRCurativeStatusTestCase(TransactionTestCase):
 
         update_epr_curatives_for_signal_mock.return_value = (test_signal, True,)
 
-        self.assertFalse(test_signal.processed)
+        self.assertIsNone(test_signal.processed_at)
 
         check_status(signal=test_signal)
 
         test_signal.refresh_from_db()
-        self.assertFalse(test_signal.processed)
+        self.assertIsNone(test_signal.processed_at)
 
     @patch('signals_gisib.gisib.epr_curative_status.update_epr_curatives_for_signal')
     def test_status_no_updates(self, update_epr_curatives_for_signal_mock):
@@ -85,9 +85,9 @@ class EPRCurativeStatusTestCase(TransactionTestCase):
 
         update_epr_curatives_for_signal_mock.return_value = (test_signal, False, )
 
-        self.assertFalse(test_signal.processed)
+        self.assertIsNone(test_signal.processed_at)
 
         check_status(signal=test_signal)
 
         test_signal.refresh_from_db()
-        self.assertFalse(test_signal.processed)
+        self.assertIsNone(test_signal.processed_at)

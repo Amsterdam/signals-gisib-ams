@@ -1,6 +1,7 @@
 from typing import List
 
 from django.conf import settings
+from django.utils import timezone
 
 from signals_gisib.gisib.update_epr_curative import update_epr_curatives_for_signal
 from signals_gisib.models import CollectionItem, Signal
@@ -47,5 +48,5 @@ def check_status(signal: Signal):
 
     if not unprocessed_qs.exists():
         # All EPR Curative have been processed, the Signal has been processed.
-        signal.processed = True
+        signal.processed_at = timezone.now()
         signal.save()
