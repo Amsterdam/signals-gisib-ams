@@ -20,7 +20,7 @@ class GISIBApiTestCase(TestCase):
 
     @gisib_api_vcr.use_cassette()
     def test_get_bearer_token(self):
-        self.assertEqual(get_bearer_token(), 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImFwaXNpYSIsIkFwaWtleSI6Ijc2MTM0NzBjNDFiMjQ5MGJiYmZlM2YwMWVhMDdmNGY2IiwiZXhwIjoxNjc0NTEzNDc1LCJpc3MiOiJnaXNpYiJ9.udrl3tVRGWO1aPENg4546TkME0-f-8kbWnSVRB-Y_rs')  # noqa
+        self.assertEqual(get_bearer_token(), 'Bearer 123456789')
 
     @gisib_api_vcr.use_cassette()
     def test_get_collections(self):

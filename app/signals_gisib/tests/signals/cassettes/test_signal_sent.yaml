@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"status": {"state": "sent", "send_email": false, "text": "EPR Curatief
+      meldingen aangemaakt in GISIB: 19245"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '111'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+    method: PATCH
+    uri: http://test.com/signals/v1/private/signals/3
+  response:
+    body:
+      string: '{"_links":{"curies":{"name":"sia","href":"http://test.com/signals/v1/relations"},"self":{"href":"http://test.com/signals/v1/private/signals/3"},"archives":{"href":"http://test.com/signals/v1/private/signals/3/history"},"sia:attachments":{"href":"http://test.com/signals/v1/private/signals/3/attachments"},"sia:pdf":{"href":"http://test.com/signals/v1/private/signals/3/pdf"},"sia:context":{"href":"http://test.com/signals/v1/private/signals/3/context"}},"_display":"3
+        - sent - None - 2023-04-05T16:09:23.730902+02:00","category":{"sub":"Eikenprocessierups","sub_slug":"eikenprocessierups","main":"Openbaar
+        groen en water","main_slug":"openbaar-groen-en-water","category_url":"http://test.com/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups","departments":"STW","created_by":null,"text":null,"deadline":"2023-04-19T16:09:23.730902+02:00","deadline_factor_3":"2023-05-17T16:09:23.730902+02:00"},"id":3,"id_display":"SIG-3","has_attachments":false,"location":{"id":3,"stadsdeel":"E","buurt_code":null,"area_type_code":null,"area_code":null,"area_name":null,"address":null,"address_text":"","geometrie":{"type":"Point","coordinates":[4.90022563,52.36768424]},"extra_properties":null,"created_by":null,"bag_validated":false},"status":{"text":"EPR
+        Curatief meldingen aangemaakt in GISIB: 19245","user":"signals.admin@example.com","state":"sent","state_display":"Extern:
+        verzonden","target_api":null,"extra_properties":null,"send_email":false,"created_at":"2023-04-05T16:22:07.149128+02:00","email_override":null},"reporter":{"email":"Elian95@example.com","phone":"+31661387441","sharing_allowed":true,"allows_contact":true},"priority":{"priority":"normal","created_by":null},"notes":[{"text":"Automatische
+        e-mail bij registratie van de melding is verzonden aan de melder.","created_by":null}],"type":{"code":"SIG","created_at":"2023-04-05T16:09:23.763302+02:00","created_by":null},"source":"online","text":"Repellat
+        illo laboriosam officia nostrum debitis et eos fugiat molestias. Neque officia
+        est voluptatem quo aliquam vel rerum iusto voluptatem. Dolores corporis at
+        doloremque velit nobis est. Iure vel velit consequuntur et. Error vitae aut
+        eos et aut at voluptate quia. Quae dicta quas voluptates est optio.","text_extra":"","extra_properties":[{"id":"extra_eikenprocessierups","label":"extra_eikenprocessierups","answer":[{"id":1879642},{"id":1879270},{"label":"niet
+        op de kaart"}],"category_url":"/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups"},{"id":"extra_nest_grootte","label":"extra_nest_grootte","answer":{"label":"Rupsen
+        bedekken de stam als een deken"},"category_url":"/signals/v1/public/terms/categories/openbaar-groen-en-water/sub_categories/eikenprocessierups"}],"created_at":"2023-04-05T16:09:23.730902+02:00","updated_at":"2023-04-05T16:22:07.150334+02:00","incident_date_start":"2023-04-05T16:09:23.647000+02:00","incident_date_end":null,"routing_departments":null,"attachments":[],"assigned_user_email":null}'
+    headers:
+      Allow:
+      - GET, PATCH, HEAD, OPTIONS
+      Content-Length:
+      - '3059'
+      Content-Type:
+      - application/json
+      Referrer-Policy:
+      - same-origin
+      Vary:
+      - Accept, Cookie, Origin
+      X-API-Version:
+      - 2.19.0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

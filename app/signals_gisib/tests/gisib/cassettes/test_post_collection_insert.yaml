@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '93'
+      - '49'
       Content-Type:
       - application/json
       User-Agent:
@@ -18,41 +18,32 @@ interactions:
     uri: https://amsterdam-test.gisib.nl/api/api/Login
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcpl
-        VmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/IvLr78wn
-        n0+LL4vvVLNvv7r6sji4nN2b3Xu+nP7g+eLh9U9dH1x/8fT43fMfHO88vzdvJ5+/+kH23Wk7+S59
-        9/pFNfnus59+/nu/qH6fN2e7L4qz5mz56v705OzTs7er3/snT77zcEwd/OR07yevJ4tn7U+9pi8W
-        z66y3/vF6vd5TY3f0u/fbcscn//0dO+LN1/svPjBk59+8fRZ8cVP/8T9Lz7/TvH7LH6q/GLv97n6
-        4rs/Of/i6Wzx4vPfZ++suCp+6veeX539dPXuxU9Pd168Of3Bi6fT3ecn31lN732BwSy5j4IQWM/q
-        8l77k68+/+6Xu9nL0xcX+/f3P33z9ovTne3z7YO3k+8uX//kqyfbv8/vXzf/D0R86CwNAQAA
+      string: '123456789'
     headers:
-      Content-Encoding:
-      - gzip
-      Content-Security-Policy:
-      - 'default-src ''self'' ''unsafe-inline'' ''unsafe-eval'' data: https:;'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '9'
       Content-Type:
-      - text/plain; charset=utf-8
+      - text/html; charset=utf-8
       Date:
-      - Tue, 31 Jan 2023 10:05:37 GMT
-      Expect-CT:
-      - enforce, max-age=43200
-      Permissions-Policy:
-      - vibrate=(self)
-      Referrer-Policy:
-      - no-referrer-when-downgrade
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding:
-      - chunked
+      - Wed, 05 Apr 2023 13:16:14 GMT
+      ETag:
+      - W/"9-98O8HYCOBHMq32eZZczDTKeuNEE"
+      Expires:
+      - '-1'
+      Keep-Alive:
+      - timeout=5
+      Pragma:
+      - no-cache
       Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-XSS-Protection:
-      - 1; mode=block
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
     status:
       code: 200
       message: OK
@@ -65,7 +56,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer 123456
+      - Bearer 1234567890
       Connection:
       - keep-alive
       Content-Length:
