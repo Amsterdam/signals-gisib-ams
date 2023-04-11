@@ -23,6 +23,7 @@ services:
       - GISIB_USERNAME=
       - GISIB_PASSWORD=
       - GISIB_APIKEY=
+      - APPLICATION_INSIGHTS_CONNECTION_STRING=
     volumes:
       - ./app:/app/
       - ./docker-compose/run.sh:/run.sh

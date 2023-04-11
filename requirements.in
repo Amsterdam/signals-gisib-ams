@@ -10,6 +10,13 @@ djangorestframework
 flower
 gunicorn
 requests
+opencensus
+opencensus-context
+opencensus-ext-azure
+opencensus-ext-django
+opencensus-ext-logging
+opencensus-ext-postgresql
+opencensus-ext-requests
 psycopg2
 python-keycloak
 uvicorn
