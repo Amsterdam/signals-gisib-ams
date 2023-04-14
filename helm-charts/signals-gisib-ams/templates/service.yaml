@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "signals-gisib-ams.fullname" . }}
+  labels:
+    {{- include "signals-gisib-ams.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "signals-gisib-ams.selectorLabels" . | nindent 4 }}

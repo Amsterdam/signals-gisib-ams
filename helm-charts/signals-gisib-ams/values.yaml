@@ -1,0 +1,76 @@
+replicaCount: 1
+
+image:
+  pullPolicy: IfNotPresent
+  repository:
+  tag:
+
+podAnnotations: {}
+
+podSecurityContext:
+   fsGroup: 999
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: ""
+  annotations: {}
+  hosts:
+    - host: gisib.signals.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+existingSecret: my-custom-signals-gisib-ams-secrets  # If set to null the secrets are managed by Helm
+secrets: # All these secrets should be replaced in the actual used secrets
+  SECRET_KEY: insecure-secret-key
+  DATABASE_PASSWORD: insecure
+  RABBITMQ_PASSWORD: insecure
+  GISIB_APIKEY: insecure
+  GISIB_PASSWORD: insecure
+  KEYCLOAK_CLIENT_ID: null
+  KEYCLOAK_CLIENT_SECRET_KEY: null
+
+env:
+  ALLOWED_HOSTS: "gisib.signals.local"
+  LOGGING_LEVEL: "INFO"
+
+  APPLICATION_INSIGHTS_CONNECTION_STRING: false
+
+  CORS_ALLOW_ALL_ORIGINS: False
+  CORS_ALLOWED_ORIGINS: https://gisib.signals.local
+
+  DATABASE_HOST: postgresql
+  DATABASE_PORT: 5432
+  DATABASE_USER: postgres
+  DATABASE_NAME: signals-gisib
+
+  RABBITMQ_HOST: rabbitmq
+  RABBITMQ_PORT: 5672
+  RABBITMQ_VHOST:
+  RABBITMQ_USER: signals-gisib-ams
+
+  GISIB_BASE_URI: null
+  GISIB_USERNAME: null
+  GISIB_LIMIT: 500
+  GISIB_SLEEP: 0.5
+
+  SIGNALS_BASE_URI: null
+  KEYCLOAK_ENABLED: false
+  KEYCLOAK_SERVER_URL: null
+  KEYCLOAK_REALM_NAME: null
+  KEYCLOAK_GRANT_TYPE: null

@@ -1,0 +1,19 @@
+image:
+  tag: latest
+
+replicaCount: 1
+
+auth:
+  username: signals-gisib-ams
+
+volumePermissions:
+  enabled: true
+
+persistence:
+  enabled: true
+  size: 1Gi
+  existingClaim: null
+
+extraEnvVars:
+  - name: AZMON_COLLECT_ENV
+    value: "False"
