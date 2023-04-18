@@ -1,3 +1,7 @@
+tags:
+  postgresql: true
+  rabbitmq: true
+
 replicaCount: 1
 
 image:
@@ -74,3 +78,25 @@ env:
   KEYCLOAK_SERVER_URL: null
   KEYCLOAK_REALM_NAME: null
   KEYCLOAK_GRANT_TYPE: null
+
+postgresql:
+  auth:
+    postgresPassword: insecure
+    database: signals-gisib
+
+  primary:
+    persistence:
+      enabled: false
+      size: 1Gi
+      existingClaim: null
+
+rabbitmq:
+  auth:
+    username: signals-gisib-ams
+    password: insecure
+    erlangCookie: insecure-erlang-cookie
+
+  persistence:
+    enabled: true
+    size: 1Gi
+    existingClaim: null

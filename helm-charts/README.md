@@ -14,23 +14,24 @@ Before you begin, ensure that you have the following prerequisites:
 - Helm is installed
 
 ## Deploying PostgreSQL and RabbitMQ (optional)
-To deploy PostgreSQL and RabbitMQ, we will use the bash scripts located in the
-[helm-charts/manual/postgresql](./manual/postgresql) and
-[helm-charts/manual/rabbitmq](./manual/rabbitmq) directories respectively.
+This optional deployment of PostgreSQL and RabbitMQ provides a convenient
+solution for local testing and development purposes, allowing you to easily
+enable or disable these services as needed in the `values.yaml` file.
 
-1. Open a terminal and navigate to the root directory of the `signals-gisib-ams`
-application.
-2. Run the following command to deploy PostgreSQL:
-    ```bash
-    ./helm-charts/manual/postgres/install.sh
-    ```
-3. Run the following command to deploy RabbitMQ:
-    ```bash
-    ./helm-charts/manual/rabbitmq/install.sh
-    ```
+By default, these settings are enabled in the `values.yaml`:
+```yaml
+tags:
+  postgresql: true
+  rabbitmq: true
+```
 
-Note: **These commands assume that you have already configured Helm to work with
-your Kubernetes cluster.**
+If you do not want to deploy PostgreSQL and/or RabbitMQ you can easily disable
+them in the `values.yaml` by setting:
+```yaml
+tags:
+  postgresql: false
+  rabbitmq: false
+```
 
 ## Deploying signals-gisib-ams
 After PostgreSQL and RabbitMQ are deployed, we can deploy the
