@@ -39,7 +39,7 @@ tolerations: []
 
 affinity: {}
 
-existingSecret: my-custom-signals-gisib-ams-secrets  # If set to null the secrets are managed by Helm
+existingSecret: null  # If set to null the secrets are managed by Helm
 secrets: # All these secrets should be replaced in the actual used secrets
   SECRET_KEY: insecure-secret-key
   DATABASE_PASSWORD: insecure
@@ -86,7 +86,7 @@ postgresql:
 
   primary:
     persistence:
-      enabled: false
+      enabled: true
       size: 1Gi
       existingClaim: null
 
