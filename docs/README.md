@@ -5,3 +5,4 @@
 * [Signals Documentation](./signals/README.md)
 * [API Documentation](./api/README.md)
 * [Short explanation GeoJSON FeatureCollection](./api/geo_json.md)
+* [Deploying the app using helm](../helm-charts/README.md)
