@@ -6,8 +6,8 @@ replicaCount: 1
 
 image:
   pullPolicy: IfNotPresent
-  repository:
-  tag:
+  repository: ghcr.io/amsterdam/signals-gisib-ams
+  tag: 0.1.0
 
 podAnnotations: {}
 
