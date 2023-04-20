@@ -185,7 +185,7 @@ GISIB_USERNAME = os.getenv('GISIB_USERNAME')
 GISIB_PASSWORD = os.getenv('GISIB_PASSWORD')
 GISIB_APIKEY = os.getenv('GISIB_APIKEY')
 GISIB_LIMIT = os.getenv('GISIB_LIMIT', 500)
-GISIB_SLEEP = os.getenv('GISIB_LIMIT', 0.5)  # seconds to sleep between consecutive calls
+GISIB_SLEEP = os.getenv('GISIB_SLEEP', 0.5)  # seconds to sleep between consecutive calls
 GISIB_REGISTRATIE_EPR_NOT_PROCESSED_STATUSES = ['a. Melding', 'b. Inspectie', 'c. Registratie EPR',
                                                 'g. EPR Deels bestreden']
 GISIB_REGISTRATIE_EPR_PROCESSED_STATUSES = ['d. Geen', 'e. EPR Niet bestrijden', 'f. EPR Bestreden',
