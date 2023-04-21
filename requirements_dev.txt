@@ -377,7 +377,7 @@ six==1.16.0
     #   google-auth
     #   python-dateutil
     #   vcrpy
-sqlparse==0.4.3
+sqlparse==0.4.4
     # via
     #   -r ./requirements_test.txt
     #   django
