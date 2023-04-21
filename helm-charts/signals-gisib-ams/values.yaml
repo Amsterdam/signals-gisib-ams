@@ -1,7 +1,3 @@
-tags:
-  postgresql: true
-  rabbitmq: true
-
 replicaCount: 1
 
 image:
