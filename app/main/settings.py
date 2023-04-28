@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_filters',
     'django_extensions',
     'rest_framework',
+    'drf_yasg',
     'simple_history',
     'corsheaders',
     'signals_gisib',
@@ -260,3 +261,11 @@ if APPLICATION_INSIGHTS_CONNECTION_STRING:
     })
     LOGGING['loggers']['django']['handlers'] += ['application_insights', ]
     LOGGING['loggers']['signals_gisib']['handlers'] += ['application_insights', ]
+
+
+# Swagger
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': None,
+    'USE_SESSION_AUTH': False,
+}
