@@ -7,6 +7,7 @@ django-extensions
 django-filter
 django-simple-history
 djangorestframework
+drf-yasg
 flower
 gunicorn
 requests

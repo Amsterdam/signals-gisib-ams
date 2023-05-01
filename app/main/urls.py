@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 
+from signals_gisib.views import schema_view
+
 router = routers.DefaultRouter()
 
 urlpatterns = [
     path('public/', include('signals_gisib.urls')),
     path('admin/', admin.site.urls),
     path('health/', include('health.urls')),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 
 if settings.DEBUG:

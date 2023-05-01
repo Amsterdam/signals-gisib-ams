@@ -2,6 +2,9 @@ from django.contrib.gis.db.models.functions import AsGeoJSON
 from django.contrib.postgres.aggregates import JSONBAgg
 from django.db.models import CharField, Value
 from django.db.models.functions import JSONObject
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
@@ -9,6 +12,20 @@ from rest_framework.viewsets import GenericViewSet
 from signals_gisib.filters import FeatureCollectionFilterSet
 from signals_gisib.models.gisib import CollectionItem
 from signals_gisib.pagination import LinkHeaderPagination
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="signals-gisib-ams",
+        default_version="0.1.0",
+        description="This API returns information about oak trees in a specific location as a GeoJSON output. "
+                    "The API supports query parameters for filtering results.",
+        license=openapi.License(name="EUPL", url="https://github.com/Amsterdam/signals-gisib-ams/blob/main/LICENSE"),
+    ),
+    public=True,
+    permission_classes=[permissions.AllowAny, ],
+    authentication_classes=[],
+    urlconf=None,
+)
 
 
 class GisibViewSet(GenericViewSet):
