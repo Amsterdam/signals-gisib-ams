@@ -66,7 +66,6 @@ env:
 
   GISIB_BASE_URI: null
   GISIB_USERNAME: null
-  GISIB_LIMIT: 500
 
   SIGNALS_BASE_URI: null
   KEYCLOAK_ENABLED: false
