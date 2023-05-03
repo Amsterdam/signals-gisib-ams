@@ -90,8 +90,15 @@ def start_import(time_delta: timedelta = None, clear_table: bool = False):  # no
         update_collection_items = []
 
         for feature_json in collections_json['features']:
+            if 'Longitude' not in feature_json['properties'] or 'Latitude' not in feature_json['properties']:
+                logger.warning("Found a tree object with missing Longitude and/or Latitude, "
+                               f"tree id #{feature_json['properties']['Id']}")
+                continue  # continue to the next Tree
+
             if feature_json['properties']['Longitude'] is None or feature_json['properties']['Latitude'] is None:
-                continue
+                logger.warning("Found a tree object with empty Longitude and/or Latitude, "
+                               f"tree id #{feature_json['properties']['Id']}")
+                continue  # continue to the next Tree
 
             if not CollectionItem.objects.filter(gisib_id=feature_json['properties']['Id']).exists():
                 # Does not exist so create it

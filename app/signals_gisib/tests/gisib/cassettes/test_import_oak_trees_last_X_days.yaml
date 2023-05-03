@@ -310,6 +310,44 @@ interactions:
         via EPR Melding","Controle positie boompunt":null,"Latitude":52.298308,"Longitude":null,"URL
         Google Maps":null,"URL Google Maps 2":null,"Ecologisch beheren":null,"Restrictie
         beschermde soort EPR":null,"Dichtstbijzijnde BAG Adres":"Kruitberghof 61","Dichtstbijzijnde
+        BAG Postcode":"1104BC","Afstand tot dichtstbijzijnde BAG Adres":31.3,"Status":{"Id":66,"GUID":"{91DB1DE7-BC2A-4A6A-AE05-3D0055FE887C}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Status/items/66","Description":"Ontwerp"},"Code":null,"GUID":"{EC9DE019-5EE3-47A5-AE81-1FEFBD955515}","Id":3749029,"Description":null,"IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-11-01T19:30:56.289487","Revisie":1}},
+        {"type":"Feature","geometry":{"type":"Point","crs":{"type":"name","properties":{"name":"EPSG:28992"}},"coordinates":[127075.907354017,481052.125425464]},"properties":{"Actueel
+        kwaliteitsniveau":null,"Afvoeren":null,"Beheerder":{"Id":802,"GUID":"{D4AD7E56-8070-47A3-BF16-6655813542C8}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Beheerder/items/802","Description":"Particulier"},"Beheerder
+        gedetailleerd":null,"Beheergebied":{"Id":26982,"GUID":"{DA01952D-A9C2-4A78-9A14-0D74D6003264}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Beheergebied/items/26982","Description":"Bijlmer-Oost"},"Beleidsstatus":null,"Beoogde
+        omlooptijd":null,"Bereikbaarheid":null,"Beschermde flora en fauna":null,"Beschermingsstatus":null,"Beschermingsstatus
+        gedetailleerd":null,"BGT Bronhouder":null,"BGT Eindregistratie":null,"BGT
+        In onderzoek":null,"BGT Objecttype":null,"BGT Opmerking":null,"BGT Status":null,"Boombeeld":null,"Boomgroep":null,"Boomhoogte
+        actueel":null,"Boomhoogteklasse eindbeeld":null,"Boomveiligheidsklasse":null,"Eigenaar":null,"Eigenaar
+        gedetailleerd":null,"Gebiedstype":null,"Gebruiksfunctie":null,"Gemeente":{"Id":20247,"GUID":"{31C33111-C0B4-489E-8539-1B7D74DF2E5A}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Gemeente/items/20247","Description":"Amsterdam"},"Gewenst
+        kwaliteitsniveau":null,"Groeifase":null,"Grondsoort":null,"Grondsoort gedetailleerd":null,"Herplantplicht":null,"ID
+        uit oude beheerindeling":null,"Identificatie":null,"Jaar van aanleg":null,"Kiemjaar":null,"Kroondiameterklasse
+        actueel":null,"Kroondiameterklasse eindbeeld":null,"Kroonvolume":null,"Kweker":null,"Leeftijd":null,"Leverancier":null,"Ligging":null,"LV
+        publicatiedatum":null,"Meerstammig":false,"Memo":null,"Monetaire boomwaarde":null,"MSLINK":null,"Objecttype":{"Id":14109,"GUID":"{635136A6-334C-4C9A-B0AD-F69C0CDB52B7}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Objecttype/items/14109","Description":"Boom"},"Omgevingsrisicoklasse":null,"Onderhoudsplichtige":null,"Openbare
+        ruimte":null,"Opleverdatum":null,"Relatieve hoogteligging":null,"Snoeifase":null,"Soortnaam":{"Id":36056,"GUID":"{5F5469C8-434B-493D-9B3E-FBA9401521DC}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Soortnaam/items/36056","Description":"Quercus"},"Stamdiameter":35.0,"Stamdiameterklasse":null,"Standplaats":{"Id":152,"GUID":"{858EB57E-40A8-4A05-A12F-058F85156DBE}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Standplaats/items/152","Description":"Gras-
+        en kruidachtigen"},"Standplaats gedetailleerd":{"Id":826,"GUID":"{DEB1BB8B-1683-4FEC-89EA-42FA6F87FC6F}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Standplaats
+        gedetailleerd/items/826","Description":"Gazon"},"Takvrije ruimte tot gebouw
+        (eindbeeld)":null,"Takvrije stam eindbeeld":null,"Takvrije zone primair eindbeeld":null,"Takvrije
+        zone secundair eindbeeld":null,"Theoretisch eindjaar":null,"Tijdstip registratie":null,"Transponder":null,"Type":{"Id":14605,"GUID":"{60FDADF1-94EE-4C93-BB0B-48986272AE55}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Type/items/14605","Description":"Boom
+        vrij uitgroeiend"},"Type gedetailleerd":null,"Vermeerderingsvorm":null,"Verplant":null,"Verplantbaar":null,"Verwijderdatum":null,"Vrije
+        doorrijhoogte":null,"Vrije doorrijhoogte primair":null,"Vrije doorrijhoogte
+        secundair":null,"Vrije takval":null,"Waterschap":null,"Wijk":{"Id":3748479,"GUID":"{62E36777-F028-4BCC-A288-4D7C90D47AE4}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Wijk/items/3748479","Description":"Bijlmermuseum"},"Wijze
+        van inwinning":{"Id":17872,"GUID":"{240BC1FD-D85A-49AE-856A-EB4C53A7D642}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Wijze
+        van inwinning/items/17872","Description":"Inspectie"},"Woonplaats":{"Id":20249,"GUID":"{02CC5815-955D-4B4B-BB76-3E0E3B45280C}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Woonplaats/items/20249","Description":"Amsterdam"},"Objectnummer":null,"Controlefrequentie":null,"ConversieID":null,"X
+        Coordinaat":127075.907,"Y Coordinaat":481052.125,"Straatnaam oude beheergegevens":null,"BGT
+        Type":null,"IMGeo Plustype":null,"Conditiescore":null,"Actuele opkroonhoogte":null,"Beoogde
+        opkroonhoogte":null,"IMGeo Plusstatus":null,"Postcode":null,"Stadsdeel of
+        kern":{"Id":20268,"GUID":"{B52292B5-6FA0-427B-B4B8-BFFFBA08904B}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Stadsdeel
+        of kern/items/20268","Description":"Zuidoost"},"Datum inwinning":"2022-11-01T19:30:56.289487","Knipoppervlakte":null,"Groeiplaatsinrichting":null,"Boombeschermer":null,"BOR
+        Type":null,"Objectnaam":null,"Snoeifrequentie":null,"Knipfrequentie":null,"Beheerafspraak":{"Id":1284591,"GUID":"{CE456BFB-1EE5-4CF0-B4B9-61DF2809521C}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Beheerafspraak/items/1284591","Description":"Boom
+        - BOOM IN GRAS"},"Buurt":{"Id":20846,"GUID":"{F9A47723-39B3-45FC-81DE-35D2C162254D}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Buurt/items/20846","Description":"Bijlmermuseum-Zuid"},"Aangemaakt
+        door":null,"Boomhoogteklasse actueel":null,"Aantal":1.0,"Deelsportcomplex":null,"Inwinningsbedrijf":null,"Sportterrein":null,"Sportveld":null,"BoomID
+        Geovisia":null,"BoomID Gisib":null,"Foto":null,"Beleid opmerkingen":null,"Datum
+        laatste snoei":null,"Datum volgende inspectie":null,"Boomaantasting":null,"Selectie
+        1":null,"Selectie 2":null,"Selectie uitvoering":null,"Selectie kap en aanplanting":null,"Snoeiwijze":null,"Boombeheerbaarheid":null,"Controlefrequentie
+        BVC":null,"Boomgrootte":null,"Toekomstverwachting":null,"Soortnaam Nederlands":null,"Boomconditie":null,"Matching":"Ingewonnen
+        via EPR Melding","Controle positie boompunt":null,"Latitude":52.298308,"URL
+        Google Maps":null,"URL Google Maps 2":null,"Ecologisch beheren":null,"Restrictie
+        beschermde soort EPR":null,"Dichtstbijzijnde BAG Adres":"Kruitberghof 61","Dichtstbijzijnde
         BAG Postcode":"1104BC","Afstand tot dichtstbijzijnde BAG Adres":31.3,"Status":{"Id":66,"GUID":"{91DB1DE7-BC2A-4A6A-AE05-3D0055FE887C}","Url":"https://amsterdam-test.gisib.nl/api/api/Collections/Status/items/66","Description":"Ontwerp"},"Code":null,"GUID":"{EC9DE019-5EE3-47A5-AE81-1FEFBD955515}","Id":3749029,"Description":null,"IMGeoId":null,"Valid_Till":null,"LastUpdate":"2022-11-01T19:30:56.289487","Revisie":1}}]}'
     headers:
       Content-Security-Policy:
