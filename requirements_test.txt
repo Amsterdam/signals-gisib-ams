@@ -99,7 +99,7 @@ deprecation==2.1.0
     #   python-keycloak
 distlib==0.3.6
     # via virtualenv
-django==4.1.8
+django==4.1.9
     # via
     #   -r ./requirements.txt
     #   django-celery-beat
