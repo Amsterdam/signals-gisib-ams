@@ -78,7 +78,7 @@ jobs:
         id: meta-docker
         uses: docker/metadata-action@v4
         with:
-          images: docker.io/amsterdam/signals-gisib-ams
+          images: docker.io/${{ secrets.DOCKERHUB_IMAGE_NAME }}
 
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image to Docker Hub
