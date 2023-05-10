@@ -20,5 +20,6 @@ opencensus-ext-postgresql
 opencensus-ext-requests
 psycopg2
 python-keycloak
+urllib3<2.0.0
 uvicorn
 whitenoise
