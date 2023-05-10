@@ -73,6 +73,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
+      # https://github.com/docker/metadata-action
+      - name: Extract Docker metadata
+        id: meta-docker
+        uses: docker/metadata-action@v4
+        with:
+          images: docker.io/amsterdam
+
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image to Docker Hub
         if: github.event_name != 'pull_request'
@@ -80,5 +87,5 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: docker.io/amsterdam:${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-docker.outputs.tags }}
+          labels: ${{ steps.meta-docker.outputs.labels }}
