@@ -32,8 +32,9 @@ class ImportQuercusTreesTest(TestCase):
     @patch('signals_gisib.tasks.start_quercus_trees_import')
     def test_import_quercus_trees_with_args(self, start_import_mock):
         # Call the import_quercus_trees function with custom arguments
-        time_delta = timedelta(days=7)
-        import_quercus_trees(time_delta=time_delta, clear_table=True)
+        time_delta_days = 7
+        time_delta = timedelta(days=time_delta_days)
+        import_quercus_trees(time_delta_days=time_delta_days, clear_table=True)
 
         # Assert that the start_import function was called
         start_import_mock.assert_called_once()

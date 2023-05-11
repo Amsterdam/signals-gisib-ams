@@ -16,7 +16,11 @@ from signals_gisib.signals.signal_status_utils import signal_done_external, sign
 
 
 @shared_task
-def import_quercus_trees(time_delta: timedelta = None, clear_table: bool = False):
+def import_quercus_trees(time_delta_days: int = None, clear_table: bool = False):
+    time_delta = None
+    if time_delta_days:
+        time_delta = timedelta(days=time_delta_days)
+
     start_quercus_trees_import(time_delta=time_delta, clear_table=clear_table)
 
 
