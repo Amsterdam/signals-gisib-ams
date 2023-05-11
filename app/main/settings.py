@@ -144,6 +144,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# Security settings
+SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', False) in TRUE_VALUES
+SECURE_REDIRECT_EXEMPT = [r'^health/', ]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', False) in TRUE_VALUES
+CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE', False) in TRUE_VALUES
+
+
 # Debug toolbar
 if DEBUG:
     INSTALLED_APPS += ['debug_toolbar', ]
