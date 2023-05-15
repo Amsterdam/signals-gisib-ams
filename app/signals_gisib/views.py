@@ -3,6 +3,7 @@ from django.contrib.postgres.aggregates import JSONBAgg
 from django.db.models import CharField, Value
 from django.db.models.functions import JSONObject
 from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from rest_framework.decorators import action
@@ -34,6 +35,37 @@ class GisibViewSet(GenericViewSet):
     filterset_class = None
 
     @action(detail=False, url_path=r'geography', methods=['GET'], filterset_class=FeatureCollectionFilterSet)
+    @swagger_auto_schema(
+        operation_description='Retrieve the geography feature collection',
+        responses={200: openapi.Response('Feature collection', schema=openapi.Schema(
+            type='object',
+            properties={
+                'type': openapi.Schema(type='string', example='FeatureCollection'),
+                'features': openapi.Schema(
+                    type='array',
+                    items=openapi.Schema(
+                        type='object',
+                        properties={
+                            'id': openapi.Schema(type='integer', example=1234567890),
+                            'type': openapi.Schema(type='string', example='Feature'),
+                            'geometry': openapi.Schema(
+                                type='object',
+                                properties={
+                                    'type': openapi.Schema(type='string', example='Point'),
+                                    'coordinates': openapi.Schema(
+                                        type='array',
+                                        items=openapi.Schema(type='number', format='float'),
+                                        example=[4.984062, 52.308218]
+                                    )
+                                }
+                            ),
+                            'properties': openapi.Schema(type='object', example={'species': 'Quercus'})
+                        }
+                    )
+                )
+            }
+        ))}
+    )
     def geography(self, *args, **kwargs):
         features_qs = self.filter_queryset(self.get_queryset().annotate(
             feature=JSONObject(
