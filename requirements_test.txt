@@ -338,7 +338,7 @@ pytz==2023.3
     #   flower
 pyyaml==6.0
     # via vcrpy
-requests==2.30.0
+requests==2.31.0
     # via
     #   -r ./requirements.txt
     #   azure-core
