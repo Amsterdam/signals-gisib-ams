@@ -419,7 +419,7 @@ sqlparse==0.4.4
     #   -r ./requirements_test.txt
     #   django
     #   django-debug-toolbar
-tornado==6.3.1
+tornado==6.3.2
     # via
     #   -r ./requirements_test.txt
     #   flower
