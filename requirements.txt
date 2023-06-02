@@ -51,7 +51,7 @@ coreschema==0.0.4
     #   drf-yasg
 cron-descriptor==1.3.0
     # via django-celery-beat
-cryptography==40.0.2
+cryptography==41.0.0
     # via
     #   azure-identity
     #   msal
