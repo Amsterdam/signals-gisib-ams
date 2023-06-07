@@ -8,31 +8,31 @@ amqp==5.1.1
     # via
     #   -r ./requirements_test.txt
     #   kombu
-asgiref==3.6.0
+asgiref==3.7.2
     # via
     #   -r ./requirements_test.txt
     #   django
-azure-core==1.26.4
+azure-core==1.27.0
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
     #   opencensus-ext-azure
-azure-identity==1.12.0
+azure-identity==1.13.0
     # via
     #   -r ./requirements_test.txt
     #   opencensus-ext-azure
-billiard==3.6.4.0
+billiard==4.1.0
     # via
     #   -r ./requirements_test.txt
     #   celery
 build==0.10.0
     # via pip-tools
-cachetools==5.3.0
+cachetools==5.3.1
     # via
     #   -r ./requirements_test.txt
     #   google-auth
     #   tox
-celery==5.2.7
+celery==5.3.0
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
@@ -88,15 +88,15 @@ coreschema==0.0.4
     #   -r ./requirements_test.txt
     #   coreapi
     #   drf-yasg
-coverage[toml]==7.2.5
+coverage[toml]==7.2.7
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
-cron-descriptor==1.3.0
+cron-descriptor==1.4.0
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
-cryptography==40.0.2
+cryptography==41.0.1
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
@@ -126,11 +126,11 @@ django-celery-beat==2.5.0
     # via -r ./requirements_test.txt
 django-celery-results==2.5.1
     # via -r ./requirements_test.txt
-django-cors-headers==3.14.0
+django-cors-headers==4.0.0
     # via -r ./requirements_test.txt
-django-debug-toolbar==4.0.0
+django-debug-toolbar==4.1.0
     # via -r requirements_dev.in
-django-extensions==3.2.1
+django-extensions==3.2.3
     # via -r ./requirements_test.txt
 django-filter==23.2
     # via -r ./requirements_test.txt
@@ -152,7 +152,7 @@ ecdsa==0.18.0
     #   python-jose
 factory-boy==3.2.1
     # via -r ./requirements_test.txt
-faker==18.7.0
+faker==18.10.1
     # via
     #   -r ./requirements_test.txt
     #   factory-boy
@@ -171,7 +171,7 @@ google-api-core==2.11.0
     # via
     #   -r ./requirements_test.txt
     #   opencensus
-google-auth==2.17.3
+google-auth==2.19.1
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
@@ -212,11 +212,11 @@ jinja2==3.1.2
     # via
     #   -r ./requirements_test.txt
     #   coreschema
-kombu==5.2.4
+kombu==5.3.0
     # via
     #   -r ./requirements_test.txt
     #   celery
-markupsafe==2.1.2
+markupsafe==2.1.3
     # via
     #   -r ./requirements_test.txt
     #   jinja2
@@ -270,7 +270,7 @@ packaging==23.1
     #   tox
 pip-tools==6.13.0
     # via -r requirements_dev.in
-platformdirs==3.5.0
+platformdirs==3.5.1
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -284,7 +284,7 @@ portalocker==2.7.0
     # via
     #   -r ./requirements_test.txt
     #   msal-extensions
-prometheus-client==0.16.0
+prometheus-client==0.17.0
     # via
     #   -r ./requirements_test.txt
     #   flower
@@ -292,7 +292,7 @@ prompt-toolkit==3.0.38
     # via
     #   -r ./requirements_test.txt
     #   click-repl
-protobuf==4.23.0
+protobuf==4.23.2
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
@@ -344,7 +344,7 @@ pytest==7.3.1
     #   -r ./requirements_test.txt
     #   pytest-cov
     #   pytest-django
-pytest-cov==4.0.0
+pytest-cov==4.1.0
     # via -r ./requirements_test.txt
 pytest-django==4.5.2
     # via -r ./requirements_test.txt
@@ -355,6 +355,7 @@ python-crontab==2.7.1
 python-dateutil==2.8.2
     # via
     #   -r ./requirements_test.txt
+    #   celery
     #   faker
     #   freezegun
     #   python-crontab
@@ -362,12 +363,11 @@ python-jose==3.3.0
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
-python-keycloak==2.16.2
+python-keycloak==3.0.0
     # via -r ./requirements_test.txt
 pytz==2023.3
     # via
     #   -r ./requirements_test.txt
-    #   celery
     #   django-timezone-field
     #   djangorestframework
     #   drf-yasg
@@ -376,7 +376,7 @@ pyyaml==6.0
     # via
     #   -r ./requirements_test.txt
     #   vcrpy
-requests==2.30.0
+requests==2.31.0
     # via
     #   -r ./requirements_test.txt
     #   azure-core
@@ -396,7 +396,7 @@ rsa==4.9
     #   -r ./requirements_test.txt
     #   google-auth
     #   python-jose
-ruamel-yaml==0.17.26
+ruamel-yaml==0.17.31
     # via
     #   -r ./requirements_test.txt
     #   drf-yasg
@@ -419,32 +419,34 @@ sqlparse==0.4.4
     #   -r ./requirements_test.txt
     #   django
     #   django-debug-toolbar
-tornado==6.3.1
+tornado==6.3.2
     # via
     #   -r ./requirements_test.txt
     #   flower
-tox==4.5.1
+tox==4.6.0
     # via -r ./requirements_test.txt
-typing-extensions==4.5.0
+typing-extensions==4.6.3
     # via
     #   -r ./requirements_test.txt
     #   azure-core
 tzdata==2023.3
     # via
     #   -r ./requirements_test.txt
+    #   celery
     #   django-celery-beat
 uritemplate==4.1.1
     # via
     #   -r ./requirements_test.txt
     #   coreapi
     #   drf-yasg
-urllib3==1.26.15
+urllib3==1.26.16
     # via
     #   -r ./requirements_test.txt
+    #   google-auth
     #   requests
 uvicorn==0.22.0
     # via -r ./requirements_test.txt
-vcrpy==4.2.1
+vcrpy==4.3.1
     # via -r ./requirements_test.txt
 vine==5.0.0
     # via
