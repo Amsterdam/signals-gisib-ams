@@ -75,11 +75,11 @@ class SignalAdmin(SimpleHistoryAdmin):
 
     @admin.display(description='Processed count')
     def get_epr_curative_not_processed_count(self, obj):
-        return obj.epr_curative.exclude(processed_at__isnull=True).count()
+        return obj.epr_curative.exclude(processed=False).count()
 
     @admin.display(description='Not processed count')
     def get_epr_curative_processed_count(self, obj):
-        return obj.epr_curative.exclude(processed_at__isnull=False).count()
+        return obj.epr_curative.exclude(processed=True).count()
 
     def has_add_permission(self, request):
         return False
