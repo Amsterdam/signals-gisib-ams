@@ -90,4 +90,3 @@ class EPRCurativeStatusTestCase(TransactionTestCase):
         check_status(signal=test_signal)
 
         test_signal.refresh_from_db()
-        self.assertIsNotNone(test_signal.processed_at)
