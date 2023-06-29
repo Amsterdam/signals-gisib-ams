@@ -90,6 +90,10 @@ def start_import(time_delta: timedelta = None, clear_table: bool = False):  # no
         update_collection_items = []
 
         for feature_json in collections_json['features']:
+            if feature_json['geometry']['type'] != 'Point':
+                logger.warning(f'Skipping Feature: geometry type is not a Point ({feature_json["geometry"]["type"]})')
+                continue
+
             point_4326 = Point(feature_json['geometry']['coordinates'], srid=28992)
             point_4326.transform(4326)
 
