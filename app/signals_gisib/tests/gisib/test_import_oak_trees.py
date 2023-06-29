@@ -73,3 +73,18 @@ class ImportOakTreesTestCase(TransactionTestCase):
         self.assertEqual(CollectionItem.objects.count(), 2)
         self.assertEqual(CollectionItem.objects.get(pk=ci1.pk).updated_at, ci1.updated_at)
         self.assertEqual(CollectionItem.objects.get(pk=ci2.pk).updated_at, ci2.updated_at)
+
+    @gisib_api_vcr.use_cassette()
+    def test_skip_import_oak_trees_geography_other_than_point(self):
+        """
+        Skip items with a geometry type other than Point
+
+        Test case has 1 item with a geometry type other than Point and 1 item
+        with a geometry type Point. So we expect 1 item to be imported.
+        """
+        self.assertEqual(CollectionItem.objects.count(), 0)
+
+        time_delta = timezone.timedelta(days=365)
+        start_import(time_delta=time_delta, clear_table=True)
+
+        self.assertEqual(CollectionItem.objects.count(), 1)
