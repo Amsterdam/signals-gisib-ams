@@ -23,7 +23,7 @@ def _get_tree_ids(extra_properties: List[dict]) -> List[int]:
         if extra_property['id'] == 'extra_eikenprocessierups':
             answers = extra_property.get('answer', [])
             for answer in answers:
-                if 'id' in answer and _tree_exists(answer['id']):
+                if 'id' in answer and answer['id'] and _tree_exists(answer['id']):
                     tree_ids.append(answer['id'])
                 else:
                     tree_ids.append(None)
