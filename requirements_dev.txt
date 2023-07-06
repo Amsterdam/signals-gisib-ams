@@ -79,6 +79,12 @@ colorama==0.4.6
     # via
     #   -r ./requirements_test.txt
     #   tox
+coreapi==2.3.3
+    # via -r ./requirements_test.txt
+coreschema==0.0.4
+    # via
+    #   -r ./requirements_test.txt
+    #   coreapi
 coverage[toml]==7.2.7
     # via
     #   -r ./requirements_test.txt
@@ -196,10 +202,22 @@ iniconfig==2.0.0
     #   pytest
 isort==5.12.0
     # via -r ./requirements_test.txt
+itypes==1.2.0
+    # via
+    #   -r ./requirements_test.txt
+    #   coreapi
+jinja2==3.1.2
+    # via
+    #   -r ./requirements_test.txt
+    #   coreschema
 kombu==5.3.1
     # via
     #   -r ./requirements_test.txt
     #   celery
+markupsafe==2.1.3
+    # via
+    #   -r ./requirements_test.txt
+    #   jinja2
 mccabe==0.7.0
     # via
     #   -r ./requirements_test.txt
@@ -361,6 +379,7 @@ requests==2.31.0
     # via
     #   -r ./requirements_test.txt
     #   azure-core
+    #   coreapi
     #   google-api-core
     #   msal
     #   opencensus-ext-azure
@@ -408,6 +427,7 @@ tzdata==2023.3
 uritemplate==4.1.1
     # via
     #   -r ./requirements_test.txt
+    #   coreapi
     #   drf-yasg
 urllib3==1.26.16
     # via
