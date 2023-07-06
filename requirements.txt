@@ -8,7 +8,7 @@ amqp==5.1.1
     # via kombu
 asgiref==3.7.2
     # via django
-azure-core==1.27.0
+azure-core==1.27.1
     # via
     #   azure-identity
     #   opencensus-ext-azure
@@ -18,7 +18,7 @@ billiard==4.1.0
     # via celery
 cachetools==5.3.1
     # via google-auth
-celery==5.3.0
+celery==5.3.1
     # via
     #   -r requirements.in
     #   django-celery-beat
@@ -41,14 +41,8 @@ click-didyoumean==0.3.0
     # via celery
 click-plugins==1.1.1
     # via celery
-click-repl==0.2.0
+click-repl==0.3.0
     # via celery
-coreapi==2.3.3
-    # via drf-yasg
-coreschema==0.0.4
-    # via
-    #   coreapi
-    #   drf-yasg
 cron-descriptor==1.4.0
     # via django-celery-beat
 cryptography==41.0.1
@@ -58,7 +52,7 @@ cryptography==41.0.1
     #   pyjwt
 deprecation==2.1.0
     # via python-keycloak
-django==4.1.9
+django==4.1.10
     # via
     #   -r requirements.in
     #   django-celery-beat
@@ -66,6 +60,7 @@ django==4.1.9
     #   django-cors-headers
     #   django-extensions
     #   django-filter
+    #   django-timezone-field
     #   djangorestframework
     #   drf-yasg
     #   opencensus-ext-django
@@ -73,7 +68,7 @@ django-celery-beat==2.5.0
     # via -r requirements.in
 django-celery-results==2.5.1
     # via -r requirements.in
-django-cors-headers==4.0.0
+django-cors-headers==4.1.0
     # via -r requirements.in
 django-extensions==3.2.3
     # via -r requirements.in
@@ -81,42 +76,36 @@ django-filter==23.2
     # via -r requirements.in
 django-simple-history==3.3.0
     # via -r requirements.in
-django-timezone-field==5.0
+django-timezone-field==5.1
     # via django-celery-beat
 djangorestframework==3.14.0
     # via
     #   -r requirements.in
     #   drf-yasg
-drf-yasg==1.21.5
+drf-yasg==1.21.6
     # via -r requirements.in
 ecdsa==0.18.0
     # via python-jose
-flower==1.2.0
+flower==2.0.0
     # via -r requirements.in
-google-api-core==2.11.0
+google-api-core==2.11.1
     # via opencensus
-google-auth==2.19.1
+google-auth==2.21.0
     # via google-api-core
-googleapis-common-protos==1.59.0
+googleapis-common-protos==1.59.1
     # via google-api-core
 gunicorn==20.1.0
     # via -r requirements.in
 h11==0.14.0
     # via uvicorn
-humanize==4.6.0
+humanize==4.7.0
     # via flower
 idna==3.4
     # via requests
 inflection==0.5.1
     # via drf-yasg
-itypes==1.2.0
-    # via coreapi
-jinja2==3.1.2
-    # via coreschema
-kombu==5.3.0
+kombu==5.3.1
     # via celery
-markupsafe==2.1.3
-    # via jinja2
 msal==1.22.0
     # via
     #   azure-identity
@@ -153,9 +142,9 @@ portalocker==2.7.0
     # via msal-extensions
 prometheus-client==0.17.0
     # via flower
-prompt-toolkit==3.0.38
+prompt-toolkit==3.0.39
     # via click-repl
-protobuf==4.23.2
+protobuf==4.23.3
     # via
     #   google-api-core
     #   googleapis-common-protos
@@ -184,7 +173,7 @@ python-dateutil==2.8.2
     #   python-crontab
 python-jose==3.3.0
     # via python-keycloak
-python-keycloak==3.0.0
+python-keycloak==3.3.0
     # via -r requirements.in
 pytz==2023.3
     # via
@@ -192,11 +181,12 @@ pytz==2023.3
     #   djangorestframework
     #   drf-yasg
     #   flower
+pyyaml==6.0
+    # via drf-yasg
 requests==2.31.0
     # via
     #   -r requirements.in
     #   azure-core
-    #   coreapi
     #   google-api-core
     #   msal
     #   opencensus-ext-azure
@@ -209,15 +199,10 @@ rsa==4.9
     # via
     #   google-auth
     #   python-jose
-ruamel-yaml==0.17.31
-    # via drf-yasg
-ruamel-yaml-clib==0.2.7
-    # via ruamel-yaml
 six==1.16.0
     # via
     #   azure-core
     #   azure-identity
-    #   click-repl
     #   ecdsa
     #   google-auth
     #   python-dateutil
@@ -225,16 +210,14 @@ sqlparse==0.4.4
     # via django
 tornado==6.3.2
     # via flower
-typing-extensions==4.6.3
+typing-extensions==4.7.1
     # via azure-core
 tzdata==2023.3
     # via
     #   celery
     #   django-celery-beat
 uritemplate==4.1.1
-    # via
-    #   coreapi
-    #   drf-yasg
+    # via drf-yasg
 urllib3==1.26.16
     # via
     #   -r requirements.in
@@ -249,7 +232,7 @@ vine==5.0.0
     #   kombu
 wcwidth==0.2.6
     # via prompt-toolkit
-whitenoise==6.4.0
+whitenoise==6.5.0
     # via -r requirements.in
 wrapt==1.15.0
     # via opencensus-ext-requests
