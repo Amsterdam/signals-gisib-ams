@@ -8,29 +8,29 @@ amqp==5.1.1
     # via kombu
 asgiref==3.7.2
     # via django
-azure-core==1.27.1
+azure-core==1.29.4
     # via
     #   azure-identity
     #   opencensus-ext-azure
-azure-identity==1.13.0
+azure-identity==1.14.0
     # via opencensus-ext-azure
 billiard==4.1.0
     # via celery
 cachetools==5.3.1
     # via google-auth
-celery==5.3.1
+celery==5.3.4
     # via
     #   -r requirements.in
     #   django-celery-beat
     #   django-celery-results
     #   flower
-certifi==2023.5.7
+certifi==2023.7.22
     # via requests
-cffi==1.15.1
+cffi==1.16.0
     # via cryptography
-charset-normalizer==3.1.0
+charset-normalizer==3.3.0
     # via requests
-click==8.1.3
+click==8.1.7
     # via
     #   celery
     #   click-didyoumean
@@ -49,14 +49,14 @@ coreschema==0.0.4
     # via coreapi
 cron-descriptor==1.4.0
     # via django-celery-beat
-cryptography==41.0.1
+cryptography==41.0.4
     # via
     #   azure-identity
     #   msal
     #   pyjwt
 deprecation==2.1.0
     # via python-keycloak
-django==4.1.10
+django==4.1.12
     # via
     #   -r requirements.in
     #   django-celery-beat
@@ -72,37 +72,37 @@ django-celery-beat==2.5.0
     # via -r requirements.in
 django-celery-results==2.5.1
     # via -r requirements.in
-django-cors-headers==4.1.0
+django-cors-headers==4.2.0
     # via -r requirements.in
 django-extensions==3.2.3
     # via -r requirements.in
-django-filter==23.2
+django-filter==23.3
     # via -r requirements.in
-django-simple-history==3.3.0
+django-simple-history==3.4.0
     # via -r requirements.in
-django-timezone-field==5.1
+django-timezone-field==6.0.1
     # via django-celery-beat
 djangorestframework==3.14.0
     # via
     #   -r requirements.in
     #   drf-yasg
-drf-yasg==1.21.6
+drf-yasg==1.21.7
     # via -r requirements.in
 ecdsa==0.18.0
     # via python-jose
-flower==2.0.0
+flower==2.0.1
     # via -r requirements.in
-google-api-core==2.11.1
+google-api-core==2.12.0
     # via opencensus
-google-auth==2.21.0
+google-auth==2.23.2
     # via google-api-core
-googleapis-common-protos==1.59.1
+googleapis-common-protos==1.60.0
     # via google-api-core
-gunicorn==20.1.0
+gunicorn==21.2.0
     # via -r requirements.in
 h11==0.14.0
     # via uvicorn
-humanize==4.7.0
+humanize==4.8.0
     # via flower
 idna==3.4
     # via requests
@@ -112,17 +112,17 @@ itypes==1.2.0
     # via coreapi
 jinja2==3.1.2
     # via coreschema
-kombu==5.3.1
+kombu==5.3.2
     # via celery
 markupsafe==2.1.3
     # via jinja2
-msal==1.22.0
+msal==1.24.1
     # via
     #   azure-identity
     #   msal-extensions
 msal-extensions==1.0.0
     # via azure-identity
-opencensus==0.11.2
+opencensus==0.11.3
     # via
     #   -r requirements.in
     #   opencensus-ext-azure
@@ -134,7 +134,7 @@ opencensus-context==0.1.3
     # via
     #   -r requirements.in
     #   opencensus
-opencensus-ext-azure==1.1.9
+opencensus-ext-azure==1.1.10
     # via -r requirements.in
 opencensus-ext-django==0.8.0
     # via -r requirements.in
@@ -144,25 +144,26 @@ opencensus-ext-postgresql==0.1.3
     # via -r requirements.in
 opencensus-ext-requests==0.8.0
     # via -r requirements.in
-packaging==23.1
+packaging==23.2
     # via
     #   deprecation
     #   drf-yasg
-portalocker==2.7.0
+    #   gunicorn
+portalocker==2.8.2
     # via msal-extensions
-prometheus-client==0.17.0
+prometheus-client==0.17.1
     # via flower
 prompt-toolkit==3.0.39
     # via click-repl
-protobuf==4.23.3
+protobuf==4.24.4
     # via
     #   google-api-core
     #   googleapis-common-protos
 psutil==5.9.5
     # via opencensus-ext-azure
-psycopg2==2.9.6
+psycopg2==2.9.9
     # via -r requirements.in
-psycopg2-binary==2.9.6
+psycopg2-binary==2.9.9
     # via opencensus-ext-postgresql
 pyasn1==0.5.0
     # via
@@ -173,9 +174,9 @@ pyasn1-modules==0.3.0
     # via google-auth
 pycparser==2.21
     # via cffi
-pyjwt[crypto]==2.7.0
+pyjwt[crypto]==2.8.0
     # via msal
-python-crontab==2.7.1
+python-crontab==3.0.0
     # via django-celery-beat
 python-dateutil==2.8.2
     # via
@@ -185,13 +186,12 @@ python-jose==3.3.0
     # via python-keycloak
 python-keycloak==3.3.0
     # via -r requirements.in
-pytz==2023.3
+pytz==2023.3.post1
     # via
-    #   django-timezone-field
     #   djangorestframework
     #   drf-yasg
     #   flower
-pyyaml==6.0
+pyyaml==6.0.1
     # via drf-yasg
 requests==2.31.0
     # via
@@ -213,15 +213,13 @@ rsa==4.9
 six==1.16.0
     # via
     #   azure-core
-    #   azure-identity
     #   ecdsa
-    #   google-auth
     #   python-dateutil
 sqlparse==0.4.4
     # via django
-tornado==6.3.2
+tornado==6.3.3
     # via flower
-typing-extensions==4.7.1
+typing-extensions==4.8.0
     # via azure-core
 tzdata==2023.3
     # via
@@ -231,24 +229,20 @@ uritemplate==4.1.1
     # via
     #   coreapi
     #   drf-yasg
-urllib3==1.26.16
+urllib3==1.26.17
     # via
     #   -r requirements.in
-    #   google-auth
     #   requests
-uvicorn==0.22.0
+uvicorn==0.23.2
     # via -r requirements.in
 vine==5.0.0
     # via
     #   amqp
     #   celery
     #   kombu
-wcwidth==0.2.6
+wcwidth==0.2.8
     # via prompt-toolkit
 whitenoise==6.5.0
     # via -r requirements.in
 wrapt==1.15.0
     # via opencensus-ext-requests
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
