@@ -1,29 +1,13 @@
-from typing import List
-
 from django.contrib.gis.geos import Polygon
 from django.db.models import Q, QuerySet
 from django_filters import ChoiceFilter, FilterSet, NumberFilter
 from django_filters.rest_framework import CharFilter
 from rest_framework.exceptions import ValidationError
 
-from signals_gisib.models import CollectionItem
-
-
-def _object_kind_name_choices() -> List:
-    return [
-        (object_kind_name, f'{object_kind_name}')
-        for object_kind_name in CollectionItem.objects.filter(
-            geometry__isnull=False
-        ).values_list(
-            'object_kind_name',
-            flat=True
-        ).distinct()
-    ]
-
 
 class FeatureCollectionFilterSet(FilterSet):
     id = NumberFilter(field_name='gisib_id', lookup_expr='exact')
-    object_kind_name = ChoiceFilter(lookup_expr='iexact', required=True, choices=_object_kind_name_choices)
+    object_kind_name = ChoiceFilter(lookup_expr='iexact', required=True, choices=[('Boom', 'Boom')])
     bbox = CharFilter(method='filter_by_bbox')
 
     def filter_by_bbox(self, queryset: QuerySet, name: str, value: str) -> QuerySet:
