@@ -8,12 +8,16 @@ amqp==5.2.0
     # via
     #   -r ./requirements_test.txt
     #   kombu
+anyio==4.2.0
+    # via
+    #   -r ./requirements_test.txt
+    #   azure-core
 asgiref==3.7.2
     # via
     #   -r ./requirements_test.txt
     #   django
     #   django-cors-headers
-azure-core==1.29.5
+azure-core==1.29.6
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
@@ -86,7 +90,7 @@ coreschema==0.0.4
     # via
     #   -r ./requirements_test.txt
     #   coreapi
-coverage[toml]==7.3.2
+coverage[toml]==7.4.0
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
@@ -104,7 +108,7 @@ deprecation==2.1.0
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
-distlib==0.3.7
+distlib==0.3.8
     # via
     #   -r ./requirements_test.txt
     #   virtualenv
@@ -131,7 +135,7 @@ django-debug-toolbar==4.2.0
     # via -r requirements_dev.in
 django-extensions==3.2.3
     # via -r ./requirements_test.txt
-django-filter==23.4
+django-filter==23.5
     # via -r ./requirements_test.txt
 django-simple-history==3.4.0
     # via -r ./requirements_test.txt
@@ -151,7 +155,7 @@ ecdsa==0.18.0
     #   python-jose
 factory-boy==3.3.0
     # via -r ./requirements_test.txt
-faker==20.1.0
+faker==22.2.0
     # via
     #   -r ./requirements_test.txt
     #   factory-boy
@@ -160,21 +164,21 @@ filelock==3.13.1
     #   -r ./requirements_test.txt
     #   tox
     #   virtualenv
-flake8==6.1.0
+flake8==7.0.0
     # via -r ./requirements_test.txt
 flower==2.0.1
     # via -r ./requirements_test.txt
-freezegun==1.2.2
+freezegun==1.4.0
     # via -r ./requirements_test.txt
-google-api-core==2.14.0
+google-api-core==2.15.0
     # via
     #   -r ./requirements_test.txt
     #   opencensus
-google-auth==2.23.4
+google-auth==2.26.2
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
-googleapis-common-protos==1.61.0
+googleapis-common-protos==1.62.0
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
@@ -191,6 +195,7 @@ humanize==4.9.0
 idna==3.6
     # via
     #   -r ./requirements_test.txt
+    #   anyio
     #   requests
     #   yarl
 inflection==0.5.1
@@ -201,13 +206,13 @@ iniconfig==2.0.0
     # via
     #   -r ./requirements_test.txt
     #   pytest
-isort==5.12.0
+isort==5.13.2
     # via -r ./requirements_test.txt
 itypes==1.2.0
     # via
     #   -r ./requirements_test.txt
     #   coreapi
-jinja2==3.1.2
+jinja2==3.1.3
     # via
     #   -r ./requirements_test.txt
     #   coreschema
@@ -223,12 +228,12 @@ mccabe==0.7.0
     # via
     #   -r ./requirements_test.txt
     #   flake8
-msal==1.25.0
+msal==1.26.0
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
     #   msal-extensions
-msal-extensions==1.0.0
+msal-extensions==1.1.0
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
@@ -236,7 +241,7 @@ multidict==6.0.4
     # via
     #   -r ./requirements_test.txt
     #   yarl
-opencensus==0.11.3
+opencensus==0.11.4
     # via
     #   -r ./requirements_test.txt
     #   opencensus-ext-azure
@@ -248,7 +253,7 @@ opencensus-context==0.1.3
     # via
     #   -r ./requirements_test.txt
     #   opencensus
-opencensus-ext-azure==1.1.12
+opencensus-ext-azure==1.1.13
     # via -r ./requirements_test.txt
 opencensus-ext-django==0.8.0
     # via -r ./requirements_test.txt
@@ -265,12 +270,13 @@ packaging==23.2
     #   deprecation
     #   drf-yasg
     #   gunicorn
+    #   msal-extensions
     #   pyproject-api
     #   pytest
     #   tox
 pip-tools==7.3.0
     # via -r requirements_dev.in
-platformdirs==4.0.0
+platformdirs==4.1.0
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -288,16 +294,16 @@ prometheus-client==0.19.0
     # via
     #   -r ./requirements_test.txt
     #   flower
-prompt-toolkit==3.0.41
+prompt-toolkit==3.0.43
     # via
     #   -r ./requirements_test.txt
     #   click-repl
-protobuf==4.25.1
+protobuf==4.25.2
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
     #   googleapis-common-protos
-psutil==5.9.6
+psutil==5.9.7
     # via
     #   -r ./requirements_test.txt
     #   opencensus-ext-azure
@@ -325,7 +331,7 @@ pycparser==2.21
     # via
     #   -r ./requirements_test.txt
     #   cffi
-pyflakes==3.1.0
+pyflakes==3.2.0
     # via
     #   -r ./requirements_test.txt
     #   flake8
@@ -339,7 +345,7 @@ pyproject-api==1.6.1
     #   tox
 pyproject-hooks==1.0.0
     # via build
-pytest==7.4.3
+pytest==7.4.4
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
@@ -401,7 +407,12 @@ six==1.16.0
     #   -r ./requirements_test.txt
     #   azure-core
     #   ecdsa
+    #   opencensus
     #   python-dateutil
+sniffio==1.3.0
+    # via
+    #   -r ./requirements_test.txt
+    #   anyio
 sqlparse==0.4.4
     # via
     #   -r ./requirements_test.txt
@@ -413,11 +424,11 @@ tornado==6.4
     #   flower
 tox==4.11.4
     # via -r ./requirements_test.txt
-typing-extensions==4.8.0
+typing-extensions==4.9.0
     # via
     #   -r ./requirements_test.txt
     #   azure-core
-tzdata==2023.3
+tzdata==2023.4
     # via
     #   -r ./requirements_test.txt
     #   celery
@@ -431,7 +442,7 @@ urllib3==1.26.18
     # via
     #   -r ./requirements_test.txt
     #   requests
-uvicorn==0.24.0.post1
+uvicorn==0.25.0
     # via -r ./requirements_test.txt
 vcrpy==5.1.0
     # via -r ./requirements_test.txt
@@ -441,11 +452,11 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.24.7
+virtualenv==20.25.0
     # via
     #   -r ./requirements_test.txt
     #   tox
-wcwidth==0.2.12
+wcwidth==0.2.13
     # via
     #   -r ./requirements_test.txt
     #   prompt-toolkit
@@ -458,7 +469,7 @@ wrapt==1.16.0
     #   -r ./requirements_test.txt
     #   opencensus-ext-requests
     #   vcrpy
-yarl==1.9.3
+yarl==1.9.4
     # via
     #   -r ./requirements_test.txt
     #   vcrpy
