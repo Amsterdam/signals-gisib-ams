@@ -84,12 +84,14 @@ coreschema==0.0.4
     #   -r ./requirements.txt
     #   coreapi
 coverage[toml]==7.4.0
-    # via pytest-cov
+    # via
+    #   coverage
+    #   pytest-cov
 cron-descriptor==1.4.0
     # via
     #   -r ./requirements.txt
     #   django-celery-beat
-cryptography==41.0.7
+cryptography==42.0.0
     # via
     #   -r ./requirements.txt
     #   azure-identity
@@ -307,6 +309,7 @@ pyjwt[crypto]==2.8.0
     # via
     #   -r ./requirements.txt
     #   msal
+    #   pyjwt
 pyproject-api==1.6.1
     # via tox
 pytest==7.4.4
