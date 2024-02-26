@@ -8,16 +8,13 @@ amqp==5.2.0
     # via
     #   -r ./requirements.txt
     #   kombu
-anyio==4.2.0
-    # via
-    #   -r ./requirements.txt
-    #   azure-core
 asgiref==3.7.2
     # via
     #   -r ./requirements.txt
     #   django
     #   django-cors-headers
-azure-core==1.29.6
+    #   django-simple-history
+azure-core==1.30.0
     # via
     #   -r ./requirements.txt
     #   azure-identity
@@ -41,7 +38,7 @@ celery==5.3.6
     #   django-celery-beat
     #   django-celery-results
     #   flower
-certifi==2023.11.17
+certifi==2024.2.2
     # via
     #   -r ./requirements.txt
     #   requests
@@ -83,15 +80,13 @@ coreschema==0.0.4
     # via
     #   -r ./requirements.txt
     #   coreapi
-coverage[toml]==7.4.0
-    # via
-    #   coverage
-    #   pytest-cov
-cron-descriptor==1.4.0
+coverage[toml]==7.4.3
+    # via pytest-cov
+cron-descriptor==1.4.3
     # via
     #   -r ./requirements.txt
     #   django-celery-beat
-cryptography==42.0.4
+cryptography==42.0.5
     # via
     #   -r ./requirements.txt
     #   azure-identity
@@ -125,7 +120,7 @@ django-extensions==3.2.3
     # via -r ./requirements.txt
 django-filter==23.5
     # via -r ./requirements.txt
-django-simple-history==3.4.0
+django-simple-history==3.5.0
     # via -r ./requirements.txt
 django-timezone-field==6.1.0
     # via
@@ -143,7 +138,7 @@ ecdsa==0.18.0
     #   python-jose
 factory-boy==3.3.0
     # via -r requirements_test.in
-faker==22.2.0
+faker==23.2.1
     # via factory-boy
 filelock==3.13.1
     # via
@@ -155,11 +150,11 @@ flower==2.0.1
     # via -r ./requirements.txt
 freezegun==1.4.0
     # via -r requirements_test.in
-google-api-core==2.15.0
+google-api-core==2.17.1
     # via
     #   -r ./requirements.txt
     #   opencensus
-google-auth==2.26.2
+google-auth==2.28.1
     # via
     #   -r ./requirements.txt
     #   google-api-core
@@ -180,7 +175,6 @@ humanize==4.9.0
 idna==3.6
     # via
     #   -r ./requirements.txt
-    #   anyio
     #   requests
     #   yarl
 inflection==0.5.1
@@ -199,17 +193,17 @@ jinja2==3.1.3
     # via
     #   -r ./requirements.txt
     #   coreschema
-kombu==5.3.4
+kombu==5.3.5
     # via
     #   -r ./requirements.txt
     #   celery
-markupsafe==2.1.3
+markupsafe==2.1.5
     # via
     #   -r ./requirements.txt
     #   jinja2
 mccabe==0.7.0
     # via flake8
-msal==1.26.0
+msal==1.27.0
     # via
     #   -r ./requirements.txt
     #   azure-identity
@@ -218,7 +212,7 @@ msal-extensions==1.1.0
     # via
     #   -r ./requirements.txt
     #   azure-identity
-multidict==6.0.4
+multidict==6.0.5
     # via yarl
 opencensus==0.11.4
     # via
@@ -252,11 +246,11 @@ packaging==23.2
     #   pyproject-api
     #   pytest
     #   tox
-platformdirs==4.1.0
+platformdirs==4.2.0
     # via
     #   tox
     #   virtualenv
-pluggy==1.3.0
+pluggy==1.4.0
     # via
     #   pytest
     #   tox
@@ -264,7 +258,7 @@ portalocker==2.8.2
     # via
     #   -r ./requirements.txt
     #   msal-extensions
-prometheus-client==0.19.0
+prometheus-client==0.20.0
     # via
     #   -r ./requirements.txt
     #   flower
@@ -272,12 +266,12 @@ prompt-toolkit==3.0.43
     # via
     #   -r ./requirements.txt
     #   click-repl
-protobuf==4.25.2
+protobuf==4.25.3
     # via
     #   -r ./requirements.txt
     #   google-api-core
     #   googleapis-common-protos
-psutil==5.9.7
+psutil==5.9.8
     # via
     #   -r ./requirements.txt
     #   opencensus-ext-azure
@@ -309,17 +303,16 @@ pyjwt[crypto]==2.8.0
     # via
     #   -r ./requirements.txt
     #   msal
-    #   pyjwt
 pyproject-api==1.6.1
     # via tox
-pytest==7.4.4
+pytest==8.0.2
     # via
     #   -r requirements_test.in
     #   pytest-cov
     #   pytest-django
 pytest-cov==4.1.0
     # via -r requirements_test.in
-pytest-django==4.7.0
+pytest-django==4.8.0
     # via -r requirements_test.in
 python-crontab==3.0.0
     # via
@@ -336,9 +329,9 @@ python-jose==3.3.0
     # via
     #   -r ./requirements.txt
     #   python-keycloak
-python-keycloak==3.7.0
+python-keycloak==3.9.0
     # via -r ./requirements.txt
-pytz==2023.3.post1
+pytz==2024.1
     # via
     #   -r ./requirements.txt
     #   djangorestframework
@@ -376,10 +369,6 @@ six==1.16.0
     #   ecdsa
     #   opencensus
     #   python-dateutil
-sniffio==1.3.0
-    # via
-    #   -r ./requirements.txt
-    #   anyio
 sqlparse==0.4.4
     # via
     #   -r ./requirements.txt
@@ -388,13 +377,13 @@ tornado==6.4
     # via
     #   -r ./requirements.txt
     #   flower
-tox==4.11.4
+tox==4.13.0
     # via -r requirements_test.in
-typing-extensions==4.9.0
+typing-extensions==4.10.0
     # via
     #   -r ./requirements.txt
     #   azure-core
-tzdata==2023.4
+tzdata==2024.1
     # via
     #   -r ./requirements.txt
     #   celery
@@ -408,9 +397,9 @@ urllib3==1.26.18
     # via
     #   -r ./requirements.txt
     #   requests
-uvicorn==0.25.0
+uvicorn==0.27.1
     # via -r ./requirements.txt
-vcrpy==5.1.0
+vcrpy==6.0.1
     # via -r requirements_test.in
 vine==5.1.0
     # via
@@ -418,7 +407,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.25.0
+virtualenv==20.25.1
     # via tox
 wcwidth==0.2.13
     # via
