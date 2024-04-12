@@ -186,7 +186,7 @@ humanize==4.9.0
     # via
     #   -r ./requirements_test.txt
     #   flower
-idna==3.6
+idna==3.7
     # via
     #   -r ./requirements_test.txt
     #   requests

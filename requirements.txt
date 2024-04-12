@@ -106,7 +106,7 @@ h11==0.14.0
     # via uvicorn
 humanize==4.9.0
     # via flower
-idna==3.6
+idna==3.7
     # via requests
 inflection==0.5.1
     # via drf-yasg
@@ -179,7 +179,9 @@ pyasn1-modules==0.3.0
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
-    # via msal
+    # via
+    #   msal
+    #   pyjwt
 python-crontab==3.0.0
     # via django-celery-beat
 python-dateutil==2.9.0.post0
