@@ -216,7 +216,7 @@ six==1.16.0
     #   azure-core
     #   opencensus
     #   python-dateutil
-sqlparse==0.4.4
+sqlparse==0.5.0
     # via django
 tornado==6.4
     # via flower
