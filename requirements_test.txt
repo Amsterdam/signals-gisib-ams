@@ -8,7 +8,7 @@ amqp==5.2.0
     # via
     #   -r ./requirements.txt
     #   kombu
-asgiref==3.7.2
+asgiref==3.8.1
     # via
     #   -r ./requirements.txt
     #   django
@@ -19,7 +19,7 @@ azure-core==1.30.1
     #   -r ./requirements.txt
     #   azure-identity
     #   opencensus-ext-azure
-azure-identity==1.15.0
+azure-identity==1.16.0
     # via
     #   -r ./requirements.txt
     #   opencensus-ext-azure
@@ -60,7 +60,7 @@ click==8.1.7
     #   click-plugins
     #   click-repl
     #   uvicorn
-click-didyoumean==0.3.0
+click-didyoumean==0.3.1
     # via
     #   -r ./requirements.txt
     #   celery
@@ -127,7 +127,7 @@ django-timezone-field==6.1.0
     # via
     #   -r ./requirements.txt
     #   django-celery-beat
-djangorestframework==3.15.0
+djangorestframework==3.15.1
     # via
     #   -r ./requirements.txt
     #   drf-yasg
@@ -135,9 +135,9 @@ drf-yasg==1.21.7
     # via -r ./requirements.txt
 factory-boy==3.3.0
     # via -r requirements_test.in
-faker==24.2.0
+faker==24.9.0
     # via factory-boy
-filelock==3.13.1
+filelock==3.13.4
     # via
     #   tox
     #   virtualenv
@@ -147,11 +147,11 @@ flower==2.0.1
     # via -r ./requirements.txt
 freezegun==1.4.0
     # via -r requirements_test.in
-google-api-core==2.17.1
+google-api-core==2.18.0
     # via
     #   -r ./requirements.txt
     #   opencensus
-google-auth==2.28.2
+google-auth==2.29.0
     # via
     #   -r ./requirements.txt
     #   google-api-core
@@ -194,7 +194,7 @@ jwcrypto==1.5.6
     # via
     #   -r ./requirements.txt
     #   python-keycloak
-kombu==5.3.5
+kombu==5.3.7
     # via
     #   -r ./requirements.txt
     #   celery
@@ -204,7 +204,7 @@ markupsafe==2.1.5
     #   jinja2
 mccabe==0.7.0
     # via flake8
-msal==1.27.0
+msal==1.28.0
     # via
     #   -r ./requirements.txt
     #   azure-identity
@@ -267,11 +267,16 @@ prompt-toolkit==3.0.43
     # via
     #   -r ./requirements.txt
     #   click-repl
+proto-plus==1.23.0
+    # via
+    #   -r ./requirements.txt
+    #   google-api-core
 protobuf==4.25.3
     # via
     #   -r ./requirements.txt
     #   google-api-core
     #   googleapis-common-protos
+    #   proto-plus
 psutil==5.9.8
     # via
     #   -r ./requirements.txt
@@ -282,18 +287,18 @@ psycopg2-binary==2.9.9
     # via
     #   -r ./requirements.txt
     #   opencensus-ext-postgresql
-pyasn1==0.5.1
+pyasn1==0.6.0
     # via
     #   -r ./requirements.txt
     #   pyasn1-modules
     #   rsa
-pyasn1-modules==0.3.0
+pyasn1-modules==0.4.0
     # via
     #   -r ./requirements.txt
     #   google-auth
 pycodestyle==2.11.1
     # via flake8
-pycparser==2.21
+pycparser==2.22
     # via
     #   -r ./requirements.txt
     #   cffi
@@ -310,7 +315,7 @@ pytest==8.1.1
     #   -r requirements_test.in
     #   pytest-cov
     #   pytest-django
-pytest-cov==4.1.0
+pytest-cov==5.0.0
     # via -r requirements_test.in
 pytest-django==4.8.0
     # via -r requirements_test.in
@@ -325,7 +330,7 @@ python-dateutil==2.9.0.post0
     #   faker
     #   freezegun
     #   python-crontab
-python-keycloak==3.9.1
+python-keycloak==3.12.0
     # via -r ./requirements.txt
 pytz==2024.1
     # via
@@ -370,9 +375,9 @@ tornado==6.4
     # via
     #   -r ./requirements.txt
     #   flower
-tox==4.14.1
+tox==4.14.2
     # via -r requirements_test.in
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via
     #   -r ./requirements.txt
     #   azure-core
@@ -391,7 +396,7 @@ urllib3==1.26.18
     # via
     #   -r ./requirements.txt
     #   requests
-uvicorn==0.28.0
+uvicorn==0.29.0
     # via -r ./requirements.txt
 vcrpy==6.0.1
     # via -r requirements_test.in
