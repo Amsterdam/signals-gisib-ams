@@ -159,7 +159,7 @@ googleapis-common-protos==1.63.0
     # via
     #   -r ./requirements.txt
     #   google-api-core
-gunicorn==21.2.0
+gunicorn==22.0.0
     # via -r ./requirements.txt
 h11==0.14.0
     # via
