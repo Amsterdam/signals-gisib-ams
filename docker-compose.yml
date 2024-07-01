@@ -30,7 +30,7 @@ services:
     command: /run.sh
 
   postgis:
-    image: postgis/postgis:11-3.3
+    image: postgis/postgis:12-3.2-alpine
     ports:
       - "54321:5432"
     environment:

@@ -1,6 +1,6 @@
 Celery
 coreapi
-Django>=4.1,<4.2
+Django>=4.1,<4.3
 django-celery-beat
 django-celery-results
 django-cors-headers
@@ -19,7 +19,7 @@ opencensus-ext-django
 opencensus-ext-logging
 opencensus-ext-postgresql
 opencensus-ext-requests
-psycopg2
+psycopg2-binary
 python-keycloak
 urllib3<2.0.0
 uvicorn

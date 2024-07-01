@@ -22,7 +22,6 @@ RUN set -eux;  \
     apt-get install -y \
       build-essential \
       gdal-bin \
-      postgresql-client-11 \
       build-essential \
       libpq-dev \
       gettext \

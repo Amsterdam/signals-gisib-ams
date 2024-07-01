@@ -17,7 +17,6 @@ asgiref==3.8.1
     #   -r ./requirements.txt
     #   django
     #   django-cors-headers
-    #   django-simple-history
 async-property==0.2.2
     # via
     #   -r ./requirements.txt
@@ -109,7 +108,7 @@ deprecation==2.1.0
     #   python-keycloak
 distlib==0.3.8
     # via virtualenv
-django==4.1.13
+django==4.2.13
     # via
     #   -r ./requirements.txt
     #   django-celery-beat
@@ -117,6 +116,7 @@ django==4.1.13
     #   django-cors-headers
     #   django-extensions
     #   django-filter
+    #   django-simple-history
     #   django-timezone-field
     #   djangorestframework
     #   drf-yasg
@@ -129,15 +129,15 @@ django-cors-headers==4.4.0
     # via -r ./requirements.txt
 django-extensions==3.2.3
     # via -r ./requirements.txt
-django-filter==23.5
+django-filter==24.2
     # via -r ./requirements.txt
-django-simple-history==3.6.0
+django-simple-history==3.7.0
     # via -r ./requirements.txt
 django-timezone-field==6.1.0
     # via
     #   -r ./requirements.txt
     #   django-celery-beat
-djangorestframework==3.15.1
+djangorestframework==3.15.2
     # via
     #   -r ./requirements.txt
     #   drf-yasg
@@ -301,8 +301,6 @@ psutil==6.0.0
     # via
     #   -r ./requirements.txt
     #   opencensus-ext-azure
-psycopg2==2.9.9
-    # via -r ./requirements.txt
 psycopg2-binary==2.9.9
     # via
     #   -r ./requirements.txt
