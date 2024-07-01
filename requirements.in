@@ -7,7 +7,7 @@ django-cors-headers
 django-extensions
 django-filter
 django-simple-history
-djangorestframework
+djangorestframework<3.16
 drf-yasg
 flower
 gunicorn
