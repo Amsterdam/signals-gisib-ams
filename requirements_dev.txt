@@ -8,18 +8,25 @@ amqp==5.2.0
     # via
     #   -r ./requirements_test.txt
     #   kombu
+anyio==4.4.0
+    # via
+    #   -r ./requirements_test.txt
+    #   httpx
 asgiref==3.8.1
     # via
     #   -r ./requirements_test.txt
     #   django
     #   django-cors-headers
-    #   django-simple-history
-azure-core==1.30.1
+async-property==0.2.2
+    # via
+    #   -r ./requirements_test.txt
+    #   python-keycloak
+azure-core==1.30.2
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
     #   opencensus-ext-azure
-azure-identity==1.16.1
+azure-identity==1.17.1
     # via
     #   -r ./requirements_test.txt
     #   opencensus-ext-azure
@@ -34,15 +41,17 @@ cachetools==5.3.3
     #   -r ./requirements_test.txt
     #   google-auth
     #   tox
-celery==5.3.6
+celery==5.4.0
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
     #   django-celery-results
     #   flower
-certifi==2024.2.2
+certifi==2024.6.2
     # via
     #   -r ./requirements_test.txt
+    #   httpcore
+    #   httpx
     #   requests
 cffi==1.16.0
     # via
@@ -87,7 +96,7 @@ coreschema==0.0.4
     # via
     #   -r ./requirements_test.txt
     #   coreapi
-coverage[toml]==7.4.4
+coverage[toml]==7.5.4
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
@@ -95,7 +104,7 @@ cron-descriptor==1.4.3
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
-cryptography==42.0.5
+cryptography==42.0.8
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
@@ -110,7 +119,7 @@ distlib==0.3.8
     # via
     #   -r ./requirements_test.txt
     #   virtualenv
-django==4.1.13
+django==4.2.13
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
@@ -119,6 +128,7 @@ django==4.1.13
     #   django-debug-toolbar
     #   django-extensions
     #   django-filter
+    #   django-simple-history
     #   django-timezone-field
     #   djangorestframework
     #   drf-yasg
@@ -127,21 +137,21 @@ django-celery-beat==2.6.0
     # via -r ./requirements_test.txt
 django-celery-results==2.5.1
     # via -r ./requirements_test.txt
-django-cors-headers==4.3.1
+django-cors-headers==4.4.0
     # via -r ./requirements_test.txt
-django-debug-toolbar==4.3.0
+django-debug-toolbar==4.4.2
     # via -r requirements_dev.in
 django-extensions==3.2.3
     # via -r ./requirements_test.txt
-django-filter==23.5
+django-filter==24.2
     # via -r ./requirements_test.txt
-django-simple-history==3.5.0
+django-simple-history==3.7.0
     # via -r ./requirements_test.txt
 django-timezone-field==6.1.0
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
-djangorestframework==3.15.1
+djangorestframework==3.15.2
     # via
     #   -r ./requirements_test.txt
     #   drf-yasg
@@ -149,30 +159,30 @@ drf-yasg==1.21.7
     # via -r ./requirements_test.txt
 factory-boy==3.3.0
     # via -r ./requirements_test.txt
-faker==24.9.0
+faker==26.0.0
     # via
     #   -r ./requirements_test.txt
     #   factory-boy
-filelock==3.13.4
+filelock==3.15.4
     # via
     #   -r ./requirements_test.txt
     #   tox
     #   virtualenv
-flake8==7.0.0
+flake8==7.1.0
     # via -r ./requirements_test.txt
 flower==2.0.1
     # via -r ./requirements_test.txt
-freezegun==1.4.0
+freezegun==1.5.1
     # via -r ./requirements_test.txt
-google-api-core==2.18.0
+google-api-core==2.19.1
     # via
     #   -r ./requirements_test.txt
     #   opencensus
-google-auth==2.29.0
+google-auth==2.30.0
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
-googleapis-common-protos==1.63.0
+googleapis-common-protos==1.63.2
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
@@ -181,7 +191,16 @@ gunicorn==22.0.0
 h11==0.14.0
     # via
     #   -r ./requirements_test.txt
+    #   httpcore
     #   uvicorn
+httpcore==1.0.5
+    # via
+    #   -r ./requirements_test.txt
+    #   httpx
+httpx==0.27.0
+    # via
+    #   -r ./requirements_test.txt
+    #   python-keycloak
 humanize==4.9.0
     # via
     #   -r ./requirements_test.txt
@@ -189,6 +208,8 @@ humanize==4.9.0
 idna==3.7
     # via
     #   -r ./requirements_test.txt
+    #   anyio
+    #   httpx
     #   requests
     #   yarl
 inflection==0.5.1
@@ -225,12 +246,12 @@ mccabe==0.7.0
     # via
     #   -r ./requirements_test.txt
     #   flake8
-msal==1.28.0
+msal==1.29.0
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
     #   msal-extensions
-msal-extensions==1.1.0
+msal-extensions==1.2.0
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
@@ -260,30 +281,29 @@ opencensus-ext-postgresql==0.1.3
     # via -r ./requirements_test.txt
 opencensus-ext-requests==0.8.0
     # via -r ./requirements_test.txt
-packaging==24.0
+packaging==24.1
     # via
     #   -r ./requirements_test.txt
     #   build
     #   deprecation
     #   drf-yasg
     #   gunicorn
-    #   msal-extensions
     #   pyproject-api
     #   pytest
     #   tox
 pip-tools==7.4.1
     # via -r requirements_dev.in
-platformdirs==4.2.0
+platformdirs==4.2.2
     # via
     #   -r ./requirements_test.txt
     #   tox
     #   virtualenv
-pluggy==1.4.0
+pluggy==1.5.0
     # via
     #   -r ./requirements_test.txt
     #   pytest
     #   tox
-portalocker==2.8.2
+portalocker==2.10.0
     # via
     #   -r ./requirements_test.txt
     #   msal-extensions
@@ -291,26 +311,24 @@ prometheus-client==0.20.0
     # via
     #   -r ./requirements_test.txt
     #   flower
-prompt-toolkit==3.0.43
+prompt-toolkit==3.0.47
     # via
     #   -r ./requirements_test.txt
     #   click-repl
-proto-plus==1.23.0
+proto-plus==1.24.0
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
-protobuf==4.25.3
+protobuf==5.27.2
     # via
     #   -r ./requirements_test.txt
     #   google-api-core
     #   googleapis-common-protos
     #   proto-plus
-psutil==5.9.8
+psutil==6.0.0
     # via
     #   -r ./requirements_test.txt
     #   opencensus-ext-azure
-psycopg2==2.9.9
-    # via -r ./requirements_test.txt
 psycopg2-binary==2.9.9
     # via
     #   -r ./requirements_test.txt
@@ -324,7 +342,7 @@ pyasn1-modules==0.4.0
     # via
     #   -r ./requirements_test.txt
     #   google-auth
-pycodestyle==2.11.1
+pycodestyle==2.12.0
     # via
     #   -r ./requirements_test.txt
     #   flake8
@@ -340,15 +358,15 @@ pyjwt[crypto]==2.8.0
     # via
     #   -r ./requirements_test.txt
     #   msal
-pyproject-api==1.6.1
+pyproject-api==1.7.1
     # via
     #   -r ./requirements_test.txt
     #   tox
-pyproject-hooks==1.0.0
+pyproject-hooks==1.1.0
     # via
     #   build
     #   pip-tools
-pytest==8.1.1
+pytest==8.2.2
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
@@ -357,7 +375,7 @@ pytest-cov==5.0.0
     # via -r ./requirements_test.txt
 pytest-django==4.8.0
     # via -r ./requirements_test.txt
-python-crontab==3.0.0
+python-crontab==3.1.0
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
@@ -368,7 +386,7 @@ python-dateutil==2.9.0.post0
     #   faker
     #   freezegun
     #   python-crontab
-python-keycloak==3.12.0
+python-keycloak==4.2.0
     # via -r ./requirements_test.txt
 pytz==2024.1
     # via
@@ -380,7 +398,7 @@ pyyaml==6.0.1
     #   -r ./requirements_test.txt
     #   drf-yasg
     #   vcrpy
-requests==2.32.0
+requests==2.32.3
     # via
     #   -r ./requirements_test.txt
     #   azure-core
@@ -405,6 +423,11 @@ six==1.16.0
     #   azure-core
     #   opencensus
     #   python-dateutil
+sniffio==1.3.1
+    # via
+    #   -r ./requirements_test.txt
+    #   anyio
+    #   httpx
 sqlparse==0.5.0
     # via
     #   -r ./requirements_test.txt
@@ -414,12 +437,13 @@ tornado==6.4.1
     # via
     #   -r ./requirements_test.txt
     #   flower
-tox==4.14.2
+tox==4.15.1
     # via -r ./requirements_test.txt
-typing-extensions==4.11.0
+typing-extensions==4.12.2
     # via
     #   -r ./requirements_test.txt
     #   azure-core
+    #   azure-identity
     #   jwcrypto
 tzdata==2024.1
     # via
@@ -435,7 +459,7 @@ urllib3==1.26.19
     # via
     #   -r ./requirements_test.txt
     #   requests
-uvicorn==0.29.0
+uvicorn==0.30.1
     # via -r ./requirements_test.txt
 vcrpy==6.0.1
     # via -r ./requirements_test.txt
@@ -445,7 +469,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.25.1
+virtualenv==20.26.3
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -455,7 +479,7 @@ wcwidth==0.2.13
     #   prompt-toolkit
 wheel==0.43.0
     # via pip-tools
-whitenoise==6.6.0
+whitenoise==6.7.0
     # via -r ./requirements_test.txt
 wrapt==1.16.0
     # via
