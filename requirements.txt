@@ -22,7 +22,7 @@ azure-identity==1.17.1
     # via opencensus-ext-azure
 billiard==4.2.0
     # via celery
-cachetools==5.3.3
+cachetools==5.4.0
     # via google-auth
 celery==5.4.0
     # via
@@ -58,7 +58,7 @@ coreschema==0.0.4
     # via coreapi
 cron-descriptor==1.4.3
     # via django-celery-beat
-cryptography==42.0.8
+cryptography==43.0.0
     # via
     #   azure-identity
     #   jwcrypto
@@ -91,7 +91,7 @@ django-filter==24.2
     # via -r requirements.in
 django-simple-history==3.7.0
     # via -r requirements.in
-django-timezone-field==6.1.0
+django-timezone-field==7.0
     # via django-celery-beat
 djangorestframework==3.15.2
     # via
@@ -103,7 +103,7 @@ flower==2.0.1
     # via -r requirements.in
 google-api-core==2.19.1
     # via opencensus
-google-auth==2.30.0
+google-auth==2.32.0
     # via google-api-core
 googleapis-common-protos==1.63.2
     # via google-api-core
@@ -117,7 +117,7 @@ httpcore==1.0.5
     # via httpx
 httpx==0.27.0
     # via python-keycloak
-humanize==4.9.0
+humanize==4.10.0
     # via flower
 idna==3.7
     # via
@@ -136,7 +136,7 @@ kombu==5.3.7
     # via celery
 markupsafe==2.1.5
     # via jinja2
-msal==1.29.0
+msal==1.30.0
     # via
     #   azure-identity
     #   msal-extensions
@@ -169,7 +169,7 @@ packaging==24.1
     #   deprecation
     #   drf-yasg
     #   gunicorn
-portalocker==2.10.0
+portalocker==2.10.1
     # via msal-extensions
 prometheus-client==0.20.0
     # via flower
@@ -200,13 +200,13 @@ pyjwt[crypto]==2.8.0
     # via
     #   msal
     #   pyjwt
-python-crontab==3.1.0
+python-crontab==3.2.0
     # via django-celery-beat
 python-dateutil==2.9.0.post0
     # via
     #   celery
     #   python-crontab
-python-keycloak==4.2.0
+python-keycloak==4.2.3
     # via -r requirements.in
 pytz==2024.1
     # via
@@ -238,7 +238,7 @@ sniffio==1.3.1
     # via
     #   anyio
     #   httpx
-sqlparse==0.5.0
+sqlparse==0.5.1
     # via django
 tornado==6.4.1
     # via flower
@@ -259,7 +259,7 @@ urllib3==1.26.19
     # via
     #   -r requirements.in
     #   requests
-uvicorn==0.30.1
+uvicorn==0.30.3
     # via -r requirements.in
 vine==5.1.0
     # via
