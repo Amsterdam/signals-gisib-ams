@@ -10,6 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+# Export modules to Azure Application Insights
+from azure.monitor.opentelemetry.exporter import AzureMonitorLogExporter, AzureMonitorTraceExporter
+
+from typing import Any
+
+# Opentelemetry modules needed for logging and tracing
+from opentelemetry import trace
+from opentelemetry.instrumentation.django import DjangoInstrumentor
+from opentelemetry.instrumentation.psycopg2 import Psycopg2Instrumentor
+from opentelemetry.sdk._logs import LoggerProvider, LoggingHandler
+from opentelemetry.sdk._logs.export import BatchLogRecordProcessor
+from opentelemetry.sdk.resources import Resource
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +39,13 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'insecure')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', False) in TRUE_VALUES
+LOGGING_LEVEL: str = os.getenv('LOGGING_LEVEL', 'INFO')
+AZURE_APPLICATION_INSIGHTS_ENABLED = os.getenv('AZURE_APPLICATION_INSIGHTS_ENABLED', False) in TRUE_VALUES
+
+print(f'{AZURE_APPLICATION_INSIGHTS_ENABLED = }')
+
+if AZURE_APPLICATION_INSIGHTS_ENABLED:
+    AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING = os.getenv('AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING')
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,0.0.0.0,localhost').split(',')
 
@@ -229,50 +250,115 @@ CORS_EXPOSE_HEADERS = [
 CORS_ALLOW_CREDENTIALS = True
 
 
-# Logging
-LOGGING_LEVEL = os.getenv('LOGGING_LEVEL', 'INFO')
+# Per default log to console
+LOGGING_HANDLERS: dict[str, dict[str, Any]] = {
+    'console': {
+        'class': 'logging.StreamHandler',
+    },
+}
+LOGGER_HANDLERS = ['console', ]
+
+MONITOR_SERVICE_NAME = 'gisib-signalsdock-api'
+resource: Resource = Resource.create({"service.name": MONITOR_SERVICE_NAME})
+
+tracer_provider: TracerProvider = TracerProvider(resource=resource)
+trace.set_tracer_provider(tracer_provider)
+
+
+# As required, the user id and name is attached to each request that is recorded as a span
+def response_hook(span, request, response):
+    if span and span.is_recording() and request.user.is_authenticated:
+        span.set_attribute('user_id', request.user.id)
+        span.set_attribute('username', request.user.username)
+
+
+# Logs and traces will be exported to Azure Application Insights
+if AZURE_APPLICATION_INSIGHTS_ENABLED and AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING:
+
+    # Enable exporting of traces
+    span_exporter: AzureMonitorTraceExporter = AzureMonitorTraceExporter(
+        connection_string=AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING
+    )
+    tracer_provider.add_span_processor(BatchSpanProcessor(span_exporter=span_exporter))
+
+    # Enable exporting of logs
+    log_exporter: AzureMonitorLogExporter = AzureMonitorLogExporter(
+        connection_string=AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING
+    )
+    logger_provider: LoggerProvider = LoggerProvider(resource=resource)
+    logger_provider.add_log_record_processor(BatchLogRecordProcessor(log_exporter, schedule_delay_millis=3000))
+
+    # Custom logging handler to attach to logging config
+    class AzureLoggingHandler(LoggingHandler):
+        def __init__(self):
+            super().__init__(logger_provider=logger_provider)
+
+    LOGGING_HANDLERS.update({
+        'azure': {
+            '()': AzureLoggingHandler,
+            'formatter': 'elaborate',
+            'level': 'INFO'
+        }
+    })
+
+    LOGGER_HANDLERS.append('azure')
+
+# Instrument Django and the postgres database
+# This will attach logs from the logger module to traces
+Psycopg2Instrumentor().instrument(tracer_provider=tracer_provider, skip_dep_check=True)
+DjangoInstrumentor().instrument(tracer_provider=tracer_provider, response_hook=response_hook)
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+    'formatters': {
+        'elaborate': {
+
+            # TODO willen we deze formatting toepassen? Nu alleen bij print statements
+            'format': '{levelname} {module}.{filename} {message}',
+            'style': '{'
+        }
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
         },
     },
+    'handlers': LOGGING_HANDLERS,
     'loggers': {
-        'django': {
-            'handlers': ['console', ],
-            'level': 'DEBUG',
-        },
-        'signals_gisib': {
-            'handlers': ['console', ],
+        '': {
             'level': LOGGING_LEVEL,
+            'handlers': LOGGER_HANDLERS,
+            'propagate': False,
+        },
+        'django.utils.autoreload': {
+            'level': 'ERROR',
+            'propagate': False,
         },
     },
 }
 
-# Opencensus
-APPLICATION_INSIGHTS_CONNECTION_STRING = os.getenv('APPLICATION_INSIGHTS_CONNECTION_STRING', False)
-if APPLICATION_INSIGHTS_CONNECTION_STRING:
-    MIDDLEWARE += ['opencensus.ext.django.middleware.OpencensusMiddleware', ]
-    OPENCENSUS = {
-        'TRACE': {
-            'SAMPLER': 'opencensus.trace.samplers.ProbabilitySampler(rate=1)',
-            'EXPORTER': f'''opencensus.ext.azure.trace_exporter.AzureExporter(
-                connection_string="{APPLICATION_INSIGHTS_CONNECTION_STRING}"
-            )''',
-            'EXCLUDELIST_PATHS': [],
-        }
-    }
-
-    LOGGING['handlers'].update({
-        'application_insights': {
-            'class': 'opencensus.ext.azure.log_exporter.AzureLogHandler',
-            'connection_string': APPLICATION_INSIGHTS_CONNECTION_STRING,
-        },
-    })
-    LOGGING['loggers']['django']['handlers'] += ['application_insights', ]
-    LOGGING['loggers']['signals_gisib']['handlers'] += ['application_insights', ]
+# if AZURE_APPLICATION_INSIGHTS_ENABLED:
+#     LOGGING.get('loggers').update({
+#         "azure.monitor.opentelemetry.exporter.export._base": {
+#             "handlers": LOGGER_HANDLERS,
+#             "level": "ERROR",  # Set to INFO to log what is being logged to Azure
+#         },
+#         "azure.core.pipeline.policies.http_logging_policy": {
+#             "handlers": LOGGER_HANDLERS,
+#             "level": "ERROR",  # Set to INFO to log what is being logged to Azure
+#         },
+#     })
+# else:
+#     # When in debug mode without Azure Insights, queries will be logged to console
+#     LOGGING.get('loggers').update({
+#         'django.db.backends': {
+#             'handlers': LOGGER_HANDLERS,
+#             'level': LOGGING_LEVEL,
+#             'propagate': False,
+#             'filters': ['require_debug_true', ],
+#         }
+#     })
 
 
 # Swagger

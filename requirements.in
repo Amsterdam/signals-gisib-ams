@@ -1,3 +1,4 @@
+azure-monitor-opentelemetry-exporter
 Celery
 coreapi
 Django>=4.1,<4.3
@@ -11,14 +12,10 @@ djangorestframework<3.16
 drf-yasg
 flower
 gunicorn
+opentelemetry-instrumentation-django
+opentelemetry-instrumentation-psycopg2
+opentelemetry-sdk
 requests
-opencensus
-opencensus-context
-opencensus-ext-azure
-opencensus-ext-django
-opencensus-ext-logging
-opencensus-ext-postgresql
-opencensus-ext-requests
 psycopg2-binary
 python-keycloak
 urllib3<2.0.0
