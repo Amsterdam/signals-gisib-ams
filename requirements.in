@@ -12,6 +12,7 @@ djangorestframework<3.16
 drf-yasg
 flower
 gunicorn
+opentelemetry-instrumentation-asgi
 opentelemetry-instrumentation-django
 opentelemetry-instrumentation-psycopg2
 opentelemetry-sdk

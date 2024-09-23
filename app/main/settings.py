@@ -17,7 +17,6 @@ from typing import Any
 
 # Opentelemetry modules needed for logging and tracing
 from opentelemetry import trace
-from opentelemetry.instrumentation.django import DjangoInstrumentor
 from opentelemetry.instrumentation.psycopg2 import Psycopg2Instrumentor
 from opentelemetry.sdk._logs import LoggerProvider, LoggingHandler
 from opentelemetry.sdk._logs.export import BatchLogRecordProcessor
@@ -41,8 +40,6 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'insecure')
 DEBUG = os.getenv('DJANGO_DEBUG', False) in TRUE_VALUES
 LOGGING_LEVEL: str = os.getenv('LOGGING_LEVEL', 'INFO')
 AZURE_APPLICATION_INSIGHTS_ENABLED = os.getenv('AZURE_APPLICATION_INSIGHTS_ENABLED', False) in TRUE_VALUES
-
-print(f'{AZURE_APPLICATION_INSIGHTS_ENABLED = }')
 
 if AZURE_APPLICATION_INSIGHTS_ENABLED:
     AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING = os.getenv('AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING')
@@ -258,7 +255,7 @@ LOGGING_HANDLERS: dict[str, dict[str, Any]] = {
 }
 LOGGER_HANDLERS = ['console', ]
 
-MONITOR_SERVICE_NAME = 'gisib-signalsdock-api'
+MONITOR_SERVICE_NAME = 'gisib-signals'
 resource: Resource = Resource.create({"service.name": MONITOR_SERVICE_NAME})
 
 tracer_provider: TracerProvider = TracerProvider(resource=resource)
@@ -296,25 +293,20 @@ if AZURE_APPLICATION_INSIGHTS_ENABLED and AZURE_APPLICATION_INSIGHTS_CONNECTION_
     LOGGING_HANDLERS.update({
         'azure': {
             '()': AzureLoggingHandler,
-            'formatter': 'elaborate',
-            'level': 'INFO'
         }
     })
 
     LOGGER_HANDLERS.append('azure')
 
-# Instrument Django and the postgres database
+# Instrument the postgres database
 # This will attach logs from the logger module to traces
 Psycopg2Instrumentor().instrument(tracer_provider=tracer_provider, skip_dep_check=True)
-DjangoInstrumentor().instrument(tracer_provider=tracer_provider, response_hook=response_hook)
 
-LOGGING = {
+LOGGING: dict[str, Any] = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
         'elaborate': {
-
-            # TODO willen we deze formatting toepassen? Nu alleen bij print statements
             'format': '{levelname} {module}.{filename} {message}',
             'style': '{'
         }
@@ -338,28 +330,27 @@ LOGGING = {
     },
 }
 
-# if AZURE_APPLICATION_INSIGHTS_ENABLED:
-#     LOGGING.get('loggers').update({
-#         "azure.monitor.opentelemetry.exporter.export._base": {
-#             "handlers": LOGGER_HANDLERS,
-#             "level": "ERROR",  # Set to INFO to log what is being logged to Azure
-#         },
-#         "azure.core.pipeline.policies.http_logging_policy": {
-#             "handlers": LOGGER_HANDLERS,
-#             "level": "ERROR",  # Set to INFO to log what is being logged to Azure
-#         },
-#     })
-# else:
-#     # When in debug mode without Azure Insights, queries will be logged to console
-#     LOGGING.get('loggers').update({
-#         'django.db.backends': {
-#             'handlers': LOGGER_HANDLERS,
-#             'level': LOGGING_LEVEL,
-#             'propagate': False,
-#             'filters': ['require_debug_true', ],
-#         }
-#     })
-
+if AZURE_APPLICATION_INSIGHTS_ENABLED:
+    LOGGING['loggers'].update({
+        "azure.monitor.opentelemetry.exporter.export._base": {
+            "handlers": LOGGER_HANDLERS,
+            "level": "ERROR",  # Set to INFO to log what is being logged to Azure
+        },
+        "azure.core.pipeline.policies.http_logging_policy": {
+            "handlers": LOGGER_HANDLERS,
+            "level": "ERROR",  # Set to INFO to log what is being logged to Azure
+        },
+    })
+else:
+    # When in debug mode without Azure Insights, queries will be logged to console
+    LOGGING['loggers'].update({
+        'django.db.backends': {
+            'handlers': LOGGER_HANDLERS,
+            'level': LOGGING_LEVEL,
+            'propagate': False,
+            'filters': ['require_debug_true', ],
+        }
+    })
 
 # Swagger
 

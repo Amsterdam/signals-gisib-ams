@@ -12,6 +12,7 @@ asgiref==3.8.1
     # via
     #   django
     #   django-cors-headers
+    #   opentelemetry-instrumentation-asgi
 async-property==0.2.2
     # via python-keycloak
 azure-core==1.30.2
@@ -142,6 +143,7 @@ opentelemetry-api==1.27.0
     # via
     #   azure-monitor-opentelemetry-exporter
     #   opentelemetry-instrumentation
+    #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-dbapi
     #   opentelemetry-instrumentation-django
     #   opentelemetry-instrumentation-psycopg2
@@ -150,10 +152,13 @@ opentelemetry-api==1.27.0
     #   opentelemetry-semantic-conventions
 opentelemetry-instrumentation==0.48b0
     # via
+    #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-dbapi
     #   opentelemetry-instrumentation-django
     #   opentelemetry-instrumentation-psycopg2
     #   opentelemetry-instrumentation-wsgi
+opentelemetry-instrumentation-asgi==0.48b0
+    # via -r requirements.in
 opentelemetry-instrumentation-dbapi==0.48b0
     # via opentelemetry-instrumentation-psycopg2
 opentelemetry-instrumentation-django==0.48b0
@@ -168,12 +173,14 @@ opentelemetry-sdk==1.27.0
     #   azure-monitor-opentelemetry-exporter
 opentelemetry-semantic-conventions==0.48b0
     # via
+    #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-dbapi
     #   opentelemetry-instrumentation-django
     #   opentelemetry-instrumentation-wsgi
     #   opentelemetry-sdk
 opentelemetry-util-http==0.48b0
     # via
+    #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-django
     #   opentelemetry-instrumentation-wsgi
 packaging==24.1
