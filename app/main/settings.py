@@ -18,6 +18,7 @@ from typing import Any
 # Opentelemetry modules needed for logging and tracing
 from opentelemetry import trace
 from opentelemetry.instrumentation.psycopg2 import Psycopg2Instrumentor
+from opentelemetry.instrumentation.django import DjangoInstrumentor
 from opentelemetry.sdk._logs import LoggerProvider, LoggingHandler
 from opentelemetry.sdk._logs.export import BatchLogRecordProcessor
 from opentelemetry.sdk.resources import Resource
@@ -301,6 +302,7 @@ if AZURE_APPLICATION_INSIGHTS_ENABLED and AZURE_APPLICATION_INSIGHTS_CONNECTION_
 # Instrument the postgres database
 # This will attach logs from the logger module to traces
 Psycopg2Instrumentor().instrument(tracer_provider=tracer_provider, skip_dep_check=True)
+DjangoInstrumentor().instrument(tracer_provider=tracer_provider, response_hook=response_hook)
 
 LOGGING: dict[str, Any] = {
     'version': 1,
