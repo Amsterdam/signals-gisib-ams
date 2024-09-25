@@ -40,10 +40,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'insecure')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', False) in TRUE_VALUES
 LOGGING_LEVEL: str = os.getenv('LOGGING_LEVEL', 'INFO')
-AZURE_APPLICATION_INSIGHTS_ENABLED = os.getenv('AZURE_APPLICATION_INSIGHTS_ENABLED', False) in TRUE_VALUES
 
-if AZURE_APPLICATION_INSIGHTS_ENABLED:
-    AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING = os.getenv('AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING')
+AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING = os.getenv('AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING', None)
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,0.0.0.0,localhost').split(',')
 
@@ -271,7 +269,7 @@ def response_hook(span, request, response):
 
 
 # Logs and traces will be exported to Azure Application Insights
-if AZURE_APPLICATION_INSIGHTS_ENABLED and AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING:
+if AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING:
 
     # Enable exporting of traces
     span_exporter: AzureMonitorTraceExporter = AzureMonitorTraceExporter(
@@ -332,7 +330,7 @@ LOGGING: dict[str, Any] = {
     },
 }
 
-if AZURE_APPLICATION_INSIGHTS_ENABLED:
+if AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING:
     LOGGING['loggers'].update({
         "azure.monitor.opentelemetry.exporter.export._base": {
             "handlers": LOGGER_HANDLERS,
