@@ -95,3 +95,6 @@ venv.bak/
 
 # Pycharm
 .idea/
+
+# VSCode
+.devcontainer/

@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
-from typing import Any
 
 # Export modules to Azure Application Insights
 from azure.monitor.opentelemetry.exporter import AzureMonitorLogExporter, AzureMonitorTraceExporter
@@ -39,7 +38,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'insecure')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', False) in TRUE_VALUES
-LOGGING_LEVEL: str = os.getenv('LOGGING_LEVEL', 'INFO')
+LOGGING_LEVEL = os.getenv('LOGGING_LEVEL', 'INFO')
 
 AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING = os.getenv('AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING', None)
 
@@ -247,7 +246,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 
 # Per default log to console
-LOGGING_HANDLERS: dict[str, dict[str, Any]] = {
+LOGGING_HANDLERS = {
     'console': {
         'class': 'logging.StreamHandler',
     },
@@ -302,7 +301,7 @@ if AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING:
 Psycopg2Instrumentor().instrument(tracer_provider=tracer_provider, skip_dep_check=True)
 DjangoInstrumentor().instrument(tracer_provider=tracer_provider, response_hook=response_hook)
 
-LOGGING: dict[str, Any] = {
+LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
