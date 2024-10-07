@@ -8,7 +8,7 @@ amqp==5.2.0
     # via
     #   -r ./requirements_test.txt
     #   kombu
-anyio==4.4.0
+anyio==4.6.0
     # via
     #   -r ./requirements_test.txt
     #   httpx
@@ -22,20 +22,20 @@ async-property==0.2.2
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
-azure-core==1.30.2
+azure-core==1.31.0
     # via
     #   -r ./requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
     #   msrest
-azure-monitor-opentelemetry-exporter==1.0.0b25
+azure-monitor-opentelemetry-exporter==1.0.0b30
     # via -r ./requirements_test.txt
-billiard==4.2.0
+billiard==4.2.1
     # via
     #   -r ./requirements_test.txt
     #   celery
-build==1.2.1
+build==1.2.2
     # via pip-tools
-cachetools==5.3.3
+cachetools==5.5.0
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -45,14 +45,14 @@ celery==5.4.0
     #   django-celery-beat
     #   django-celery-results
     #   flower
-certifi==2024.7.4
+certifi==2024.8.30
     # via
     #   -r ./requirements_test.txt
     #   httpcore
     #   httpx
     #   msrest
     #   requests
-cffi==1.16.0
+cffi==1.17.1
     # via
     #   -r ./requirements_test.txt
     #   cryptography
@@ -95,11 +95,11 @@ coreschema==0.0.4
     # via
     #   -r ./requirements_test.txt
     #   coreapi
-coverage[toml]==7.5.4
+coverage[toml]==7.6.1
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
-cron-descriptor==1.4.3
+cron-descriptor==1.4.5
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
@@ -120,7 +120,7 @@ distlib==0.3.8
     # via
     #   -r ./requirements_test.txt
     #   virtualenv
-django==4.2.15
+django==4.2.16
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
@@ -133,21 +133,21 @@ django==4.2.15
     #   django-timezone-field
     #   djangorestframework
     #   drf-yasg
-django-celery-beat==2.6.0
+django-celery-beat==2.7.0
     # via -r ./requirements_test.txt
 django-celery-results==2.5.1
     # via -r ./requirements_test.txt
 django-cors-headers==4.4.0
     # via -r ./requirements_test.txt
-django-debug-toolbar==4.4.2
+django-debug-toolbar==4.4.6
     # via -r requirements_dev.in
 django-extensions==3.2.3
     # via -r ./requirements_test.txt
-django-filter==24.2
+django-filter==24.3
     # via -r ./requirements_test.txt
 django-simple-history==3.7.0
     # via -r ./requirements_test.txt
-django-timezone-field==6.1.0
+django-timezone-field==7.0
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
@@ -157,13 +157,13 @@ djangorestframework==3.15.2
     #   drf-yasg
 drf-yasg==1.21.7
     # via -r ./requirements_test.txt
-factory-boy==3.3.0
+factory-boy==3.3.1
     # via -r ./requirements_test.txt
-faker==26.0.0
+faker==30.1.0
     # via
     #   -r ./requirements_test.txt
     #   factory-boy
-filelock==3.15.4
+filelock==3.16.1
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -172,13 +172,13 @@ fixedint==0.1.6
     # via
     #   -r ./requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
-flake8==7.1.0
+flake8==7.1.1
     # via -r ./requirements_test.txt
 flower==2.0.1
     # via -r ./requirements_test.txt
 freezegun==1.5.1
     # via -r ./requirements_test.txt
-gunicorn==22.0.0
+gunicorn==23.0.0
     # via -r ./requirements_test.txt
 h11==0.14.0
     # via
@@ -189,15 +189,15 @@ httpcore==1.0.5
     # via
     #   -r ./requirements_test.txt
     #   httpx
-httpx==0.27.0
+httpx==0.27.2
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
-humanize==4.9.0
+humanize==4.10.0
     # via
     #   -r ./requirements_test.txt
     #   flower
-idna==3.7
+idna==3.10
     # via
     #   -r ./requirements_test.txt
     #   anyio
@@ -234,7 +234,7 @@ jwcrypto==1.5.6
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
-kombu==5.3.7
+kombu==5.4.2
     # via
     #   -r ./requirements_test.txt
     #   celery
@@ -250,7 +250,7 @@ msrest==0.7.1
     # via
     #   -r ./requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
-multidict==6.0.5
+multidict==6.1.0
     # via
     #   -r ./requirements_test.txt
     #   yarl
@@ -322,7 +322,7 @@ packaging==24.1
     #   tox
 pip-tools==7.4.1
     # via -r requirements_dev.in
-platformdirs==4.2.2
+platformdirs==4.3.6
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -332,21 +332,21 @@ pluggy==1.5.0
     #   -r ./requirements_test.txt
     #   pytest
     #   tox
-prometheus-client==0.20.0
+prometheus-client==0.21.0
     # via
     #   -r ./requirements_test.txt
     #   flower
-prompt-toolkit==3.0.47
+prompt-toolkit==3.0.48
     # via
     #   -r ./requirements_test.txt
     #   click-repl
-psutil==6.0.0
+psutil==5.9.8
     # via
     #   -r ./requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
 psycopg2-binary==2.9.9
     # via -r ./requirements_test.txt
-pycodestyle==2.12.0
+pycodestyle==2.12.1
     # via
     #   -r ./requirements_test.txt
     #   flake8
@@ -358,24 +358,24 @@ pyflakes==3.2.0
     # via
     #   -r ./requirements_test.txt
     #   flake8
-pyproject-api==1.7.1
+pyproject-api==1.8.0
     # via
     #   -r ./requirements_test.txt
     #   tox
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
-pytest==8.2.2
+pytest==8.3.3
     # via
     #   -r ./requirements_test.txt
     #   pytest-cov
     #   pytest-django
 pytest-cov==5.0.0
     # via -r ./requirements_test.txt
-pytest-django==4.8.0
+pytest-django==4.9.0
     # via -r ./requirements_test.txt
-python-crontab==3.1.0
+python-crontab==3.2.0
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
@@ -386,14 +386,14 @@ python-dateutil==2.9.0.post0
     #   faker
     #   freezegun
     #   python-crontab
-python-keycloak==4.2.0
+python-keycloak==4.5.0
     # via -r ./requirements_test.txt
-pytz==2024.1
+pytz==2024.2
     # via
     #   -r ./requirements_test.txt
     #   drf-yasg
     #   flower
-pyyaml==6.0.1
+pyyaml==6.0.2
     # via
     #   -r ./requirements_test.txt
     #   drf-yasg
@@ -426,7 +426,7 @@ sniffio==1.3.1
     #   -r ./requirements_test.txt
     #   anyio
     #   httpx
-sqlparse==0.5.0
+sqlparse==0.5.1
     # via
     #   -r ./requirements_test.txt
     #   django
@@ -435,29 +435,31 @@ tornado==6.4.1
     # via
     #   -r ./requirements_test.txt
     #   flower
-tox==4.15.1
+tox==4.21.0
     # via -r ./requirements_test.txt
 typing-extensions==4.12.2
     # via
     #   -r ./requirements_test.txt
     #   azure-core
+    #   faker
     #   jwcrypto
     #   opentelemetry-sdk
-tzdata==2024.1
+tzdata==2024.2
     # via
     #   -r ./requirements_test.txt
     #   celery
     #   django-celery-beat
+    #   kombu
 uritemplate==4.1.1
     # via
     #   -r ./requirements_test.txt
     #   coreapi
     #   drf-yasg
-urllib3==1.26.19
+urllib3==1.26.20
     # via
     #   -r ./requirements_test.txt
     #   requests
-uvicorn==0.30.1
+uvicorn==0.31.0
     # via -r ./requirements_test.txt
 vcrpy==6.0.1
     # via -r ./requirements_test.txt
@@ -467,7 +469,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.26.3
+virtualenv==20.26.6
     # via
     #   -r ./requirements_test.txt
     #   tox
@@ -475,7 +477,7 @@ wcwidth==0.2.13
     # via
     #   -r ./requirements_test.txt
     #   prompt-toolkit
-wheel==0.43.0
+wheel==0.44.0
     # via pip-tools
 whitenoise==6.7.0
     # via -r ./requirements_test.txt
@@ -486,7 +488,7 @@ wrapt==1.16.0
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-dbapi
     #   vcrpy
-yarl==1.9.4
+yarl==1.13.1
     # via
     #   -r ./requirements_test.txt
     #   vcrpy
