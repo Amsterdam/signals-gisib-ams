@@ -290,6 +290,13 @@ if AZURE_APPLICATION_INSIGHTS_CONNECTION_STRING:
         def __init__(self):
             super().__init__(logger_provider=logger_provider)
 
+        @staticmethod
+        def _get_attributes(record):
+            attributes = LoggingHandler._get_attributes(record)
+            if "request" in attributes:
+                attributes["request"] = f'{attributes["request"].method} {attributes["request"].path}'
+            return attributes
+
     LOGGING_HANDLERS.update({
         'azure': {
             '()': AzureLoggingHandler,
