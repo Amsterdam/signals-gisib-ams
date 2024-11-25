@@ -37,8 +37,10 @@ RUN set -eux; \
     chgrp signals-gisib /app; \
     chmod g+w /app; \
     mkdir -p /app/static /app/media; \
-    chown signals-gisib /app/static; \
+    chown -R signals-gisib /app/static; \
     chown signals-gisib /app/media
+
+RUN ls -lah /app
 
 USER signals-gisib
 
