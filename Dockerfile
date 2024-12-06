@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG PYTHON_VERSION=3.12-slim-bookworm
+ARG PYTHON_VERSION=3.13-slim-bookworm
 
 ##################################################
 #                   Python                       #
