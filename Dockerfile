@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1
-ARG PYTHON_VERSION=3.11
+ARG PYTHON_VERSION=3.13-slim-bookworm
 
 ##################################################
 #                   Python                       #
 ##################################################
-FROM python:${PYTHON_VERSION}-slim-buster as app
+FROM python:${PYTHON_VERSION} AS app
 
 ENV PYTHONUNBUFFERED 1
 ENV DJANGO_SETTINGS_MODULE=main.settings
@@ -48,7 +48,7 @@ RUN SECRET_KEY=$DJANGO_SECRET_KEY python manage.py collectstatic --no-input
 
 CMD ["gunicorn", "main.asgi:application", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "--reload", "-w", "2", "--threads", "4"]
 
-FROM app as dev
+FROM app AS dev
 USER root
 COPY requirements_dev.txt /requirements_dev.txt
 RUN pip install -r /requirements_dev.txt
