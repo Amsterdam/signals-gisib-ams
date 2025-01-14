@@ -14,8 +14,7 @@ WORKDIR /app
 
 RUN useradd --no-create-home signals-gisib
 
-COPY requirements.txt /requirements.txt
-COPY requirements_test.txt /requirements_test.txt
+COPY ./app/requirements /app/requirements
 
 RUN set -eux;  \
     apt-get update; \
@@ -29,7 +28,7 @@ RUN set -eux;  \
     apt-get purge -y --auto-remove; \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir -r /requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements/requirements.txt
 
 COPY app /app
 
@@ -50,6 +49,5 @@ CMD ["gunicorn", "main.asgi:application", "-k", "uvicorn.workers.UvicornWorker",
 
 FROM app AS dev
 USER root
-COPY requirements_dev.txt /requirements_dev.txt
-RUN pip install -r /requirements_dev.txt
+RUN pip install -r /app/requirements/requirements_dev.txt
 USER signals-gisib
