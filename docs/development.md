@@ -53,9 +53,9 @@ To create or update the dependencies run the provided `make` command:
 make requirements
 ```
 
-This will update the [requirements.txt](../requirements.txt), 
-[requirements_dev.txt](../requirements_dev.txt) and 
-[requirements_test.txt](../requirements_test.txt).
+This will update the [requirements.txt](./requirements/requirements.txt), 
+[requirements_dev.txt](./requirements/requirements_dev.txt) and 
+[requirements_test.txt](./requirements/requirements_test.txt).
 
 Install dependencies in the virtual environment using the provided `make` command:
 
