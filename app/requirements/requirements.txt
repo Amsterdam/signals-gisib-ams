@@ -22,12 +22,12 @@ azure-core==1.32.0
     #   azure-monitor-opentelemetry-exporter
     #   msrest
 azure-monitor-opentelemetry-exporter==1.0.0b34
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 billiard==4.2.1
     # via celery
 celery==5.4.0
     # via
-    #   -r requirements/requirements.in
+    #   -r requirements.in
     #   django-celery-beat
     #   django-celery-results
     #   flower
@@ -55,7 +55,7 @@ click-plugins==1.1.1
 click-repl==0.3.0
     # via celery
 coreapi==2.3.3
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 coreschema==0.0.4
     # via coreapi
 cron-descriptor==1.4.5
@@ -68,9 +68,9 @@ deprecated==1.2.18
     #   opentelemetry-semantic-conventions
 deprecation==2.1.0
     # via python-keycloak
-django==4.2.19
+django==4.2.20
     # via
-    #   -r requirements/requirements.in
+    #   -r requirements.in
     #   django-celery-beat
     #   django-celery-results
     #   django-cors-headers
@@ -81,31 +81,31 @@ django==4.2.19
     #   djangorestframework
     #   drf-yasg
 django-celery-beat==2.7.0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 django-celery-results==2.5.1
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 django-cors-headers==4.7.0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 django-extensions==3.2.3
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 django-filter==25.1
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 django-simple-history==3.8.0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 django-timezone-field==7.1
     # via django-celery-beat
 djangorestframework==3.15.2
     # via
-    #   -r requirements/requirements.in
+    #   -r requirements.in
     #   drf-yasg
 drf-yasg==1.21.9
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 fixedint==0.1.6
     # via azure-monitor-opentelemetry-exporter
 flower==2.0.1
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 gunicorn==23.0.0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 h11==0.14.0
     # via
     #   httpcore
@@ -160,18 +160,18 @@ opentelemetry-instrumentation==0.51b0
     #   opentelemetry-instrumentation-psycopg2
     #   opentelemetry-instrumentation-wsgi
 opentelemetry-instrumentation-asgi==0.51b0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 opentelemetry-instrumentation-dbapi==0.51b0
     # via opentelemetry-instrumentation-psycopg2
 opentelemetry-instrumentation-django==0.51b0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 opentelemetry-instrumentation-psycopg2==0.51b0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 opentelemetry-instrumentation-wsgi==0.51b0
     # via opentelemetry-instrumentation-django
 opentelemetry-sdk==1.30.0
     # via
-    #   -r requirements/requirements.in
+    #   -r requirements.in
     #   azure-monitor-opentelemetry-exporter
 opentelemetry-semantic-conventions==0.51b0
     # via
@@ -199,7 +199,7 @@ prompt-toolkit==3.0.50
 psutil==6.1.1
     # via azure-monitor-opentelemetry-exporter
 psycopg2-binary==2.9.10
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 pycparser==2.22
     # via cffi
 python-crontab==3.2.0
@@ -209,7 +209,7 @@ python-dateutil==2.9.0.post0
     #   celery
     #   python-crontab
 python-keycloak==5.3.1
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 pytz==2025.1
     # via
     #   drf-yasg
@@ -218,7 +218,7 @@ pyyaml==6.0.2
     # via drf-yasg
 requests==2.32.3
     # via
-    #   -r requirements/requirements.in
+    #   -r requirements.in
     #   azure-core
     #   coreapi
     #   msrest
@@ -255,10 +255,10 @@ uritemplate==4.1.1
     #   drf-yasg
 urllib3==1.26.20
     # via
-    #   -r requirements/requirements.in
+    #   -r requirements.in
     #   requests
 uvicorn==0.34.0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 vine==5.1.0
     # via
     #   amqp
@@ -267,7 +267,7 @@ vine==5.1.0
 wcwidth==0.2.13
     # via prompt-toolkit
 whitenoise==6.9.0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 wrapt==1.17.2
     # via
     #   deprecated
