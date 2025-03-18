@@ -17,7 +17,7 @@ from signals_gisib.pagination import LinkHeaderPagination
 schema_view = get_schema_view(
     openapi.Info(
         title="signals-gisib-ams",
-        default_version="0.2.4",
+        default_version="0.2.5",
         description="This API returns information about oak trees in a specific location as a GeoJSON output. "
                     "The API supports query parameters for filtering results.",
         license=openapi.License(name="EUPL", url="https://github.com/Amsterdam/signals-gisib-ams/blob/main/LICENSE"),
