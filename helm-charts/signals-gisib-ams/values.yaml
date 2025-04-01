@@ -94,3 +94,6 @@ rabbitmq:
     enabled: true
     size: 1Gi
     existingClaim: null
+
+extraVolumes: []
+extraVolumeMounts: []
