@@ -17,7 +17,7 @@ asgiref==3.8.1
     #   opentelemetry-instrumentation-asgi
 async-property==0.2.2
     # via python-keycloak
-azure-core==1.33.0
+azure-core==1.34.0
     # via
     #   azure-identity
     #   azure-monitor-opentelemetry-exporter
@@ -42,7 +42,7 @@ certifi==2025.4.26
     #   requests
 cffi==1.17.1
     # via cryptography
-charset-normalizer==3.4.1
+charset-normalizer==3.4.2
     # via requests
 click==8.1.8
     # via
@@ -63,7 +63,7 @@ coreschema==0.0.4
     # via coreapi
 cron-descriptor==1.4.5
     # via django-celery-beat
-cryptography==44.0.2
+cryptography==44.0.3
     # via
     #   azure-identity
     #   jwcrypto
@@ -121,7 +121,7 @@ httpcore==1.0.9
     # via httpx
 httpx==0.28.1
     # via python-keycloak
-humanize==4.12.2
+humanize==4.12.3
     # via flower
 idna==3.10
     # via

@@ -26,7 +26,7 @@ async-property==0.2.2
     # via
     #   -r /app/requirements/requirements.txt
     #   python-keycloak
-azure-core==1.33.0
+azure-core==1.34.0
     # via
     #   -r /app/requirements/requirements.txt
     #   azure-identity
@@ -63,7 +63,7 @@ cffi==1.17.1
     #   cryptography
 chardet==5.2.0
     # via tox
-charset-normalizer==3.4.1
+charset-normalizer==3.4.2
     # via
     #   -r /app/requirements/requirements.txt
     #   requests
@@ -101,7 +101,7 @@ cron-descriptor==1.4.5
     # via
     #   -r /app/requirements/requirements.txt
     #   django-celery-beat
-cryptography==44.0.2
+cryptography==44.0.3
     # via
     #   -r /app/requirements/requirements.txt
     #   azure-identity
@@ -186,7 +186,7 @@ httpx==0.28.1
     # via
     #   -r /app/requirements/requirements.txt
     #   python-keycloak
-humanize==4.12.2
+humanize==4.12.3
     # via
     #   -r /app/requirements/requirements.txt
     #   flower
@@ -456,7 +456,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.30.0
+virtualenv==20.31.1
     # via tox
 wcwidth==0.2.13
     # via
