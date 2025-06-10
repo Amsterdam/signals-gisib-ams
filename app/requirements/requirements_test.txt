@@ -386,7 +386,7 @@ pyyaml==6.0.2
     #   -r ./requirements.txt
     #   drf-yasg
     #   vcrpy
-requests==2.32.3
+requests==2.32.4
     # via
     #   -r ./requirements.txt
     #   azure-core
