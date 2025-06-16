@@ -62,6 +62,8 @@ def import_categorized_signals(category_slugs: List[str], time_delta_days: int =
             )
             signal_created_at = timezone.datetime.strptime(signal_json['created_at'], '%Y-%m-%dT%H:%M:%S.%f%z')
             signal_extra_properties = signal_json['extra_properties']
+            if signal_extra_properties is None:
+                signal_extra_properties = {}
 
             signal = Signal.objects.create(
                 signal_id=signal_id,
