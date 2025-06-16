@@ -57,7 +57,7 @@ def _translate_nest_size(extra_properties: List[dict]) -> Union[None, int]:
 
 
 def _create_post_collection_insert_body(signal_id: int, signal_created_at: datetime,  signal_geometry: Point,
-                                        nest_size: int, tree_id: int = None) -> dict:
+                                        nest_size: int | None, tree_id: int | None = None) -> dict:
     body = {
         'Properties': {
             'SIG Nummer melding': signal_id,
