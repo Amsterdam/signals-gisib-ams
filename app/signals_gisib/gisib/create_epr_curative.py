@@ -1,7 +1,7 @@
 import copy
 import json
 from datetime import datetime
-from typing import List, Union
+from typing import List
 
 from django.contrib.gis.geos import Point
 
@@ -30,7 +30,7 @@ def _get_tree_ids(extra_properties: List[dict]) -> List[int]:
     return list(set(tree_ids)) if tree_ids else []
 
 
-def _translate_nest_size(extra_properties: List[dict]) -> Union[None, int]:
+def _translate_nest_size(extra_properties: List[dict]) -> int | None:
     _translation = {
         # 'signal_answer': 'gisib_answer'
         'Nest is zo groot als een tennisbal': 'Nest is zo groot als een tennisbal',
@@ -52,12 +52,12 @@ def _translate_nest_size(extra_properties: List[dict]) -> Union[None, int]:
             )
             return collection_item.gisib_id
         except CollectionItem.DoesNotExist:
-            return
-    return
+            return None
+    return None
 
 
 def _create_post_collection_insert_body(signal_id: int, signal_created_at: datetime,  signal_geometry: Point,
-                                        nest_size: int, tree_id: int = None) -> dict:
+                                        nest_size: int | None, tree_id: int | None = None) -> dict:
     body = {
         'Properties': {
             'SIG Nummer melding': signal_id,
