@@ -82,16 +82,23 @@ def create_epr_curative(signal: Signal) -> List[int]:
     nest_size = _translate_nest_size(signal.signal_extra_properties)
     tree_ids = _get_tree_ids(signal.signal_extra_properties)
 
-    post_collection_insert_body_list = [
-        _create_post_collection_insert_body(
+    post_collection_insert_body_list = []
+    if len(tree_ids) > 0:
+        for tree_id in tree_ids:
+            post_collection_insert_body_list.append(_create_post_collection_insert_body(
+                signal_id=signal.signal_id,
+                signal_geometry=signal.signal_geometry,
+                signal_created_at=signal.signal_created_at,
+                nest_size=nest_size,
+                tree_id=tree_id,
+            ))
+    else:
+        post_collection_insert_body_list.append(_create_post_collection_insert_body(
             signal_id=signal.signal_id,
             signal_geometry=signal.signal_geometry,
             signal_created_at=signal.signal_created_at,
             nest_size=nest_size,
-            tree_id=tree_id,
-        )
-        for tree_id in tree_ids
-    ]
+        ))
 
     created_epr_curative_id_list = []
     for post_collection_insert_body in post_collection_insert_body_list:
