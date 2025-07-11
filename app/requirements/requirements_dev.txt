@@ -16,7 +16,7 @@ anyio==4.9.0
     # via
     #   -r /app/requirements/requirements_test.txt
     #   httpx
-asgiref==3.8.1
+asgiref==3.9.1
     # via
     #   -r /app/requirements/requirements_test.txt
     #   django
@@ -26,7 +26,7 @@ async-property==0.2.2
     # via
     #   -r /app/requirements/requirements_test.txt
     #   python-keycloak
-azure-core==1.34.0
+azure-core==1.35.0
     # via
     #   -r /app/requirements/requirements_test.txt
     #   azure-identity
@@ -36,7 +36,7 @@ azure-identity==1.23.0
     # via
     #   -r /app/requirements/requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
-azure-monitor-opentelemetry-exporter==1.0.0b38
+azure-monitor-opentelemetry-exporter==1.0.0b39
     # via -r /app/requirements/requirements_test.txt
 billiard==4.2.1
     # via
@@ -54,7 +54,7 @@ celery==5.5.3
     #   django-celery-beat
     #   django-celery-results
     #   flower
-certifi==2025.6.15
+certifi==2025.7.9
     # via
     #   -r /app/requirements/requirements_test.txt
     #   httpcore
@@ -104,7 +104,7 @@ coreschema==0.0.4
     # via
     #   -r /app/requirements/requirements_test.txt
     #   coreapi
-coverage[toml]==7.9.1
+coverage[toml]==7.9.2
     # via
     #   -r /app/requirements/requirements_test.txt
     #   pytest-cov
@@ -112,7 +112,7 @@ cron-descriptor==1.4.5
     # via
     #   -r /app/requirements/requirements_test.txt
     #   django-celery-beat
-cryptography==45.0.4
+cryptography==45.0.5
     # via
     #   -r /app/requirements/requirements_test.txt
     #   azure-identity
@@ -266,7 +266,7 @@ msrest==0.7.1
     # via
     #   -r /app/requirements/requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
-multidict==6.6.0
+multidict==6.6.3
     # via
     #   -r /app/requirements/requirements_test.txt
     #   yarl
@@ -467,7 +467,7 @@ tornado==6.5.1
     #   flower
 tox==4.27.0
     # via -r /app/requirements/requirements_test.txt
-typing-extensions==4.14.0
+typing-extensions==4.14.1
     # via
     #   -r /app/requirements/requirements_test.txt
     #   azure-core
@@ -492,7 +492,7 @@ urllib3==2.5.0
     #   -r /app/requirements/requirements_test.txt
     #   requests
     #   vcrpy
-uvicorn==0.34.3
+uvicorn==0.35.0
     # via -r /app/requirements/requirements_test.txt
 vcrpy==7.0.0
     # via -r /app/requirements/requirements_test.txt
