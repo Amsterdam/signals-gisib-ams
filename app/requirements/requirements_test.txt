@@ -42,7 +42,7 @@ billiard==4.2.1
     # via
     #   -r /app/requirements/requirements.txt
     #   celery
-cachetools==6.1.0
+cachetools==6.2.0
     # via tox
 celery==5.5.3
     # via
@@ -95,13 +95,13 @@ coreschema==0.0.4
     # via
     #   -r /app/requirements/requirements.txt
     #   coreapi
-coverage[toml]==7.10.3
+coverage[toml]==7.10.6
     # via pytest-cov
-cron-descriptor==1.4.5
+cron-descriptor==2.0.6
     # via
     #   -r /app/requirements/requirements.txt
     #   django-celery-beat
-cryptography==45.0.6
+cryptography==45.0.7
     # via
     #   -r /app/requirements/requirements.txt
     #   azure-identity
@@ -114,7 +114,7 @@ deprecation==2.1.0
     #   python-keycloak
 distlib==0.4.0
     # via virtualenv
-django==4.2.23
+django==4.2.24
     # via
     #   -r /app/requirements/requirements.txt
     #   django-celery-beat
@@ -150,9 +150,9 @@ drf-yasg==1.21.10
     # via -r /app/requirements/requirements.txt
 factory-boy==3.3.3
     # via -r ./requirements/requirements_test.in
-faker==37.5.3
+faker==37.6.0
     # via factory-boy
-filelock==3.18.0
+filelock==3.19.1
     # via
     #   tox
     #   virtualenv
@@ -181,7 +181,7 @@ httpx==0.28.1
     # via
     #   -r /app/requirements/requirements.txt
     #   python-keycloak
-humanize==4.12.3
+humanize==4.13.0
     # via
     #   -r /app/requirements/requirements.txt
     #   flower
@@ -313,7 +313,7 @@ packaging==25.0
     #   pyproject-api
     #   pytest
     #   tox
-platformdirs==4.3.8
+platformdirs==4.4.0
     # via
     #   tox
     #   virtualenv
@@ -326,7 +326,7 @@ prometheus-client==0.22.1
     # via
     #   -r /app/requirements/requirements.txt
     #   flower
-prompt-toolkit==3.0.51
+prompt-toolkit==3.0.52
     # via
     #   -r /app/requirements/requirements.txt
     #   click-repl
@@ -354,7 +354,7 @@ pyjwt[crypto]==2.10.1
     #   msal
 pyproject-api==1.9.1
     # via tox
-pytest==8.4.1
+pytest==8.4.2
     # via
     #   -r ./requirements/requirements_test.in
     #   pytest-cov
@@ -372,7 +372,7 @@ python-dateutil==2.9.0.post0
     #   -r /app/requirements/requirements.txt
     #   celery
     #   freezegun
-python-keycloak==5.7.0
+python-keycloak==5.8.1
     # via -r /app/requirements/requirements.txt
 pytz==2025.2
     # via
@@ -384,7 +384,7 @@ pyyaml==6.0.2
     #   -r /app/requirements/requirements.txt
     #   drf-yasg
     #   vcrpy
-requests==2.32.4
+requests==2.32.5
     # via
     #   -r /app/requirements/requirements.txt
     #   azure-core
@@ -419,13 +419,14 @@ tornado==6.5.2
     # via
     #   -r /app/requirements/requirements.txt
     #   flower
-tox==4.28.4
+tox==4.30.2
     # via -r ./requirements/requirements_test.in
-typing-extensions==4.14.1
+typing-extensions==4.15.0
     # via
     #   -r /app/requirements/requirements.txt
     #   azure-core
     #   azure-identity
+    #   cron-descriptor
     #   jwcrypto
     #   opentelemetry-api
     #   opentelemetry-sdk
@@ -456,7 +457,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.33.1
+virtualenv==20.34.0
     # via tox
 wcwidth==0.2.13
     # via
