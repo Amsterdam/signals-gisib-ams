@@ -127,7 +127,7 @@ distlib==0.4.0
     # via
     #   -r ./requirements_test.txt
     #   virtualenv
-django==4.2.25
+django==4.2.26
     # via
     #   -r ./requirements_test.txt
     #   django-celery-beat
