@@ -26,7 +26,7 @@ async-property==0.2.2
     # via
     #   -r ./requirements_test.txt
     #   python-keycloak
-azure-core==1.37.0
+azure-core==1.38.0
     # via
     #   -r ./requirements_test.txt
     #   azure-identity
