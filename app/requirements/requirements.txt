@@ -17,7 +17,7 @@ asgiref==3.11.0
     #   opentelemetry-instrumentation-asgi
 async-property==0.2.2
     # via python-keycloak
-azure-core==1.37.0
+azure-core==1.38.0
     # via
     #   azure-identity
     #   azure-monitor-opentelemetry-exporter
