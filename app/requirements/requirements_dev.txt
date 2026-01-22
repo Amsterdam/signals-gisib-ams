@@ -334,6 +334,7 @@ packaging==25.0
     #   pyproject-api
     #   pytest
     #   tox
+    #   wheel
 pip-tools==7.5.2
     # via -r requirements_dev.in
 platformdirs==4.5.1
@@ -499,7 +500,7 @@ wcwidth==0.2.14
     # via
     #   -r ./requirements_test.txt
     #   prompt-toolkit
-wheel==0.45.1
+wheel==0.46.2
     # via pip-tools
 whitenoise==6.11.0
     # via -r ./requirements_test.txt
