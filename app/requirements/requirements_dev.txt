@@ -439,7 +439,7 @@ sqlparse==0.5.5
     #   -r requirements_test.txt
     #   django
     #   django-debug-toolbar
-tornado==6.5.4
+tornado==6.5.5
     # via
     #   -r requirements_test.txt
     #   flower
