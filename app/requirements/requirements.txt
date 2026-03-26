@@ -224,7 +224,7 @@ pytz==2025.2
     #   flower
 pyyaml==6.0.3
     # via drf-yasg
-requests==2.32.5
+requests==2.33.0
     # via
     #   -r requirements.in
     #   azure-core
