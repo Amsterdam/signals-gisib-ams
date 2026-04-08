@@ -69,7 +69,7 @@ cryptography==46.0.5
     #   pyjwt
 deprecation==2.1.0
     # via python-keycloak
-django==4.2.29
+django==4.2.30
     # via
     #   -r requirements.in
     #   django-celery-beat
