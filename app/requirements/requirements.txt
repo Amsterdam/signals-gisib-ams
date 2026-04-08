@@ -61,7 +61,7 @@ coreschema==0.0.4
     # via coreapi
 cron-descriptor==2.0.6
     # via django-celery-beat
-cryptography==46.0.5
+cryptography==46.0.7
     # via
     #   azure-identity
     #   jwcrypto
