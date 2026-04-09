@@ -8,31 +8,31 @@ aiofiles==25.1.0
     # via python-keycloak
 amqp==5.3.1
     # via kombu
-anyio==4.12.1
+anyio==4.13.0
     # via httpx
 asgiref==3.11.1
     # via
     #   django
     #   django-cors-headers
     #   opentelemetry-instrumentation-asgi
-azure-core==1.38.2
+azure-core==1.39.0
     # via
     #   azure-identity
     #   azure-monitor-opentelemetry-exporter
     #   msrest
-azure-identity==1.25.2
+azure-identity==1.25.3
     # via azure-monitor-opentelemetry-exporter
-azure-monitor-opentelemetry-exporter==1.0.0b48
-    # via -r requirements.in
+azure-monitor-opentelemetry-exporter==1.0.0b51
+    # via -r ./requirements/requirements.in
 billiard==4.2.4
     # via celery
-celery==5.6.2
+celery==5.6.3
     # via
-    #   -r requirements.in
+    #   -r ./requirements/requirements.in
     #   django-celery-beat
     #   django-celery-results
     #   flower
-certifi==2026.1.4
+certifi==2026.2.25
     # via
     #   httpcore
     #   httpx
@@ -40,9 +40,9 @@ certifi==2026.1.4
     #   requests
 cffi==2.0.0
     # via cryptography
-charset-normalizer==3.4.4
+charset-normalizer==3.4.7
     # via requests
-click==8.3.1
+click==8.3.2
     # via
     #   celery
     #   click-didyoumean
@@ -56,12 +56,12 @@ click-plugins==1.1.1.2
 click-repl==0.3.0
     # via celery
 coreapi==2.3.3
-    # via -r requirements.in
+    # via -r ./requirements/requirements.in
 coreschema==0.0.4
     # via coreapi
-cron-descriptor==2.0.6
+cron-descriptor==1.4.5
     # via django-celery-beat
-cryptography==46.0.5
+cryptography==46.0.7
     # via
     #   azure-identity
     #   jwcrypto
@@ -69,9 +69,9 @@ cryptography==46.0.5
     #   pyjwt
 deprecation==2.1.0
     # via python-keycloak
-django==4.2.29
+django==4.2.30
     # via
-    #   -r requirements.in
+    #   -r ./requirements/requirements.in
     #   django-celery-beat
     #   django-celery-results
     #   django-cors-headers
@@ -81,30 +81,30 @@ django==4.2.29
     #   django-timezone-field
     #   djangorestframework
     #   drf-yasg
-django-celery-beat==2.8.1
-    # via -r requirements.in
+django-celery-beat==2.9.0
+    # via -r ./requirements/requirements.in
 django-celery-results==2.6.0
-    # via -r requirements.in
+    # via -r ./requirements/requirements.in
 django-cors-headers==4.9.0
-    # via -r requirements.in
+    # via -r ./requirements/requirements.in
 django-extensions==4.1
-    # via -r requirements.in
+    # via -r ./requirements/requirements.in
 django-filter==25.1
-    # via -r requirements.in
+    # via -r ./requirements/requirements.in
 django-simple-history==3.11.0
-    # via -r requirements.in
+    # via -r ./requirements/requirements.in
 django-timezone-field==7.2.1
     # via django-celery-beat
 djangorestframework==3.15.2
     # via
-    #   -r requirements.in
+    #   -r ./requirements/requirements.in
     #   drf-yasg
-drf-yasg==1.21.14
-    # via -r requirements.in
+drf-yasg==1.21.15
+    # via -r ./requirements/requirements.in
 flower==2.0.1
-    # via -r requirements.in
-gunicorn==25.1.0
-    # via -r requirements.in
+    # via -r ./requirements/requirements.in
+gunicorn==25.3.0
+    # via -r ./requirements/requirements.in
 h11==0.16.0
     # via
     #   httpcore
@@ -130,13 +130,13 @@ itypes==1.2.0
     # via coreapi
 jinja2==3.1.6
     # via coreschema
-jwcrypto==1.5.6
+jwcrypto==1.5.7
     # via python-keycloak
 kombu==5.6.2
     # via celery
 markupsafe==3.0.3
     # via jinja2
-msal==1.34.0
+msal==1.36.0
     # via
     #   azure-identity
     #   msal-extensions
@@ -146,7 +146,7 @@ msrest==0.7.1
     # via azure-monitor-opentelemetry-exporter
 oauthlib==3.3.1
     # via requests-oauthlib
-opentelemetry-api==1.39.0
+opentelemetry-api==1.40.0
     # via
     #   azure-monitor-opentelemetry-exporter
     #   opentelemetry-instrumentation
@@ -157,28 +157,28 @@ opentelemetry-api==1.39.0
     #   opentelemetry-instrumentation-wsgi
     #   opentelemetry-sdk
     #   opentelemetry-semantic-conventions
-opentelemetry-instrumentation==0.60b0
+opentelemetry-instrumentation==0.61b0
     # via
     #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-dbapi
     #   opentelemetry-instrumentation-django
     #   opentelemetry-instrumentation-psycopg2
     #   opentelemetry-instrumentation-wsgi
-opentelemetry-instrumentation-asgi==0.60b0
-    # via -r requirements.in
-opentelemetry-instrumentation-dbapi==0.60b0
+opentelemetry-instrumentation-asgi==0.61b0
+    # via -r ./requirements/requirements.in
+opentelemetry-instrumentation-dbapi==0.61b0
     # via opentelemetry-instrumentation-psycopg2
-opentelemetry-instrumentation-django==0.60b0
-    # via -r requirements.in
-opentelemetry-instrumentation-psycopg2==0.60b0
-    # via -r requirements.in
-opentelemetry-instrumentation-wsgi==0.60b0
+opentelemetry-instrumentation-django==0.61b0
+    # via -r ./requirements/requirements.in
+opentelemetry-instrumentation-psycopg2==0.61b0
+    # via -r ./requirements/requirements.in
+opentelemetry-instrumentation-wsgi==0.61b0
     # via opentelemetry-instrumentation-django
-opentelemetry-sdk==1.39.0
+opentelemetry-sdk==1.40.0
     # via
-    #   -r requirements.in
+    #   -r ./requirements/requirements.in
     #   azure-monitor-opentelemetry-exporter
-opentelemetry-semantic-conventions==0.60b0
+opentelemetry-semantic-conventions==0.61b0
     # via
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-asgi
@@ -186,7 +186,7 @@ opentelemetry-semantic-conventions==0.60b0
     #   opentelemetry-instrumentation-django
     #   opentelemetry-instrumentation-wsgi
     #   opentelemetry-sdk
-opentelemetry-util-http==0.60b0
+opentelemetry-util-http==0.61b0
     # via
     #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-django
@@ -205,10 +205,10 @@ prompt-toolkit==3.0.52
 psutil==7.2.2
     # via azure-monitor-opentelemetry-exporter
 psycopg2-binary==2.9.11
-    # via -r requirements.in
+    # via -r ./requirements/requirements.in
 pycparser==3.0
     # via cffi
-pyjwt[crypto]==2.11.0
+pyjwt[crypto]==2.12.1
     # via
     #   msal
     #   pyjwt
@@ -217,16 +217,16 @@ python-crontab==3.3.0
 python-dateutil==2.9.0.post0
     # via celery
 python-keycloak==7.1.1
-    # via -r requirements.in
-pytz==2025.2
+    # via -r ./requirements/requirements.in
+pytz==2026.1.post1
     # via
     #   drf-yasg
     #   flower
 pyyaml==6.0.3
     # via drf-yasg
-requests==2.32.5
+requests==2.33.1
     # via
-    #   -r requirements.in
+    #   -r ./requirements/requirements.in
     #   azure-core
     #   coreapi
     #   msal
@@ -248,12 +248,11 @@ typing-extensions==4.15.0
     # via
     #   azure-core
     #   azure-identity
-    #   cron-descriptor
     #   jwcrypto
     #   opentelemetry-api
     #   opentelemetry-sdk
     #   opentelemetry-semantic-conventions
-tzdata==2025.3
+tzdata==2026.1
     # via
     #   django-celery-beat
     #   kombu
@@ -265,10 +264,10 @@ uritemplate==4.2.0
     #   drf-yasg
 urllib3==2.6.3
     # via
-    #   -r requirements.in
+    #   -r ./requirements/requirements.in
     #   requests
-uvicorn==0.41.0
-    # via -r requirements.in
+uvicorn==0.44.0
+    # via -r ./requirements/requirements.in
 vine==5.1.0
     # via
     #   amqp
@@ -276,8 +275,8 @@ vine==5.1.0
     #   kombu
 wcwidth==0.6.0
     # via prompt-toolkit
-whitenoise==6.11.0
-    # via -r requirements.in
+whitenoise==6.12.0
+    # via -r ./requirements/requirements.in
 wrapt==1.17.3
     # via
     #   opentelemetry-instrumentation
