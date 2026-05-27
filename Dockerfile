@@ -19,7 +19,7 @@ COPY ./app/requirements /app/requirements
 RUN set -eux;  \
     apt-get update; \
     apt-get upgrade -y; \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y \
       build-essential \
       gdal-bin \
       libpq-dev \
