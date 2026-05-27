@@ -18,10 +18,10 @@ COPY ./app/requirements /app/requirements
 
 RUN set -eux;  \
     apt-get update; \
-    apt-get install -y \
+    apt-get upgrade -y; \
+    apt-get install -y --no-install-recommends \
       build-essential \
       gdal-bin \
-      build-essential \
       libpq-dev \
       gettext \
     ; \
