@@ -12,7 +12,7 @@ amqp==5.3.1
     # via
     #   -r requirements/requirements_test.txt
     #   kombu
-anyio==4.13.0
+anyio==4.14.1
     # via
     #   -r requirements/requirements_test.txt
     #   httpx
@@ -32,7 +32,7 @@ azure-identity==1.25.3
     # via
     #   -r requirements/requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
-azure-monitor-opentelemetry-exporter==1.0.0b52
+azure-monitor-opentelemetry-exporter==1.0.0b53
     # via -r requirements/requirements_test.txt
 billiard==4.2.4
     # via
@@ -50,7 +50,7 @@ celery==5.6.3
     #   django-celery-beat
     #   django-celery-results
     #   flower
-certifi==2026.5.20
+certifi==2026.6.17
     # via
     #   -r requirements/requirements_test.txt
     #   httpcore
@@ -65,7 +65,7 @@ charset-normalizer==3.4.7
     # via
     #   -r requirements/requirements_test.txt
     #   requests
-click==8.4.1
+click==8.4.2
     # via
     #   -r requirements/requirements_test.txt
     #   celery
@@ -96,7 +96,7 @@ coreschema==0.0.4
     # via
     #   -r requirements/requirements_test.txt
     #   coreapi
-coverage[toml]==7.14.1
+coverage[toml]==7.14.3
     # via
     #   -r requirements/requirements_test.txt
     #   pytest-cov
@@ -104,7 +104,7 @@ cron-descriptor==1.4.5
     # via
     #   -r requirements/requirements_test.txt
     #   django-celery-beat
-cryptography==48.0.0
+cryptography==49.0.0
     # via
     #   -r requirements/requirements_test.txt
     #   azure-identity
@@ -115,7 +115,7 @@ deprecation==2.1.0
     # via
     #   -r requirements/requirements_test.txt
     #   python-keycloak
-distlib==0.4.0
+distlib==0.4.3
     # via
     #   -r requirements/requirements_test.txt
     #   virtualenv
@@ -144,9 +144,9 @@ django-extensions==4.1
     # via -r requirements/requirements_test.txt
 django-filter==25.1
     # via -r requirements/requirements_test.txt
-django-simple-history==3.11.0
+django-simple-history==3.12.0
     # via -r requirements/requirements_test.txt
-django-timezone-field==7.2.1
+django-timezone-field==7.2.2
     # via
     #   -r requirements/requirements_test.txt
     #   django-celery-beat
@@ -158,11 +158,11 @@ drf-yasg==1.21.15
     # via -r requirements/requirements_test.txt
 factory-boy==3.3.3
     # via -r requirements/requirements_test.txt
-faker==40.19.1
+faker==40.23.0
     # via
     #   -r requirements/requirements_test.txt
     #   factory-boy
-filelock==3.29.0
+filelock==3.29.4
     # via
     #   -r requirements/requirements_test.txt
     #   python-discovery
@@ -193,7 +193,7 @@ humanize==4.15.0
     # via
     #   -r requirements/requirements_test.txt
     #   flower
-idna==3.16
+idna==3.18
     # via
     #   -r requirements/requirements_test.txt
     #   anyio
@@ -225,7 +225,7 @@ jinja2==3.1.6
     # via
     #   -r requirements/requirements_test.txt
     #   coreschema
-jwcrypto==1.5.7
+jwcrypto==1.5.8
     # via
     #   -r requirements/requirements_test.txt
     #   python-keycloak
@@ -241,7 +241,7 @@ mccabe==0.7.0
     # via
     #   -r requirements/requirements_test.txt
     #   flake8
-msal==1.36.0
+msal==1.37.0
     # via
     #   -r requirements/requirements_test.txt
     #   azure-identity
@@ -372,7 +372,7 @@ pyjwt[crypto]==2.13.0
     # via
     #   -r requirements/requirements_test.txt
     #   msal
-pyproject-api==1.10.0
+pyproject-api==1.10.1
     # via
     #   -r requirements/requirements_test.txt
     #   tox
@@ -380,7 +380,7 @@ pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
-pytest==9.0.3
+pytest==9.1.1
     # via
     #   -r requirements/requirements_test.txt
     #   pytest-cov
@@ -398,7 +398,7 @@ python-dateutil==2.9.0.post0
     #   -r requirements/requirements_test.txt
     #   celery
     #   freezegun
-python-discovery==1.4.0
+python-discovery==1.4.2
     # via
     #   -r requirements/requirements_test.txt
     #   tox
@@ -446,11 +446,11 @@ tomli-w==1.2.0
     # via
     #   -r requirements/requirements_test.txt
     #   tox
-tornado==6.5.6
+tornado==6.5.7
     # via
     #   -r requirements/requirements_test.txt
     #   flower
-tox==4.55.0
+tox==4.56.1
     # via -r requirements/requirements_test.txt
 typing-extensions==4.15.0
     # via
@@ -466,7 +466,7 @@ tzdata==2026.2
     #   -r requirements/requirements_test.txt
     #   django-celery-beat
     #   kombu
-tzlocal==5.3.1
+tzlocal==5.4.4
     # via
     #   -r requirements/requirements_test.txt
     #   celery
@@ -479,9 +479,9 @@ urllib3==2.7.0
     # via
     #   -r requirements/requirements_test.txt
     #   requests
-uvicorn==0.48.0
+uvicorn==0.49.0
     # via -r requirements/requirements_test.txt
-vcrpy==8.1.1
+vcrpy==8.2.1
     # via -r requirements/requirements_test.txt
 vine==5.1.0
     # via
@@ -489,11 +489,11 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==21.4.1
+virtualenv==21.5.1
     # via
     #   -r requirements/requirements_test.txt
     #   tox
-wcwidth==0.7.0
+wcwidth==0.8.1
     # via
     #   -r requirements/requirements_test.txt
     #   prompt-toolkit
