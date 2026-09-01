@@ -398,7 +398,7 @@ sqlparse==0.6.0
     #   django
 tomli-w==1.2.0
     # via tox
-tornado==6.5.7
+tornado==6.5.8
     # via
     #   -r requirements.txt
     #   flower
