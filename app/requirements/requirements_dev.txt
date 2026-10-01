@@ -6,68 +6,68 @@
 #
 aiofiles==25.1.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   python-keycloak
 amqp==5.4.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   kombu
 anyio==4.15.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   httpx
 asgiref==3.12.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   django
     #   django-cors-headers
     #   opentelemetry-instrumentation-asgi
 azure-core==1.41.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-identity
     #   azure-monitor-opentelemetry-exporter
     #   msrest
 azure-identity==1.25.3
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
 azure-monitor-opentelemetry-exporter==1.0.0b57
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 billiard==4.3.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   celery
 build==1.6.1
     # via pip-tools
 cachetools==7.2.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   tox
 celery==5.6.3
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   django-celery-beat
     #   django-celery-results
     #   flower
 certifi==2026.7.22
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   httpcore
     #   httpx
     #   msrest
     #   requests
 cffi==2.1.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   cryptography
 charset-normalizer==3.5.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   requests
 click==8.5.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   celery
     #   click-didyoumean
     #   click-plugins
@@ -76,52 +76,52 @@ click==8.5.0
     #   uvicorn
 click-didyoumean==0.3.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   celery
 click-plugins==1.1.1.2
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   celery
 click-repl==0.4.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   celery
 colorama==0.4.6
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   tox
 coreapi==2.3.3
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 coreschema==0.0.4
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   coreapi
 coverage[toml]==7.16.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   pytest-cov
 cron-descriptor==1.4.5
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   django-celery-beat
 cryptography==50.0.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-identity
     #   jwcrypto
     #   msal
     #   pyjwt
 deprecation==2.1.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   python-keycloak
 distlib==0.4.3
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   virtualenv
 django==5.2.17
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   django-celery-beat
     #   django-celery-results
     #   django-cors-headers
@@ -133,134 +133,134 @@ django==5.2.17
     #   djangorestframework
     #   drf-yasg
 django-celery-beat==2.9.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 django-celery-results==2.6.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 django-cors-headers==4.9.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 django-debug-toolbar==8.0.0
-    # via -r requirements/requirements_dev.in
+    # via -r requirements_dev.in
 django-extensions==4.1
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 django-filter==26.1
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 django-simple-history==3.13.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 django-timezone-field==7.2.2
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   django-celery-beat
 djangorestframework==3.17.2
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   drf-yasg
 drf-yasg==1.21.15
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 factory-boy==3.3.3
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 faker==40.39.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   factory-boy
 filelock==4.0.3
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   python-discovery
     #   tox
     #   virtualenv
 flake8==7.4.1
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 flower==2.2.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 freezegun==1.5.5
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 gunicorn==26.2.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 h11==0.16.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   httpcore
     #   uvicorn
 httpcore==1.0.9
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   httpx
 httpx==0.28.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   python-keycloak
 humanize==4.16.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   flower
 idna==3.20
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   anyio
     #   httpx
     #   requests
 inflection==0.5.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   drf-yasg
 iniconfig==2.3.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   pytest
 isodate==0.7.2
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   msrest
 isort==9.0.1
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 itypes==1.2.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   coreapi
 jinja2==3.1.6
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   coreschema
 jwcrypto==1.6.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   python-keycloak
 kombu==5.6.2
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   celery
 markupsafe==3.0.3
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   jinja2
 mccabe==0.7.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   flake8
 msal==1.39.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-identity
     #   msal-extensions
 msal-extensions==1.3.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-identity
 msrest==0.7.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
 mypy-extensions==1.1.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   isort
-oauthlib==3.3.1
+oauthlib==4.0.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   requests-oauthlib
 opentelemetry-api==1.44.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-asgi
@@ -272,33 +272,33 @@ opentelemetry-api==1.44.0
     #   opentelemetry-semantic-conventions
 opentelemetry-instrumentation==0.65b0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-dbapi
     #   opentelemetry-instrumentation-django
     #   opentelemetry-instrumentation-psycopg2
     #   opentelemetry-instrumentation-wsgi
 opentelemetry-instrumentation-asgi==0.65b0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 opentelemetry-instrumentation-dbapi==0.65b0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   opentelemetry-instrumentation-psycopg2
 opentelemetry-instrumentation-django==0.65b0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 opentelemetry-instrumentation-psycopg2==0.65b0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 opentelemetry-instrumentation-wsgi==0.65b0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   opentelemetry-instrumentation-django
 opentelemetry-sdk==1.44.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
 opentelemetry-semantic-conventions==0.65b0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-dbapi
@@ -307,13 +307,13 @@ opentelemetry-semantic-conventions==0.65b0
     #   opentelemetry-sdk
 opentelemetry-util-http==0.65b0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-django
     #   opentelemetry-instrumentation-wsgi
 packaging==26.3
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   build
     #   deprecation
     #   drf-yasg
@@ -324,55 +324,55 @@ packaging==26.3
     #   tox
     #   wheel
 pip-tools==7.6.1
-    # via -r requirements/requirements_dev.in
+    # via -r requirements_dev.in
 platformdirs==4.11.12
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   tox
     #   virtualenv
 pluggy==1.6.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   pytest
     #   pytest-cov
     #   tox
 prometheus-client==0.26.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   flower
 prompt-toolkit==3.0.53
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   click-repl
 psutil==7.2.2
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-monitor-opentelemetry-exporter
 psycopg2-binary==2.9.13
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 pycodestyle==2.15.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   flake8
 pycparser==3.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   cffi
 pyflakes==4.0.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   flake8
 pygments==2.21.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   pytest
 pyjwt[crypto]==2.15.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   msal
 pyproject-api==1.11.2
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   tox
 pyproject-hooks==1.3.3
     # via
@@ -380,42 +380,42 @@ pyproject-hooks==1.3.3
     #   pip-tools
 pytest==9.1.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   pytest-cov
     #   pytest-django
 pytest-cov==7.1.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 pytest-django==4.14.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 python-crontab==3.4.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   django-celery-beat
 python-dateutil==2.9.0.post0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   celery
     #   freezegun
 python-discovery==1.6.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   tox
     #   virtualenv
 python-keycloak==7.1.1
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 pytz==2026.4
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   drf-yasg
     #   flower
 pyyaml==6.0.3
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   drf-yasg
     #   vcrpy
 requests==2.34.2
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   azure-core
     #   coreapi
     #   msal
@@ -425,34 +425,34 @@ requests==2.34.2
     #   requests-toolbelt
 requests-oauthlib==2.0.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   msrest
 requests-toolbelt==1.0.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   python-keycloak
 six==1.17.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   python-dateutil
 sqlparse==0.6.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   django
     #   django-debug-toolbar
 tomli-w==1.2.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   tox
 tornado==6.5.10
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   flower
 tox==4.64.1
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 typing-extensions==4.16.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   anyio
     #   azure-core
     #   azure-identity
@@ -463,47 +463,47 @@ typing-extensions==4.16.0
     #   opentelemetry-semantic-conventions
 tzdata==2026.4
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   django-celery-beat
     #   kombu
 tzlocal==5.4.4
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   celery
 uritemplate==4.2.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   coreapi
     #   drf-yasg
 urllib3==2.8.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   requests
 uvicorn==0.53.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 vcrpy==8.3.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 vine==5.1.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   amqp
     #   celery
     #   kombu
 virtualenv==21.12.0
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   tox
 wcwidth==0.9.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   prompt-toolkit
 wheel==0.48.0
     # via pip-tools
 whitenoise==6.12.0
-    # via -r requirements/requirements_test.txt
+    # via -r requirements_test.txt
 wrapt==2.4.1
     # via
-    #   -r requirements/requirements_test.txt
+    #   -r requirements_test.txt
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-dbapi
     #   vcrpy
