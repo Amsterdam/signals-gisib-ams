@@ -322,6 +322,7 @@ packaging==26.3
     #   pyproject-api
     #   pytest
     #   tox
+    #   virtualenv
     #   wheel
 pip-tools==7.6.1
     # via -r requirements_dev.in
@@ -489,7 +490,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==21.12.0
+virtualenv==21.14.13
     # via
     #   -r requirements_test.txt
     #   tox
