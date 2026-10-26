@@ -146,7 +146,7 @@ factory-boy==3.3.3
     # via -r requirements_test.in
 faker==40.39.0
     # via factory-boy
-filelock==4.0.3
+filelock==4.2.1
     # via
     #   python-discovery
     #   tox
