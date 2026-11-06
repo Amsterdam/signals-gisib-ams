@@ -254,7 +254,7 @@ mypy-extensions==1.1.0
     # via
     #   -r requirements_test.txt
     #   isort
-oauthlib==4.0.0
+oauthlib==4.0.1
     # via
     #   -r requirements_test.txt
     #   requests-oauthlib

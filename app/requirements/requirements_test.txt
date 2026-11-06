@@ -231,7 +231,7 @@ msrest==0.7.1
     #   azure-monitor-opentelemetry-exporter
 mypy-extensions==1.1.0
     # via isort
-oauthlib==4.0.0
+oauthlib==4.0.1
     # via
     #   -r requirements.txt
     #   requests-oauthlib
