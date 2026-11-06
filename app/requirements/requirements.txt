@@ -239,7 +239,7 @@ six==1.17.0
     # via python-dateutil
 sqlparse==0.6.0
     # via django
-tornado==6.5.10
+tornado==6.6
     # via flower
 typing-extensions==4.16.0
     # via
